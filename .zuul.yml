@@ -6,10 +6,10 @@ browsers:
   - name: firefox
     version: latest
   - name: microsoftedge
-    version: [13, latest]
+    version: latest
   - name: safari
     version: latest
   - name: iphone
-    version: [9, latest]
+    version: latest
   - name: android
     version: latest

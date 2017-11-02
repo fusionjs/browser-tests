@@ -1,6 +1,10 @@
 language: node_js
 node_js:
+<<<<<<< HEAD
 - '8.9'
+=======
+- '8'
+>>>>>>> b83f2484052b88d22b789e1fd2ffb6303eda0306
 before_install:
 - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.2.1
 - export PATH=$HOME/.yarn/bin:$PATH
