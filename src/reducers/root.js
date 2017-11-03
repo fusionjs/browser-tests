@@ -3,7 +3,7 @@ import rpcCount from './rpc-count';
 import loading from './loading';
 import error from './error';
 
-export default (state, action) => ({
+export default (state = {}, action) => ({
   count: count(state.count, action),
   rpcCount: rpcCount(state.rpcCount, action),
   loading: loading(state.loading, action),

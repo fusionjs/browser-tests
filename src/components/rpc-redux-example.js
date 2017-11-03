@@ -4,13 +4,13 @@ import {prepared} from 'fusion-react-async';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
 
-function Example({rpcCount, loading, error, rpcRedux}) {
+function Example({rpcCount, loading, error, increment, decrement}) {
   return (
     <div>
       <p>Count: {rpcCount}</p>
       <p>
-        <button onClick={() => rpcRedux.increment()}>Increment</button>
-        <button onClick={() => rpcRedux.decrement()}>Decrement</button>
+        <button onClick={() => increment()}>Increment</button>
+        <button onClick={() => decrement()}>Decrement</button>
       </p>
       {loading && 'Loading...'}
       {error}
@@ -18,9 +18,15 @@ function Example({rpcCount, loading, error, rpcRedux}) {
   );
 }
 
+const withIncrement = withRPCRedux('increment');
+const withDecrement = withRPCRedux('decrement');
+const withGetCount = withRPCRedux('getCount');
+
 const hoc = compose(
-  withRPCRedux,
+  withIncrement,
+  withDecrement,
+  withGetCount,
   connect(({rpcCount, loading, error}) => ({rpcCount, loading, error})),
-  prepared(props => props.rpcCount || props.rpcRedux.getCount())
+  prepared(props => props.rpcCount || props.getCount())
 );
 export default hoc(Example);

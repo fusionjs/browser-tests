@@ -1,5 +1,5 @@
 import React from 'react';
-import {withCsrfProtection} from 'fusion-plugin-csrf-protection-react';
+import {withFetch} from 'fusion-plugin-csrf-protection-react';
 
 class FetchingComponent extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class FetchingComponent extends React.Component {
     };
   }
   componentDidMount() {
-    const {fetch} = this.props.csrfProtection;
+    const {fetch} = this.props;
     fetch('/test-fetch', {method: 'POST'}).then(resp => {
       this.setState({
         loading: false,
@@ -26,4 +26,4 @@ class FetchingComponent extends React.Component {
   }
 }
 
-export default withCsrfProtection(FetchingComponent);
+export default withFetch(FetchingComponent);
