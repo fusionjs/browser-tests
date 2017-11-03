@@ -4,5 +4,7 @@
 .vscode
 .DS_Store
 config/secrets/secrets.json
+selenium-debug.log
 yarn-error.log
 node_modules
+reports
