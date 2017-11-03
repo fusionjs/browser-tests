@@ -41,7 +41,7 @@ const Root = (
     <ul>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/test">Test</Link></li>
-      <li><Link to="/image">Image</Link></li>
+      <li id="image"><Link to="/image">Image</Link></li>
       <li><Link to="/split">Split</Link></li>
       <li><Link to="/split-deferred">Split (Deferred)</Link></li>
       <li><Link to="/styletron">CSS styled (Styletron)</Link></li>
