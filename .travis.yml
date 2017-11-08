@@ -24,6 +24,8 @@ script:
   - nightwatch --config nightwatch-ci.js --env safari-mac
   - nightwatch --config nightwatch-ci.js --env ie
   - nightwatch --config nightwatch-ci.js --env edge
+  - nightwatch --config nightwatch-ci.js --env android
+  - nightwatch --config nightwatch-ci.js --env iOS
   - pkill node
 
 env:

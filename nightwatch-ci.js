@@ -56,6 +56,7 @@ module.exports = {
       },
     },
 
+    // not supported by sauce
     'safari-windows': {
       desiredCapabilities: {
         browserName: 'safari',
@@ -75,12 +76,29 @@ module.exports = {
       },
     },
 
-    // Android: {
-    //   desiredCapabilities: {
-    //     browserName: 'Android',
-    //     deviceName: 'Samsung Galaxy S4 GoogleAPI Emulator',
-    //     deviceOrientation: 'portrait',
-    //   },
-    // },
+    android: {
+      desiredCapabilities: {
+        browserName: 'Android',
+        deviceName: 'Samsung Galaxy S4 GoogleAPI Emulator',
+        deviceOrientation: 'portrait',
+      },
+    },
+
+    iOS: {
+      desiredCapabilities: {
+        browserName: 'Safari',
+        deviceName: 'iPhone 4s Simulator',
+        deviceOrientation: 'portrait',
+        platformVersion: '8.1',
+        platformName: 'iOS',
+      },
+    },
+
+    // caps.setCapability("appiumVersion", "1.6.4");
+    // caps.setCapability("deviceName","iPhone 4s Simulator");
+    // caps.setCapability("deviceOrientation", "portrait");
+    // caps.setCapability("platformVersion","8.1");
+    // caps.setCapability("platformName", "iOS");
+    // caps.setCapability("browserName", "Safari");
   },
 };
