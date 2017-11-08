@@ -42,7 +42,7 @@ export default function start() {
   const {fetch, ignore} = app.plugin(CsrfProtection, {
     Session,
     fetch: unfetch,
-  }).Service;
+  }).of();
   const EventEmitter = app.plugin(UniversalEvents, {fetch});
 
   app.plugin(Router, {EventEmitter});
