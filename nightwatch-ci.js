@@ -49,25 +49,50 @@ module.exports = {
       },
     },
 
-    'safari-mac': {
+    'safari-11': {
       desiredCapabilities: {
         browserName: 'safari',
         platform: 'macOS 10.12',
+        version: '11.0',
       },
     },
 
-    // not supported by sauce
-    'safari-windows': {
+    'safari-9': {
       desiredCapabilities: {
         browserName: 'safari',
-        platform: 'Windows 10',
+        platform: 'OS X 10.11',
+        version: '9.0',
       },
     },
 
-    ie: {
+    'safari-7': {
+      desiredCapabilities: {
+        browserName: 'safari',
+        platform: 'OS X 10.9',
+        version: '7.0',
+      },
+    },
+
+    'ie-11': {
       desiredCapabilities: {
         browserName: 'internet explorer',
+        platform: 'Windows 10',
+        version: '11.103',
       },
+    },
+
+    'ie-8': {
+      desiredCapabilities: {
+        browserName: 'internet explorer',
+        platform: 'Windows 7',
+        version: '8.0',
+      },
+    },
+
+    'firefox-13': {
+      browserName: 'firefox',
+      platform: 'Windows 7',
+      version: '13.0',
     },
 
     edge: {
@@ -76,7 +101,17 @@ module.exports = {
       },
     },
 
-    android: {
+    'samsung-S3': {
+      desiredCapabilities: {
+        browserName: 'Android',
+        deviceName: 'Samsung Galaxy S3 Emulator',
+        deviceOrientation: 'portrait',
+        platformVersion: '4.4',
+        platformName: 'Android',
+      },
+    },
+
+    'samsung-G4': {
       desiredCapabilities: {
         browserName: 'Android',
         deviceName: 'Samsung Galaxy S4 GoogleAPI Emulator',
@@ -84,7 +119,7 @@ module.exports = {
       },
     },
 
-    iOS: {
+    'iPhone-4S': {
       desiredCapabilities: {
         browserName: 'Safari',
         deviceName: 'iPhone 4s Simulator',
@@ -94,11 +129,24 @@ module.exports = {
       },
     },
 
-    // caps.setCapability("appiumVersion", "1.6.4");
-    // caps.setCapability("deviceName","iPhone 4s Simulator");
-    // caps.setCapability("deviceOrientation", "portrait");
-    // caps.setCapability("platformVersion","8.1");
-    // caps.setCapability("platformName", "iOS");
-    // caps.setCapability("browserName", "Safari");
+    'iPhone-X': {
+      desiredCapabilities: {
+        browserName: 'Safari',
+        deviceName: 'iPhone X Simulator',
+        deviceOrientation: 'portrait',
+        platformVersion: '11.0',
+        platformName: 'iOS',
+      },
+    },
+
+    kindleFire: {
+      desiredCapabilities: {
+        browserName: 'Browser',
+        deviceName: 'Amazon Kindle Fire HD 8.9 GoogleAPI Emulator',
+        deviceOrientation: 'portrait',
+        platformVersion: '4.4',
+        platformName: 'Android',
+      },
+    },
   },
 };
