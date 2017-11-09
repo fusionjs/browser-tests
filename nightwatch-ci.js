@@ -81,11 +81,11 @@ module.exports = {
       },
     },
 
-    'ie-8': {
+    'ie-9': {
       desiredCapabilities: {
         browserName: 'internet explorer',
         platform: 'Windows 7',
-        version: '8.0',
+        version: '9.0',
       },
     },
 
