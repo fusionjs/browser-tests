@@ -14,7 +14,7 @@
     "build-test": "fusion build --test",
     "download-selenium": "node download-selenium.js",
     "test-local": "nightwatch --config nightwatch.js",
-    "test-remote": "nightwatch --config nightwatch-remote.js --env safari-11",
+    "test-remote": "nightwatch --config nightwatch-remote.js --env chrome-mac",
     "cover": "fusion test --cover",
     "source-map-explorer": "fusion source-map-explorer",
     "check": "fusion check"
