@@ -4,7 +4,7 @@ const TRAVIS_JOB_NUMBER = process.env.TRAVIS_JOB_NUMBER;
 const BINPATH = './node_modules/nightwatch/bin/';
 
 module.exports = {
-  src_folders: ['src/test/browser/test.js'],
+  src_folders: ['src/test/browser/index.js'],
   output_folder: 'reports',
   custom_commands_path: '',
   custom_assertions_path: '',
