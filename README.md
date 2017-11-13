@@ -1,5 +1,7 @@
 # browser-tests
 
+[![Build status](https://badge.buildkite.com/97cbb370d16a1aa622bc2d8c3475b887475be2710f0370fab9.svg?branch=master)](https://buildkite.com/uberopensource/browser-tests)
+
 CI and adhoc testing for cross browser API support using nightwatch, selenium and saucelabs
 
 ## Travis CI
@@ -54,7 +56,3 @@ e.g.
 ```
 
 To add additional test environments see https://wiki.saucelabs.com/display/DOCS/Platform+Configurator#/
-
-
-
-

@@ -1,0 +1,7 @@
+version: '2'
+services:
+  browser-tests:
+    build: .
+    volumes:
+      - .:/browser-tests
+      - /browser-tests/node_modules/
