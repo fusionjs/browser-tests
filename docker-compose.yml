@@ -1,7 +1,55 @@
-version: '2'
+version: '2.1'
 services:
+  fusion-server:
+    build: .
+    command: yarn start --environment=development
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+    network_mode: "host"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -H \"Accept: text/html\" -f http://localhost:3000 || exit 1"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+
+  sauce-tunnel:
+    image: henrrich/docker-sauce-connect:latest
+    restart: always
+    expose:
+      - 4445
+    ports:
+      - 4445
+    network_mode: "host"
+    command: ["-u", "${SAUCE_USERNAME}", "-k", "${SAUCE_ACCESS_KEY}", "-i", "${BUILDKITE_BUILD_NUMBER}", "-p"]
+    environment:
+      - SAUCE_USERNAME
+      - SAUCE_ACCESS_KEY
+      - BUILDKITE_BUILD_NUMBER
+    healthcheck:
+      #test: ["CMD-SHELL", "[ -f \"/tmp/sc_client-${BUILDKITE_BUILD_NUMBER}.pid\" ] || exit 0"]
+      test: ["CMD-SHELL", "grep -R \"Sauce Connect is up\" /tmp/sc-${BUILDKITE_BUILD_NUMBER}.log || exit 1"]
+      interval: 5s
+      timeout: 5m
+      retries: 10
+
+  # docker-compose run does not wait on healthchecks, so proxy using this service.
+  services-are-healthy:
+    build: .
+    network_mode: "host"
+    depends_on:
+      sauce-tunnel:
+        condition: service_healthy
+      fusion-server:
+        condition: service_healthy
+
   browser-tests:
     build: .
-    volumes:
-      - .:/browser-tests
-      - /browser-tests/node_modules/
+    network_mode: "host"
+    depends_on:
+      - services-are-healthy
+    environment:
+      - SAUCE_USERNAME
+      - SAUCE_ACCESS_KEY
+      - BUILDKITE_BUILD_NUMBER
