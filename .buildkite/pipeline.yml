@@ -11,62 +11,56 @@ steps:
       docker-compose#v1.5.2:
         run: browser-tests
   # Run saucelabs jobs twice at once, due to rate limiting
-  - name: ":saucelabs: mac"
-    command: "yarn lint"
-    plugins:
-      docker-compose#v1.5.2:
-        run: browser-tests
-  #- wait
   - name: ":saucelabs: chrome-mac"
-    command: nightwatch --config nightwatch-ci.js --env chrome-mac"
+    command: "nightwatch --config nightwatch-ci.js --env chrome-mac"
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests
   - wait
   - name: ":saucelabs: chrome-windows"
-    command: nightwatch --config nightwatch-ci.js --env chrome-windows"
+    command: "nightwatch --config nightwatch-ci.js --env chrome-windows"
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests
   # - wait
   - name: ":saucelabs: safari-7"
-    command: nightwatch --config nightwatch-ci.js --env safari-7"
+    command: "nightwatch --config nightwatch-ci.js --env safari-7"
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests
   - wait
   - name: ":saucelabs: safari-9"
-    command: nightwatch --config nightwatch-ci.js --env safari-9"
+    command: "nightwatch --config nightwatch-ci.js --env safari-9"
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests
   # - wait
   - name: ":saucelabs: safari-11"
-    command: nightwatch --config nightwatch-ci.js --env safari-11"
+    command: "nightwatch --config nightwatch-ci.js --env safari-11"
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests
   - wait
   - name: ":saucelabs: ie-9"
-    command: nightwatch --config nightwatch-ci.js --env ie-9"
+    command: "nightwatch --config nightwatch-ci.js --env ie-9"
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests
   # - wait
   - name: ":saucelabs: edge"
-    command: nightwatch --config nightwatch-ci.js --env edge"
+    command: "nightwatch --config nightwatch-ci.js --env edge"
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests
   - wait
   - name: ":saucelabs: iPhone-4S"
-    command: nightwatch --config nightwatch-ci.js --env iPhone-4S"
+    command: "nightwatch --config nightwatch-ci.js --env iPhone-4S"
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests
   # - wait
   - name: ":saucelabs: iPhone-X"
-    command: nightwatch --config nightwatch-ci.js --env iPhone-X"
+    command: "nightwatch --config nightwatch-ci.js --env iPhone-X"
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests
