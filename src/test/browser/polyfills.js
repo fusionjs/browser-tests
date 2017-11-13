@@ -19,7 +19,7 @@ function gatherBrowserData() {
       typeOfSymbol: typeof Symbol !== 'undefined' && typeof Symbol(),
       objectAssignment:
         typeof Object.assign === 'function' &&
-          Object.assign({a: 1, b: 3}, {b: 2, c: 3}),
+        Object.assign({a: 1, b: 3}, {b: 2, c: 3}),
       arrayShouldInclude: [1, 2, 3].includes(2),
       arrayShouldNotInclude: [1, 2, 3].includes(4),
       arrayFind: [{a: 1, b: 2}, {a: 2, b: 1}, {a: 3}].find(function(e) {
