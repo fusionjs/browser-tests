@@ -44,11 +44,20 @@ services:
       fusion-server:
         condition: service_healthy
 
+  # For running integration tests in CI
   browser-tests:
     build: .
     network_mode: "host"
     depends_on:
       - services-are-healthy
+    environment:
+      - SAUCE_USERNAME
+      - SAUCE_ACCESS_KEY
+      - BUILDKITE_BUILD_NUMBER
+
+  # For running linters and static analysis
+  browser-tests-linters:
+    build: .
     environment:
       - SAUCE_USERNAME
       - SAUCE_ACCESS_KEY
