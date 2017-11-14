@@ -1,12 +1,22 @@
 steps:
-  - name: ":docker: :package:"
+  - name: ":docker: :package: tests"
     plugins:
       docker-compose#v1.5.2:
         build: browser-tests
         image-repository: 296822479253.dkr.ecr.us-east-2.amazonaws.com/fusionjs
+  - name: ":docker: :package: linters"
+    plugins:
+      docker-compose#v1.5.2:
+        build: browser-tests-linters
+        image-repository: 296822479253.dkr.ecr.us-east-2.amazonaws.com/fusionjs
   - wait
   - name: ":eslint:"
     command: "yarn lint"
+    plugins:
+      docker-compose#v1.5.2:
+        run: browser-tests-linters
+  - name: ":saucelabs: :selenium:"
+    command: .buildkite/runAllTests
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests

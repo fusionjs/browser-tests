@@ -1,6 +1,6 @@
 /* globals module, process */
 
-const TRAVIS_JOB_NUMBER = process.env.TRAVIS_JOB_NUMBER;
+const JOB_IDENTIFIER = process.env.BUILDKITE_BUILD_NUMBER;
 const BINPATH = './node_modules/nightwatch/bin/';
 
 module.exports = {
@@ -30,8 +30,7 @@ module.exports = {
       username: process.env.SAUCE_USERNAME,
       access_key: process.env.SAUCE_ACCESS_KEY,
       desiredCapabilities: {
-        build: `build-${TRAVIS_JOB_NUMBER}`,
-        'tunnel-identifier': TRAVIS_JOB_NUMBER,
+        'tunnel-identifier': JOB_IDENTIFIER,
       },
     },
 
