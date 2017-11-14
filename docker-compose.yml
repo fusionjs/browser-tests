@@ -28,7 +28,6 @@ services:
       - SAUCE_ACCESS_KEY
       - BUILDKITE_BUILD_NUMBER
     healthcheck:
-      #test: ["CMD-SHELL", "[ -f \"/tmp/sc_client-${BUILDKITE_BUILD_NUMBER}.pid\" ] || exit 0"]
       test: ["CMD-SHELL", "grep -R \"Sauce Connect is up\" /tmp/sc-${BUILDKITE_BUILD_NUMBER}.log || exit 1"]
       interval: 5s
       timeout: 5m
