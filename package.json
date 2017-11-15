@@ -13,8 +13,9 @@
     "start": "fusion start",
     "build-test": "fusion build --test",
     "download-selenium": "node download-selenium.js",
-    "test-local": "nightwatch --config nightwatch.js",
-    "test-remote": "nightwatch --config nightwatch-remote.js --env samsung-G4",
+    "test-chrome": "docker-compose run browser-test-chrome",    
+    "test-firefox": "docker-compose run browser-test-firefox",
+    "test-remote": "./test-remotely.sh",
     "cover": "fusion test --cover",
     "source-map-explorer": "fusion source-map-explorer",
     "check": "fusion check"
@@ -66,7 +67,6 @@
     "selenium-download": "^2.0.10",
     "tape": "^4.8.0"
   },
-  "TODO": "Can we either always add this or figure out some way to know when to add it?",
   "clientHotLoaderEntry": "react-hot-loader/patch",
   "engines": {
     "node": ">= 8.9.0"
