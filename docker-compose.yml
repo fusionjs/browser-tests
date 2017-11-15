@@ -14,6 +14,20 @@ services:
       timeout: 10s
       retries: 5
 
+  chrome-standalone:
+    image: selenium/standalone-chrome:latest
+    network_mode: "host"    
+    restart: always    
+    ports:
+      - "4444:4444"
+
+  firefox-standalone:
+    image: selenium/standalone-firefox:latest
+    network_mode: "host"    
+    restart: always    
+    ports:
+      - "4444:4444"      
+
   sauce-tunnel:
     image: henrrich/docker-sauce-connect:latest
     restart: always
@@ -34,12 +48,18 @@ services:
       retries: 10
 
   # docker-compose run does not wait on healthchecks, so proxy using this service.
-  services-are-healthy:
+  sauce-tunnel-healthy:
     build: .
     network_mode: "host"
     depends_on:
       sauce-tunnel:
         condition: service_healthy
+
+  # wait for running server.
+  fusion-server-healthy:
+    build: .
+    network_mode: "host"
+    depends_on:
       fusion-server:
         condition: service_healthy
 
@@ -48,7 +68,8 @@ services:
     build: .
     network_mode: "host"
     depends_on:
-      - services-are-healthy
+      - sauce-tunnel-healthy
+      - fusion-server-healthy
     environment:
       - SAUCE_USERNAME
       - SAUCE_ACCESS_KEY
@@ -61,3 +82,22 @@ services:
       - SAUCE_USERNAME
       - SAUCE_ACCESS_KEY
       - BUILDKITE_BUILD_NUMBER
+
+  # For running integration tests locally in chrome
+  browser-test-chrome:
+    build: .
+    network_mode: "host"
+    depends_on:
+      - chrome-standalone
+      - fusion-server-healthy    
+    command: ./test-standalone.sh
+
+  # For running integration tests locally in firefox
+  browser-test-firefox:
+    build: .
+    network_mode: "host"
+    depends_on:
+      - firefox-standalone
+      - fusion-server-healthy    
+    command: ./test-standalone.sh    
+
