@@ -16,7 +16,7 @@ steps:
       docker-compose#v1.5.2:
         run: browser-tests-linters
   - name: ":saucelabs: :selenium:"
-    command: .buildkite/runAllTests
+    command: .buildkite/run-all-tests.sh
     plugins:
       docker-compose#v1.5.2:
         run: browser-tests

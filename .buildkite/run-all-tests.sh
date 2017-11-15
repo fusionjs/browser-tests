@@ -9,10 +9,11 @@ nightwatch --config nightwatch-ci.js --env safari-7
 nightwatch --config nightwatch-ci.js --env safari-9
 nightwatch --config nightwatch-ci.js --env safari-11
 nightwatch --config nightwatch-ci.js --env ie-9
-# nightwatch --config nightwatch-ci.js --env ie-11 ("Promise is not defined")
+nightwatch --config nightwatch-ci.js --env ie-11
 nightwatch --config nightwatch-ci.js --env edge
-# nightwatch --config nightwatch-ci.js --env samsung-S3 ("Error processing the server response")
-# nightwatch --config nightwatch-ci.js --env samsung-G4 ("Map is not defined")
+nightwatch --config nightwatch-ci.js --env samsung-S3
+nightwatch --config nightwatch-ci.js --env samsung-G4
 nightwatch --config nightwatch-ci.js --env iPhone-4S
-nightwatch --config nightwatch-ci.js --env iPhone-X
-# nightwatch --config nightwatch-ci.js --env kindleFire ("Map is not defined")
+# skipping iphone X for now as tests are taking a very long time to complete
+# nightwatch --config nightwatch-ci.js --env iPhone-X
+nightwatch --config nightwatch-ci.js --env kindleFire
