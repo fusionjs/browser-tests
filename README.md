@@ -11,18 +11,21 @@ After each push Buildkite runs cross-browser UI tests over core libraries and pl
 ## Running Ad hoc chrome and firefox tests locally
 
 In Chrome
-`npm run test-chrome`
+`yarn test-chrome`
 In Firefox
-`npm run test-firefox`
+`yarn test-firefox`
 
 ## Running Ad hoc cross-browser tests remotely
 
+(For convenience you should add SAUCE\_USERNAME and SAUCE\_ACCESS_KEY as environment variables)
+
 1. Start the app server\
-`npm run dev`
+`yarn dev`
 1. Start sauce connect\
 `sc -u <saucelabs username> -k <saucelabs access key>`
-1. Run the tests remotely passing environment\
-`npm run test-remote -- --env ie-11`
+1. Run the tests remotely\
+run specific test: `yarn test-remote -- --env ie-11`\
+run all tests: `yarn test-remote`
 
 ## The Tests
 
