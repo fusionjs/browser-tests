@@ -2,12 +2,12 @@ import React from 'react';
 import {Route, Link, Switch, NotFound} from 'fusion-plugin-react-router';
 import {split} from 'fusion-react-async';
 import Image from './image';
+import PolyfillTests from './polyfill-tests';
 import RPCReduxExample from './rpc-redux-example';
 import CsrfProtectionExample from './csrf-protection-example';
 import ReduxExample from './redux-example';
 
 const Home = () => <div>Hello</div>;
-const Test = () => <div>Test</div>;
 const PageNotFound = () => (
   <NotFound>
     <div>404</div>
@@ -45,8 +45,8 @@ const Root = (
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li>
-        <Link to="/test">Test</Link>
+      <li id="polyfills">
+        <Link to="/test-polyfills">Test Polyfills</Link>
       </li>
       <li id="image">
         <Link to="/image">Image</Link>
@@ -78,7 +78,7 @@ const Root = (
     </ul>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/test" component={Test} />
+      <Route exact path="/test-polyfills" component={PolyfillTests} />
       <Route exact path="/image" component={Image} />
       <Route exact path="/split" component={SplitExample} />
       <Route exact path="/split-deferred" component={SplitDefer} />

@@ -13,7 +13,7 @@
     "start": "fusion start",
     "build-test": "fusion build --test",
     "download-selenium": "node download-selenium.js",
-    "test-chrome": "docker-compose run browser-test-chrome",    
+    "test-chrome": "docker-compose run browser-test-chrome",
     "test-firefox": "docker-compose run browser-test-firefox",
     "test-remote": "./test-remotely.sh",
     "cover": "fusion test --cover",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "fast-async": "^6.3.0",
-    "fusion-cli": "^0.1.9",
+    "fusion-cli": "^0.1.10",
     "fusion-core": "^0.2.1",
     "fusion-plugin-browser-performance-emitter": "^0.1.10",
     "fusion-plugin-csrf-protection-react": "^0.2.0",
