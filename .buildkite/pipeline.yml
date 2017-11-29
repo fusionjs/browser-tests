@@ -10,6 +10,11 @@ steps:
         build: browser-tests-linters
         image-repository: 296822479253.dkr.ecr.us-east-2.amazonaws.com/fusionjs
   - wait
+  - command: yarn flow
+    name: ':flowtype:'
+    plugins:
+      'docker-compose#v1.7.0':
+        run: browser-tests-linters
   - name: ':eslint:'
     command: yarn lint
     plugins:
