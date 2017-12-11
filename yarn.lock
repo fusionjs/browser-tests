@@ -2942,9 +2942,9 @@ fusion-cli@^0.1.10:
     winston "^2.3.1"
     yargs "^8.0.2"
 
-fusion-cli@^0.1.8:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/fusion-cli/-/fusion-cli-0.1.9.tgz#c792cb75b021c712115eb4d9e7b74372ad1757ea"
+fusion-cli@^0.1.9:
+  version "0.1.12"
+  resolved "https://unpm.uberinternal.com/fusion-cli/-/fusion-cli-0.1.12.tgz#2ec209a3581ed5332cc79d9601ecd9c8efa0c09f"
   dependencies:
     "@nadiia/file-loader" "^1.0.0-beta.5"
     babel-core "^6.22.1"
@@ -2965,6 +2965,7 @@ fusion-cli@^0.1.8:
     chalk "^1.1.3"
     compose-middleware "3.0.0"
     compression-webpack-plugin "^0.4.0"
+    core-js "^2.5.1"
     es6-object-assign "^1.1.0"
     express "^4.15.2"
     fast-async "^6.3.0"
@@ -2982,6 +2983,7 @@ fusion-cli@^0.1.8:
     memory-fs "^0.4.1"
     mime "^1.3.4"
     mime-db "^1.26.0"
+    multi-entry-loader "^1.1.2"
     node-zopfli "^2.0.2"
     nyc "10.1.2"
     path-is-absolute "^1.0.1"
@@ -3032,12 +3034,16 @@ fusion-plugin-csrf-protection@^0.2.0:
   dependencies:
     base64-url "^2.0.0"
 
-fusion-plugin-error-handling@0.1.10:
-  version "0.1.10"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-0.1.10.tgz#2b6ee557e4ff21c31b58116a3f621caab4668712"
+fusion-plugin-error-handling@0.1.12:
+  version "0.1.12"
+  resolved "https://unpm.uberinternal.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-0.1.12.tgz#062c65ac6f1dcea186f376110d307c3855960538"
   dependencies:
-    fusion-cli "^0.1.8"
+    fusion-cli "^0.1.9"
     koa-bodyparser "4.2.0"
+
+fusion-plugin-font-loading@../fusion-plugin-font-loading/fusion-plugin-font-loading-0.1.0.tgz:
+  version "0.1.0"
+  resolved "../fusion-plugin-font-loading/fusion-plugin-font-loading-0.1.0.tgz#12ce35458bdd6484119965adb7df62a4852fa907"
 
 fusion-plugin-i18n-react@^0.1.9:
   version "0.1.9"

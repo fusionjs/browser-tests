@@ -6,6 +6,7 @@ import I18n from 'fusion-plugin-i18n-react';
 import UniversalEvents from 'fusion-plugin-universal-events-react';
 import UniversalLogger from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
+import {FontPlugin} from 'fusion-plugin-font-loading';
 import RPC from 'fusion-plugin-rpc-redux-react';
 import Redux from 'fusion-plugin-react-redux';
 import ErrorHandling from 'fusion-plugin-error-handling';
@@ -22,6 +23,8 @@ import rpcExample from './rpc/rpc-example';
 import CsrfProtectionExample from './rpc/csrf-protection-example';
 import reducer from './reducers/root';
 import {Plugin} from 'fusion-core';
+
+import {preloadDepth, fonts} from './font-config.js';
 
 const MemoryTranslationsLoader = new Plugin({
   Service: class MemoryTranslations {
@@ -49,6 +52,7 @@ export default function start() {
 
   app.plugin(Router, {EventEmitter});
   app.plugin(Styletron);
+  app.plugin(FontPlugin, {preloadDepth, fonts});
   app.plugin(
     I18n,
     __BROWSER__ ? {fetch} : {TranslationsLoader: MemoryTranslationsLoader}

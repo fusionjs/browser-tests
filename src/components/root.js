@@ -37,6 +37,11 @@ const SplitStyled = split({
   LoadingComponent,
   ErrorComponent,
 });
+const CustomFonts = split({
+  load: () => import('./custom-fonts'),
+  LoadingComponent,
+  ErrorComponent,
+});
 
 const Root = (
   <div>
@@ -61,6 +66,9 @@ const Root = (
         <Link to="/styletron">CSS styled (Styletron)</Link>
       </li>
       <li>
+        <Link to="/custom-fonts">Custom Fonts</Link>
+      </li>
+      <li>
         <Link to="/translations">Translations</Link>
       </li>
       <li>
@@ -83,6 +91,7 @@ const Root = (
       <Route exact path="/split" component={SplitExample} />
       <Route exact path="/split-deferred" component={SplitDefer} />
       <Route exact path="/styletron" component={SplitStyled} />
+      <Route exact path="/custom-fonts" component={CustomFonts} />
       <Route exact path="/translations" component={SplitTranslations} />
       <Route exact path="/csrf-token" component={CsrfProtectionExample} />
       <Route exact path="/redux" component={ReduxExample} />
