@@ -10,7 +10,7 @@ import {assetUrl} from 'fusion-core';
 export const preloadDepth = 1;
 export const fonts = {
   'ClanPro-Book': {
-    url: {
+    urls: {
       woff2: assetUrl('./static/Clan-Book.woff2'),
     },
     fallback: {
@@ -18,7 +18,7 @@ export const fonts = {
     },
   },
   'ClanPro-News': {
-    url: {
+    urls: {
       woff2: assetUrl('./static/Clan-News.woff2'),
     },
     fallback: {
@@ -29,7 +29,7 @@ export const fonts = {
     },
   },
   'ClanPro-Thin': {
-    url: {
+    urls: {
       woff2: assetUrl('./static/Clan-Thin.woff2'),
     },
     fallback: {

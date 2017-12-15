@@ -6,7 +6,7 @@ import I18n from 'fusion-plugin-i18n-react';
 import UniversalEvents from 'fusion-plugin-universal-events-react';
 import UniversalLogger from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
-import {FontPlugin} from 'fusion-plugin-font-loading';
+import {FontPlugin} from 'fusion-plugin-font-loader-react';
 import RPC from 'fusion-plugin-rpc-redux-react';
 import Redux from 'fusion-plugin-react-redux';
 import ErrorHandling from 'fusion-plugin-error-handling';
@@ -40,7 +40,6 @@ const MemoryTranslationsLoader = new Plugin({
 export default function start() {
   const app = new App(root);
 
-  // TODO: Secrets should never be hard-coded, and ideally should not be in version control
   const Session = app.plugin(JWTSession, {secret: __NODE__ ? 'abcdefg' : ''});
   const {fetch, ignore} = app
     .plugin(CsrfProtection, {
