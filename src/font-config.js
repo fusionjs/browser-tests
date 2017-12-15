@@ -9,33 +9,33 @@ Purpose
 import {assetUrl} from 'fusion-core';
 export const preloadDepth = 1;
 export const fonts = {
-  'ClanPro-Book': {
+  'Lato-Regular': {
     urls: {
-      woff2: assetUrl('./static/Clan-Book.woff2'),
+      woff2: assetUrl('./static/lato-regular-webfont.woff2'),
     },
     fallback: {
       name: 'Helvetica',
     },
   },
-  'ClanPro-News': {
+  'Lato-Bold': {
     urls: {
-      woff2: assetUrl('./static/Clan-News.woff2'),
+      woff2: assetUrl('./static/lato-bold-webfont.woff2'),
     },
     fallback: {
-      name: 'ClanPro-Book',
+      name: 'Lato-Regular',
       styles: {
-        fontWeight: 'bold',
+        'font-weight': 'bold',
       },
     },
   },
-  'ClanPro-Thin': {
+  'Lato-Italic': {
     urls: {
-      woff2: assetUrl('./static/Clan-Thin.woff2'),
+      woff2: assetUrl('./static/lato-italic-webfont.woff2'),
     },
     fallback: {
-      name: 'ClanPro-Book',
+      name: 'Lato-Regular',
       styles: {
-        fontWeight: '100',
+        'font-style': 'italic',
       },
     },
   },

@@ -3,17 +3,17 @@ import {styled} from 'fusion-plugin-styletron-react';
 import {withFontLoading as FontHOC} from 'fusion-plugin-font-loader-react';
 
 // FIXME: as of React 16, <div> props are written to html (e.g. fontstyles)
-const FancyLink1 = FontHOC('ClanPro-News')(
+const FancyLink1 = FontHOC('Lato-Bold')(
   styled('a', props => ({
     ':hover': {fontSize: `${props.answer}px`},
     ...props.fontStyles,
   }))
 );
-const FancyLink2 = FontHOC('ClanPro-Thin')(
+const FancyLink2 = FontHOC('Lato-Italic')(
   styled('div', props => ({...props.fontStyles}))
 );
 
-const FontedContainer = FontHOC('ClanPro-Book')(
+const FontedContainer = FontHOC('Lato-Regular')(
   styled('div', props => ({
     background: 'lightgreen',
     border: '5px solid pink',
