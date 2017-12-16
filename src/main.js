@@ -6,6 +6,7 @@ import I18n from 'fusion-plugin-i18n-react';
 import UniversalEvents from 'fusion-plugin-universal-events-react';
 import UniversalLogger from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
+import {FontPlugin} from 'fusion-plugin-font-loader-react';
 import RPC from 'fusion-plugin-rpc-redux-react';
 import Redux from 'fusion-plugin-react-redux';
 import ErrorHandling from 'fusion-plugin-error-handling';
@@ -23,6 +24,8 @@ import CsrfProtectionExample from './rpc/csrf-protection-example';
 import reducer from './reducers/root';
 import {Plugin} from 'fusion-core';
 
+import {preloadDepth, fonts} from './font-config.js';
+
 const MemoryTranslationsLoader = new Plugin({
   Service: class MemoryTranslations {
     constructor() {
@@ -37,7 +40,6 @@ const MemoryTranslationsLoader = new Plugin({
 export default function start() {
   const app = new App(root);
 
-  // TODO: Secrets should never be hard-coded, and ideally should not be in version control
   const Session = app.plugin(JWTSession, {secret: __NODE__ ? 'abcdefg' : ''});
   const {fetch, ignore} = app
     .plugin(CsrfProtection, {
@@ -49,6 +51,7 @@ export default function start() {
 
   app.plugin(Router, {EventEmitter});
   app.plugin(Styletron);
+  app.plugin(FontPlugin, {preloadDepth, fonts});
   app.plugin(
     I18n,
     __BROWSER__ ? {fetch} : {TranslationsLoader: MemoryTranslationsLoader}
