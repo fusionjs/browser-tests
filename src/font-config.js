@@ -9,7 +9,7 @@ Purpose
 import {assetUrl} from 'fusion-core';
 export const preloadDepth = 1;
 export const fonts = {
-  'Lato-Regular': {
+  'lato-regular': {
     urls: {
       woff2: assetUrl('./static/lato-regular-webfont.woff2'),
     },
@@ -17,23 +17,23 @@ export const fonts = {
       name: 'Helvetica',
     },
   },
-  'Lato-Bold': {
+  'lato-bold': {
     urls: {
       woff2: assetUrl('./static/lato-bold-webfont.woff2'),
     },
     fallback: {
-      name: 'Lato-Regular',
+      name: 'lato-regular',
       styles: {
         'font-weight': 'bold',
       },
     },
   },
-  'Lato-Italic': {
+  'lato-italic': {
     urls: {
       woff2: assetUrl('./static/lato-italic-webfont.woff2'),
     },
     fallback: {
-      name: 'Lato-Regular',
+      name: 'lato-regular',
       styles: {
         'font-style': 'italic',
       },

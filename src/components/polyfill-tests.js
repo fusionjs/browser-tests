@@ -13,6 +13,9 @@ export default class PolyfillsTest extends React.Component {
       arrayInclude: null,
       arrayFind: null,
       promise: null,
+      weakMap: null,
+      map: null,
+      set: null,
     };
   }
 
@@ -48,10 +51,24 @@ export default class PolyfillsTest extends React.Component {
     // Map
     let map = typeof Map === 'function' && new Map();
     const key = {};
+    const value = {};
     if (map) {
-      map.set(key, 'value');
+      map.set(key, value);
     }
-    map = map && map.get(key) === 'value';
+    map = map && map.get(key) === value;
+
+    // Weak Map
+    let weakMap = typeof WeakMap === 'function' && new WeakMap();
+    const weakKey = {};
+    const weakValue = {};
+    if (weakMap) {
+      weakMap.set(weakKey, weakValue);
+    }
+    weakMap = weakMap && weakMap.get(weakKey) === weakValue;
+
+    // Set
+    let set = typeof Set === 'function' && new Set([1, 2, 3, 1, 2]);
+    set = set && set.size === 3;
 
     // Promise
     if (typeof Promise === 'function') {
@@ -64,7 +81,15 @@ export default class PolyfillsTest extends React.Component {
       this.setState({promise: false});
     }
 
-    this.setState({symbol, objectAssign, arrayInclude, arrayFind, map});
+    this.setState({
+      symbol,
+      objectAssign,
+      arrayInclude,
+      arrayFind,
+      map,
+      weakMap,
+      set,
+    });
   }
 
   render() {
@@ -86,6 +111,12 @@ export default class PolyfillsTest extends React.Component {
         ) : null}
         {this.state.map !== null ? (
           <div id="map">{`map: ${this.state.map}`}</div>
+        ) : null}
+        {this.state.weakMap !== null ? (
+          <div id="weakMap">{`weakMap: ${this.state.weakMap}`}</div>
+        ) : null}
+        {this.state.set !== null ? (
+          <div id="set">{`set: ${this.state.set}`}</div>
         ) : null}
         {this.state.promise !== null ? (
           <div id="promise">{`promise: ${this.state.promise}`}</div>
