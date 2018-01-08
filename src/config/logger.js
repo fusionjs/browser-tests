@@ -1,8 +1,11 @@
-let loggerConfig = null;
-if (__NODE__) {
-  const winston = require('winston');
-  loggerConfig = {
-    transports: [new winston.transports.Console()],
-  };
+function getLoggerConfig() {
+  if (__NODE__) {
+    const winston = require('winston');
+    return {
+      transports: [new winston.transports.Console()],
+    };
+  }
+  return null;
 }
-export default loggerConfig;
+
+export default getLoggerConfig();
