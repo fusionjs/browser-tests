@@ -56,7 +56,7 @@ const Root = (
       <li id="image">
         <Link to="/image">Image</Link>
       </li>
-      <li>
+      <li id="split">
         <Link to="/split">Split</Link>
       </li>
       <li>
@@ -65,10 +65,10 @@ const Root = (
       <li>
         <Link to="/styletron">CSS styled (Styletron)</Link>
       </li>
-      <li>
+      <li id="custom-fonts">
         <Link to="/custom-fonts">Custom Fonts</Link>
       </li>
-      <li>
+      <li id="translations">
         <Link to="/translations">Translations</Link>
       </li>
       <li>

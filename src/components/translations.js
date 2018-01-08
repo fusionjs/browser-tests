@@ -7,7 +7,9 @@ export default withTranslations(['raw', 'interpolated'])(({translate}) => {
       <h1>Translations example</h1>
       <ul>
         <li>{translate('raw')}</li>
-        <li>{translate('interpolated', {thing: 'doge'})}</li>
+        <li id="doge-translation">
+          {translate('interpolated', {thing: 'doge'})}
+        </li>
         <li>
           <Translate id="some.translation.key" />
         </li>
