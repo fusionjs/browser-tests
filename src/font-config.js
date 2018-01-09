@@ -7,6 +7,7 @@ Purpose
 */
 
 import {assetUrl} from 'fusion-core';
+
 export const preloadDepth = 1;
 export const fonts = {
   'lato-regular': {
