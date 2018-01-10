@@ -3,25 +3,35 @@ steps:
     plugins:
       'docker-compose#v1.7.0':
         build: browser-tests
-        image-repository: 296822479253.dkr.ecr.us-east-2.amazonaws.com/fusionjs
+        image-repository: 027047743804.dkr.ecr.us-east-2.amazonaws.com/uber
+    agents:
+      queue: builders
   - name: ':docker: :package: linters'
     plugins:
       'docker-compose#v1.7.0':
         build: browser-tests-linters
-        image-repository: 296822479253.dkr.ecr.us-east-2.amazonaws.com/fusionjs
+        image-repository: 027047743804.dkr.ecr.us-east-2.amazonaws.com/uber
+    agents:
+      queue: builders
   - wait
   - command: yarn flow
     name: ':flowtype:'
     plugins:
       'docker-compose#v1.7.0':
         run: browser-tests-linters
+    agents:
+      queue: workers
   - name: ':eslint:'
     command: yarn lint
     plugins:
       'docker-compose#v1.7.0':
         run: browser-tests-linters
+    agents:
+      queue: workers
   - name: ':saucelabs: :selenium:'
     command: .buildkite/run-all-tests.sh
     plugins:
       'docker-compose#v1.7.0':
         run: browser-tests
+    agents:
+      queue: workers
