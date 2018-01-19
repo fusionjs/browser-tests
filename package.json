@@ -23,7 +23,7 @@
     "fast-async": "^6.3.0",
     "fusion-cli": "^0.2.5",
     "fusion-core": "^0.2.7",
-    "fusion-plugin-browser-performance-emitter": "^0.1.11",
+    "fusion-plugin-browser-performance-emitter": "^0.2.0",
     "fusion-plugin-csrf-protection-react": "^0.2.1",
     "fusion-plugin-error-handling": "0.1.13",
     "fusion-plugin-font-loader-react": "0.2.1",
