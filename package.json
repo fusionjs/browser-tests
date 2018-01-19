@@ -36,7 +36,7 @@
     "fusion-plugin-styletron-react": "^0.2.2",
     "fusion-plugin-universal-events-react": "^0.1.12",
     "fusion-plugin-universal-logger": "^0.2.0",
-    "fusion-react": "^0.1.10",
+    "fusion-react": "^0.4.0",
     "fusion-react-async": "^0.1.4",
     "fusion-redux-action-emitter-enhancer": "^0.1.5",
     "react": "^16.2.0",
