@@ -32,7 +32,7 @@
     "fusion-plugin-node-performance-emitter": "^0.2.0",
     "fusion-plugin-react-redux": "^0.1.13",
     "fusion-plugin-react-router": "^0.2.3",
-    "fusion-plugin-rpc-redux-react": "^0.2.4",
+    "fusion-plugin-rpc-redux-react": "^0.3.0",
     "fusion-plugin-styletron-react": "^0.2.2",
     "fusion-plugin-universal-events-react": "^0.1.12",
     "fusion-plugin-universal-logger": "^0.2.0",
