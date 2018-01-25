@@ -29,7 +29,7 @@
     "fusion-plugin-font-loader-react": "0.2.1",
     "fusion-plugin-i18n-react": "^0.1.10",
     "fusion-plugin-jwt": "^0.2.2",
-    "fusion-plugin-node-performance-emitter": "^0.2.0",
+    "fusion-plugin-node-performance-emitter": "^0.3.0",
     "fusion-plugin-react-redux": "^0.1.13",
     "fusion-plugin-react-router": "^0.2.3",
     "fusion-plugin-rpc-redux-react": "^0.2.4",
