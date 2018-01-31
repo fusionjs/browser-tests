@@ -5,7 +5,6 @@
  */
 
 import App from 'fusion-react';
-import {createPlugin} from 'fusion-core';
 import JWTSession, {
   SessionCookieNameToken,
   SessionSecretToken,
