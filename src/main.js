@@ -21,9 +21,7 @@ import I18n, {
 import UniversalEvents, {
   UniversalEventsToken,
 } from 'fusion-plugin-universal-events-react';
-import UniversalLogger, {
-  UniversalLoggerConfigToken,
-} from 'fusion-plugin-universal-logger';
+import UniversalLogger from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
 import FontLoaderReactPlugin, {
   FontLoaderReactConfigToken,
@@ -47,7 +45,7 @@ import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhan
 import unfetch from 'unfetch';
 import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
 
-import loggerConfig from './config/logger';
+// import loggerConfig from './config/logger';
 
 import root from './components/root';
 import rpcExample from './rpc/rpc-example';
@@ -64,14 +62,13 @@ export default function start() {
     app.register(SessionSecretToken, 'abcdefg');
     app.register(SessionCookieNameToken, 'temp');
     app.register(I18nLoaderToken, createI18nLoader());
-    app.register(RPCHandlersToken, rpcExample);
+    app.register(RPCHandlersToken, rpcExample());
     app.register(RPCToken, RPC);
   } else if (__BROWSER__) {
     app.register(FetchForCsrfToken, unfetch);
-    app.register(FetchToken, CsrfProtection);
     app.register(RPCToken, RPC);
   }
-
+  app.register(FetchToken, CsrfProtection);
   app.register(UniversalEventsToken, UniversalEvents);
   app.register(Router);
   app.register(Styletron);
@@ -98,7 +95,6 @@ export default function start() {
   app.register(ErrorHandling);
   app.register(BrowserPerformanceEmitter);
   app.register(LoggerToken, UniversalLogger);
-  app.register(UniversalLoggerConfigToken, loggerConfig);
   // app.register(CsrfProtectionExample);
 
   return app;
