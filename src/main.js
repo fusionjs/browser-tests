@@ -5,6 +5,7 @@
  */
 
 import App from 'fusion-react';
+import {createPlugin} from 'fusion-core';
 import JWTSession, {
   SessionCookieNameToken,
   SessionSecretToken,
@@ -82,9 +83,16 @@ export default function start() {
   app.register(EnhancerToken, ReduxActionEmitterEnhancer);
 
   if (__NODE__) {
+    const MemoryTranslationsLoader = {
+      from: () => ({
+        locale: 'en-US',
+        translations: require('../translations/en-US.json'),
+      }),
+    };
     app.register(InitialStateToken, async () => {
       return {};
     });
+    app.register(I18nLoaderToken, MemoryTranslationsLoader);
     app.register(NodePerformanceEmitterToken, NodePerformanceEmitterPlugin);
     app.register(EventLoopLagIntervalToken, 1000 * 10);
     app.register(MemoryIntervalToken, 1000 * 10);
