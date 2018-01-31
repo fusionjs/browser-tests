@@ -64,6 +64,7 @@ export default function start() {
     app.register(SessionSecretToken, 'abcdefg');
     app.register(SessionCookieNameToken, 'temp');
     app.register(I18nLoaderToken, createI18nLoader());
+    app.register(RPCHandlersToken, rpcExample);
   } else if (__BROWSER__) {
     app.register(FetchForCsrfToken, unfetch);
     app.register(FetchToken, CsrfProtection);
@@ -81,7 +82,6 @@ export default function start() {
   app.register(ReducerToken, reducer);
   app.register(EnhancerToken, ReduxActionEmitterEnhancer);
   app.register(RPCToken, RPC);
-  app.register(RPCHandlersToken, rpcExample());
 
   __NODE__ &&
     app.register(InitialStateToken, async () => {
