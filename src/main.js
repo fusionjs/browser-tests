@@ -14,9 +14,8 @@ import CsrfProtection, {
 } from 'fusion-plugin-csrf-protection-react';
 import Router from 'fusion-plugin-react-router';
 import I18n, {I18nToken, I18nLoaderToken} from 'fusion-plugin-i18n-react';
-import {
+import UniversalEvents, {
   UniversalEventsToken,
-  UniversalEvents,
 } from 'fusion-plugin-universal-events-react';
 import UniversalLogger, {
   UniversalLoggerConfigToken,
@@ -42,7 +41,6 @@ import NodePerformanceEmitterPlugin, {
 import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter';
 import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhancer';
 import unfetch from 'unfetch';
-import {Plugin} from 'fusion-core';
 import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
 
 import loggerConfig from './config/logger';
@@ -54,16 +52,18 @@ import reducer from './reducers/root';
 
 import {preloadDepth, fonts} from './font-config.js';
 
-const MemoryTranslationsLoader = new Plugin({
-  Service: class MemoryTranslations {
-    constructor() {
+const MemoryTranslationsLoader = () => {
+  return {
+    from: () => {
       if (__NODE__) {
-        this.locale = 'en-US';
-        this.translations = require('../translations/en-US.json');
+        return {
+          locale: 'en-US',
+          translations: require('../translations/en-US.json'),
+        };
       }
-    }
-  },
-});
+    },
+  };
+};
 
 export default function start() {
   const app = new App(root);
@@ -100,9 +100,9 @@ export default function start() {
   app.register(BrowserPerformanceEmitter);
   const Logger = app.register(LoggerToken, UniversalLogger);
   app.register(UniversalLoggerConfigToken, loggerConfig);
-  if (__NODE__) {
-    Logger.of().info('Hello from server!');
-  }
+  // if (__NODE__) {
+  //   Logger.of().info('Hello from server!');
+  // }
   app.register(ErrorHandling);
   app.register(ErrorHandlerToken, e => Logger.of().error(e));
   app.register(CsrfProtectionExample);

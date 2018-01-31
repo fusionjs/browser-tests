@@ -3532,13 +3532,13 @@ fusion-plugin-browser-performance-emitter@0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/fusion-plugin-browser-performance-emitter/-/fusion-plugin-browser-performance-emitter-0.2.1.tgz#fa00dad0303813aa6ae91563721e23791458b10a"
 
-fusion-plugin-csrf-protection-react@0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection-react/-/fusion-plugin-csrf-protection-react-0.3.2.tgz#9ca10cf4ad234bd60b776b2b178821e970c6a67f"
+fusion-plugin-csrf-protection-react@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection-react/-/fusion-plugin-csrf-protection-react-0.3.5.tgz#e0dffb3c8c3bcad83e6c53d68ad01d12e8fc1597"
   dependencies:
-    fusion-plugin-csrf-protection "^0.3.1"
+    fusion-plugin-csrf-protection "^0.3.3"
 
-fusion-plugin-csrf-protection@^0.3.1:
+fusion-plugin-csrf-protection@^0.3.3:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection/-/fusion-plugin-csrf-protection-0.3.3.tgz#04827486d29f55267e10fe29d8afaa06da1be68b"
   dependencies:
