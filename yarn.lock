@@ -3544,9 +3544,9 @@ fusion-plugin-csrf-protection@^0.3.3:
   dependencies:
     base64-url "^2.1.0"
 
-fusion-plugin-error-handling@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-0.2.1.tgz#bdc80a7f7883cf70d6723cad9305bb444e42dac7"
+fusion-plugin-error-handling@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-0.2.2.tgz#ae8a8d7e98acc14678f24e4ba588a34567aeb3d5"
   dependencies:
     fusion-cli "^0.3.1"
     koa-bodyparser "4.2.0"
@@ -3650,9 +3650,9 @@ fusion-react-async@^0.1.4:
   dependencies:
     prop-types "^15.5.8"
 
-fusion-react@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/fusion-react/-/fusion-react-0.4.1.tgz#d411ebc389ae22e1bfd7e1058d66ac0d19b4d64a"
+fusion-react@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/fusion-react/-/fusion-react-0.4.2.tgz#00fbaebb62c4a616feb0be1c4dc3f0202e4d3371"
 
 fusion-rpc-redux@^0.3.3:
   version "0.3.4"
