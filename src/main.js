@@ -66,9 +66,9 @@ export default function start() {
     app.register(I18nLoaderToken, createI18nLoader());
   } else if (__BROWSER__) {
     app.register(FetchForCsrfToken, unfetch);
+    app.register(FetchToken, CsrfProtection);
   }
 
-  app.register(FetchToken, CsrfProtection);
   app.register(UniversalEventsToken, UniversalEvents);
   app.register(Router);
   app.register(Styletron);
