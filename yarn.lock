@@ -3555,7 +3555,7 @@ fusion-plugin-font-loader-react@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/fusion-plugin-font-loader-react/-/fusion-plugin-font-loader-react-0.3.0.tgz#0da14a06934567cabf2f2d22db377ffb03a647fb"
 
-fusion-plugin-i18n-react@^0.3.3:
+fusion-plugin-i18n-react@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/fusion-plugin-i18n-react/-/fusion-plugin-i18n-react-0.3.4.tgz#cc1e129f7d0e3abb808c2b5089b720792517aea8"
   dependencies:
@@ -7202,8 +7202,8 @@ raw-body@2, raw-body@2.3.2, raw-body@^2.2.0:
     unpipe "1.0.0"
 
 rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.1.7:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.4.tgz#a0f606caae2a3b862bbd0ef85482c0125b315fa3"
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.5.tgz#275cd687f6e3b36cc756baa26dfee80a790301fd"
   dependencies:
     deep-extend "~0.4.0"
     ini "~1.3.0"
