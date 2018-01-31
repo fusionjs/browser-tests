@@ -9,7 +9,9 @@ import JWTSession, {
   SessionCookieNameToken,
   SessionSecretToken,
 } from 'fusion-plugin-jwt';
-import CsrfProtection from 'fusion-plugin-csrf-protection-react';
+import CsrfProtection, {
+  FetchForCsrfToken,
+} from 'fusion-plugin-csrf-protection-react';
 import Router from 'fusion-plugin-react-router';
 import I18n, {I18nToken, I18nLoaderToken} from 'fusion-plugin-i18n-react';
 import {
@@ -18,7 +20,10 @@ import {
 } from 'fusion-plugin-universal-events-react';
 import UniversalLogger from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
-import {FontPlugin} from 'fusion-plugin-font-loader-react';
+import {
+  FontPlugin as FontLoaderReact,
+  FontLoaderReactConfigToken,
+} from 'fusion-plugin-font-loader-react';
 import RPC, {RPCToken, RPCConfigToken} from 'fusion-plugin-rpc-redux-react';
 import Redux from 'fusion-plugin-react-redux';
 import ErrorHandling from 'fusion-plugin-error-handling';
@@ -38,8 +43,6 @@ import reducer from './reducers/root';
 
 import {preloadDepth, fonts} from './font-config.js';
 
-const BaseFetchToken = createToken('BaseFetch');
-
 const MemoryTranslationsLoader = new Plugin({
   Service: class MemoryTranslations {
     constructor() {
@@ -58,20 +61,19 @@ export default function start() {
     app.register(SessionToken, JWTSession);
     app.register(SessionSecretToken, 'abcdefg');
     app.register(SessionCookieNameToken, 'temp');
+    app.register(I18nLoaderToken, MemoryTranslationsLoader);
   }
 
-  app.register(BaseFetchToken, unfetch);
-  app.register(FetchToken, CsrfProtection).alias(FetchToken, BaseFetchToken);
-
-  const EventEmitter = app.register(UniversalEventsToken, UniversalEvents);
-
+  app.register(FetchForCsrfToken, unfetch);
+  app.register(FetchToken, CsrfProtection);
+  app.register(UniversalEventsToken, UniversalEvents);
   app.register(Router);
   app.register(Styletron);
-  app.plugin(FontPlugin, {preloadDepth, fonts});
-  app.plugin(
-    I18n,
-    __BROWSER__ ? {fetch} : {TranslationsLoader: MemoryTranslationsLoader}
-  );
+
+  app.register(FontLoaderReactConfigToken, {preloadDepth, fonts});
+  app.register(FontLoaderReact);
+  app.register(I18nToken, I18n);
+
   app.plugin(Redux, {reducer, enhancer: actionEmitter(EventEmitter)});
   app.plugin(RPC, {handlers: __NODE__ && rpcExample(), fetch});
 
