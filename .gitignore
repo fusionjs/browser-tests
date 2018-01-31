@@ -7,4 +7,5 @@ config/secrets/secrets.json
 selenium-debug.log
 yarn-error.log
 node_modules
+npm-debug.log
 reports
