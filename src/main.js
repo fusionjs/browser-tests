@@ -12,7 +12,10 @@ import JWTSession, {
 import CsrfProtection from 'fusion-plugin-csrf-protection-react';
 import Router from 'fusion-plugin-react-router';
 import I18n, {I18nToken, I18nLoaderToken} from 'fusion-plugin-i18n-react';
-import UniversalEvents from 'fusion-plugin-universal-events-react';
+import {
+  UniversalEventsToken,
+  UniversalEvents,
+} from 'fusion-plugin-universal-events-react';
 import UniversalLogger from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
 import {FontPlugin} from 'fusion-plugin-font-loader-react';
@@ -24,7 +27,7 @@ import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter
 import actionEmitter from 'fusion-redux-action-emitter-enhancer';
 import unfetch from 'unfetch';
 import {Plugin} from 'fusion-core';
-import {SessionToken} from 'fusion-tokens';
+import {FetchToken, SessionToken, createToken} from 'fusion-tokens';
 
 import loggerConfig from './config/logger';
 
@@ -34,6 +37,8 @@ import CsrfProtectionExample from './rpc/csrf-protection-example';
 import reducer from './reducers/root';
 
 import {preloadDepth, fonts} from './font-config.js';
+
+const BaseFetchToken = createToken('BaseFetch');
 
 const MemoryTranslationsLoader = new Plugin({
   Service: class MemoryTranslations {
@@ -55,12 +60,10 @@ export default function start() {
     app.register(SessionCookieNameToken, 'temp');
   }
 
-  const {fetch, ignore} = app
-    .plugin(CsrfProtection, {
-      fetch: unfetch,
-    })
-    .of();
-  const EventEmitter = app.plugin(UniversalEvents, {fetch});
+  app.register(BaseFetchToken, unfetch);
+  app.register(FetchToken, CsrfProtection).alias(FetchToken, BaseFetchToken);
+
+  const EventEmitter = app.register(UniversalEventsToken, UniversalEvents);
 
   app.register(Router);
   app.register(Styletron);

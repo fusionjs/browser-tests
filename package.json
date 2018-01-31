@@ -20,7 +20,6 @@
     "check": "fusion check"
   },
   "dependencies": {
-    "@uber/fusion-migrate": "^0.0.49",
     "fast-async": "^6.3.0",
     "fusion-cli": "0.3.1",
     "fusion-core": "0.3.0-5",
