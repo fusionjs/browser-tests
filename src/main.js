@@ -65,9 +65,11 @@ export default function start() {
     app.register(SessionCookieNameToken, 'temp');
     app.register(I18nLoaderToken, createI18nLoader());
     app.register(RPCHandlersToken, rpcExample);
+    app.register(RPCToken, RPC);
   } else if (__BROWSER__) {
     app.register(FetchForCsrfToken, unfetch);
     app.register(FetchToken, CsrfProtection);
+    app.register(RPCToken, RPC);
   }
 
   app.register(UniversalEventsToken, UniversalEvents);
@@ -81,26 +83,22 @@ export default function start() {
   app.register(ReduxToken, Redux);
   app.register(ReducerToken, reducer);
   app.register(EnhancerToken, ReduxActionEmitterEnhancer);
-  app.register(RPCToken, RPC);
 
-  __NODE__ &&
+  if (__NODE__) {
     app.register(InitialStateToken, async () => {
       return {};
     });
-
-  if (__NODE__) {
     app.register(NodePerformanceEmitterToken, NodePerformanceEmitterPlugin);
     app.register(EventLoopLagIntervalToken, 1000 * 10);
     app.register(MemoryIntervalToken, 1000 * 10);
     app.register(SocketIntervalToken, 1000 * 10);
+    // eslint-disable-next-line no-console
+    app.register(ErrorHandlerToken, e => console.log('error!', e));
   }
+  app.register(ErrorHandling);
   app.register(BrowserPerformanceEmitter);
   app.register(LoggerToken, UniversalLogger);
   app.register(UniversalLoggerConfigToken, loggerConfig);
-  app.register(ErrorHandling);
-  // app.register(ErrorHandlerToken, e => Logger.of().error(e));
-  // eslint-disable-next-line no-console
-  app.register(ErrorHandlerToken, e => console.log('error!', e));
   // app.register(CsrfProtectionExample);
 
   return app;
