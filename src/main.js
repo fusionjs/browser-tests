@@ -21,8 +21,7 @@ import UniversalLogger, {
   UniversalLoggerConfigToken,
 } from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
-import {
-  FontPlugin as FontLoaderReact,
+import FontLoaderReactPlugin, {
   FontLoaderReactConfigToken,
 } from 'fusion-plugin-font-loader-react';
 import RPC, {RPCToken, RPCHandlersToken} from 'fusion-plugin-rpc-redux-react';
@@ -82,7 +81,7 @@ export default function start() {
   app.register(Styletron);
 
   app.register(FontLoaderReactConfigToken, {preloadDepth, fonts});
-  app.register(FontLoaderReact);
+  app.register(FontLoaderReactPlugin);
   app.register(I18nToken, I18n);
 
   app.register(ReduxToken, Redux);
