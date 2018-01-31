@@ -18,7 +18,9 @@ import {
   UniversalEventsToken,
   UniversalEvents,
 } from 'fusion-plugin-universal-events-react';
-import UniversalLogger from 'fusion-plugin-universal-logger';
+import UniversalLogger, {
+  UniversalLoggerConfigToken,
+} from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
 import {
   FontPlugin as FontLoaderReact,
@@ -29,15 +31,19 @@ import Redux, {
   ReduxToken,
   ReducerToken,
   EnhancerToken,
-  InitialStateToken,
 } from 'fusion-plugin-react-redux';
-import ErrorHandling from 'fusion-plugin-error-handling';
-import NodePerformanceEmitter from 'fusion-plugin-node-performance-emitter';
+import ErrorHandling, {ErrorHandlerToken} from 'fusion-plugin-error-handling';
+import NodePerformanceEmitterPlugin, {
+  NodePerformanceEmitterToken,
+  EventLoopLagIntervalToken,
+  MemoryIntervalToken,
+  SocketIntervalToken,
+} from 'fusion-plugin-node-performance-emitter';
 import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter';
 import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhancer';
 import unfetch from 'unfetch';
 import {Plugin} from 'fusion-core';
-import {FetchToken, SessionToken, createToken} from 'fusion-tokens';
+import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
 
 import loggerConfig from './config/logger';
 
@@ -86,28 +92,20 @@ export default function start() {
   app.register(RPCHandlersToken, rpcExample());
 
   if (__NODE__) {
-    const nodePerfConfig = {
-      eventLoopLagInterval: 1000 * 10,
-      memoryInterval: 1000 * 10,
-      socketInterval: 1000 * 10,
-    };
-    app.plugin(NodePerformanceEmitter, {
-      config: nodePerfConfig,
-    });
+    app.register(NodePerformanceEmitterToken, NodePerformanceEmitterPlugin);
+    app.register(EventLoopLagIntervalToken, 1000 * 10);
+    app.register(MemoryIntervalToken, 1000 * 10);
+    app.register(SocketIntervalToken, 1000 * 10);
   }
-  app.plugin(BrowserPerformanceEmitter);
-  const Logger = app.plugin(UniversalLogger, {
-    config: loggerConfig,
-  });
+  app.register(BrowserPerformanceEmitter);
+  const Logger = app.register(LoggerToken, UniversalLogger);
+  app.register(UniversalLoggerConfigToken, loggerConfig);
   if (__NODE__) {
     Logger.of().info('Hello from server!');
   }
-
-  app.plugin(ErrorHandling, {
-    onError: e => Logger.of().error(e),
-  });
-
-  app.plugin(CsrfProtectionExample);
+  app.register(ErrorHandling);
+  app.register(ErrorHandlerToken, e => Logger.of().error(e));
+  app.register(CsrfProtectionExample);
 
   return app;
 }
