@@ -9,9 +9,7 @@ import JWTSession, {
   SessionCookieNameToken,
   SessionSecretToken,
 } from 'fusion-plugin-jwt';
-import CsrfProtection, {
-  FetchForCsrfToken,
-} from 'fusion-plugin-csrf-protection-react';
+import CsrfProtection from 'fusion-plugin-csrf-protection-react';
 import Router from 'fusion-plugin-react-router';
 import I18n, {
   I18nToken,
@@ -21,8 +19,8 @@ import I18n, {
 import UniversalEvents, {
   UniversalEventsToken,
 } from 'fusion-plugin-universal-events-react';
-import {
-  /* UniversalLogger,*/ UniversalLoggerConfigToken,
+import UniversalLogger, {
+  UniversalLoggerConfigToken,
 } from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
 import FontLoaderReactPlugin, {
@@ -45,7 +43,7 @@ import NodePerformanceEmitterPlugin, {
 import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter';
 import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhancer';
 // import unfetch from 'unfetch';
-import {/* LoggerToken ,*/ FetchToken, SessionToken} from 'fusion-tokens';
+import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
 
 import loggerConfig from './config/logger';
 
@@ -55,19 +53,6 @@ import rpcExample from './rpc/rpc-example';
 import reducer from './reducers/root';
 
 import {preloadDepth, fonts} from './font-config.js';
-
-// const MemoryTranslationsLoader = () => {
-//   return {
-//     from: () => {
-//       if (__NODE__) {
-//         return {
-//           locale: 'en-US',
-//           translations: require('../translations/en-US.json'),
-//         };
-//       }
-//     },
-//   };
-// };
 
 export default function start() {
   const app = new App(root);
@@ -107,13 +92,11 @@ export default function start() {
     app.register(SocketIntervalToken, 1000 * 10);
   }
   app.register(BrowserPerformanceEmitter);
-  // const Logger = app.register(LoggerToken, UniversalLogger);
+  app.register(LoggerToken, UniversalLogger);
   app.register(UniversalLoggerConfigToken, loggerConfig);
-  // if (__NODE__) {
-  //   Logger.of().info('Hello from server!');
-  // }
   app.register(ErrorHandling);
   // app.register(ErrorHandlerToken, e => Logger.of().error(e));
+  // eslint-disable-next-line no-console
   app.register(ErrorHandlerToken, e => console.log('error!', e));
   // app.register(CsrfProtectionExample);
 
