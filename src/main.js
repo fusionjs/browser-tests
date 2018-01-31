@@ -9,7 +9,9 @@ import JWTSession, {
   SessionCookieNameToken,
   SessionSecretToken,
 } from 'fusion-plugin-jwt';
-import CsrfProtection from 'fusion-plugin-csrf-protection-react';
+import CsrfProtection, {
+  FetchForCsrfToken,
+} from 'fusion-plugin-csrf-protection-react';
 import Router from 'fusion-plugin-react-router';
 import I18n, {
   I18nToken,
@@ -42,7 +44,7 @@ import NodePerformanceEmitterPlugin, {
 } from 'fusion-plugin-node-performance-emitter';
 import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter';
 import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhancer';
-// import unfetch from 'unfetch';
+import unfetch from 'unfetch';
 import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
 
 import loggerConfig from './config/logger';
@@ -62,9 +64,10 @@ export default function start() {
     app.register(SessionSecretToken, 'abcdefg');
     app.register(SessionCookieNameToken, 'temp');
     app.register(I18nLoaderToken, createI18nLoader());
+  } else if (__BROWSER__) {
+    app.register(FetchForCsrfToken, unfetch);
   }
 
-  // app.register(FetchForCsrfToken, unfetch);
   app.register(FetchToken, CsrfProtection);
   app.register(UniversalEventsToken, UniversalEvents);
   app.register(Router);
