@@ -5,15 +5,18 @@
  */
 
 import App from 'fusion-react';
-import JWTSession from 'fusion-plugin-jwt';
+import JWTSession, {
+  SessionCookieNameToken,
+  SessionSecretToken,
+} from 'fusion-plugin-jwt';
 import CsrfProtection from 'fusion-plugin-csrf-protection-react';
 import Router from 'fusion-plugin-react-router';
-import I18n from 'fusion-plugin-i18n-react';
+import I18n, {I18nToken, I18nLoaderToken} from 'fusion-plugin-i18n-react';
 import UniversalEvents from 'fusion-plugin-universal-events-react';
 import UniversalLogger from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
 import {FontPlugin} from 'fusion-plugin-font-loader-react';
-import RPC from 'fusion-plugin-rpc-redux-react';
+import RPC, {RPCToken, RPCConfigToken} from 'fusion-plugin-rpc-redux-react';
 import Redux from 'fusion-plugin-react-redux';
 import ErrorHandling from 'fusion-plugin-error-handling';
 import NodePerformanceEmitter from 'fusion-plugin-node-performance-emitter';
@@ -21,6 +24,7 @@ import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter
 import actionEmitter from 'fusion-redux-action-emitter-enhancer';
 import unfetch from 'unfetch';
 import {Plugin} from 'fusion-core';
+import {SessionToken} from 'fusion-tokens';
 
 import loggerConfig from './config/logger';
 
@@ -45,17 +49,21 @@ const MemoryTranslationsLoader = new Plugin({
 export default function start() {
   const app = new App(root);
 
-  const Session = app.plugin(JWTSession, {secret: __NODE__ ? 'abcdefg' : ''});
+  if (__NODE__) {
+    app.register(SessionToken, JWTSession);
+    app.register(SessionSecretToken, 'abcdefg');
+    app.register(SessionCookieNameToken, 'temp');
+  }
+
   const {fetch, ignore} = app
     .plugin(CsrfProtection, {
-      Session,
       fetch: unfetch,
     })
     .of();
   const EventEmitter = app.plugin(UniversalEvents, {fetch});
 
-  app.plugin(Router, {EventEmitter});
-  app.plugin(Styletron);
+  app.register(Router);
+  app.register(Styletron);
   app.plugin(FontPlugin, {preloadDepth, fonts});
   app.plugin(
     I18n,
