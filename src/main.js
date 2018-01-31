@@ -24,12 +24,17 @@ import {
   FontPlugin as FontLoaderReact,
   FontLoaderReactConfigToken,
 } from 'fusion-plugin-font-loader-react';
-import RPC, {RPCToken, RPCConfigToken} from 'fusion-plugin-rpc-redux-react';
-import Redux from 'fusion-plugin-react-redux';
+import RPC, {RPCToken, RPCHandlersToken} from 'fusion-plugin-rpc-redux-react';
+import Redux, {
+  ReduxToken,
+  ReducerToken,
+  EnhancerToken,
+  InitialStateToken,
+} from 'fusion-plugin-react-redux';
 import ErrorHandling from 'fusion-plugin-error-handling';
 import NodePerformanceEmitter from 'fusion-plugin-node-performance-emitter';
 import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter';
-import actionEmitter from 'fusion-redux-action-emitter-enhancer';
+import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhancer';
 import unfetch from 'unfetch';
 import {Plugin} from 'fusion-core';
 import {FetchToken, SessionToken, createToken} from 'fusion-tokens';
@@ -74,8 +79,11 @@ export default function start() {
   app.register(FontLoaderReact);
   app.register(I18nToken, I18n);
 
-  app.plugin(Redux, {reducer, enhancer: actionEmitter(EventEmitter)});
-  app.plugin(RPC, {handlers: __NODE__ && rpcExample(), fetch});
+  app.register(ReduxToken, Redux);
+  app.register(ReducerToken, reducer);
+  app.register(EnhancerToken, ReduxActionEmitterEnhancer);
+  app.register(RPCToken, RPC);
+  app.register(RPCHandlersToken, rpcExample());
 
   if (__NODE__) {
     const nodePerfConfig = {
@@ -85,12 +93,10 @@ export default function start() {
     };
     app.plugin(NodePerformanceEmitter, {
       config: nodePerfConfig,
-      EventEmitter,
     });
   }
-  app.plugin(BrowserPerformanceEmitter, {EventEmitter});
+  app.plugin(BrowserPerformanceEmitter);
   const Logger = app.plugin(UniversalLogger, {
-    UniversalEvents: EventEmitter,
     config: loggerConfig,
   });
   if (__NODE__) {
@@ -99,7 +105,6 @@ export default function start() {
 
   app.plugin(ErrorHandling, {
     onError: e => Logger.of().error(e),
-    CsrfProtection: {ignore},
   });
 
   app.plugin(CsrfProtectionExample);
