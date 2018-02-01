@@ -54,6 +54,8 @@ import reducer from './reducers/root';
 
 import {preloadDepth, fonts} from './font-config.js';
 
+import translations from '../translations/en-US.json';
+
 export default function start() {
   const app = new App(root);
 
@@ -77,21 +79,21 @@ export default function start() {
   app.register(FontLoaderReactPlugin);
   app.register(I18nToken, I18n);
 
+  const MemoryTranslationsLoader = {
+    from: () => ({
+      locale: 'en-US',
+      translations,
+    }),
+  };
+  app.register(I18nLoaderToken, MemoryTranslationsLoader);
   app.register(ReduxToken, Redux);
   app.register(ReducerToken, reducer);
   app.register(EnhancerToken, ReduxActionEmitterEnhancer);
 
   if (__NODE__) {
-    const MemoryTranslationsLoader = {
-      from: () => ({
-        locale: 'en-US',
-        translations: require('../translations/en-US.json'),
-      }),
-    };
     app.register(InitialStateToken, async () => {
       return {};
     });
-    app.register(I18nLoaderToken, MemoryTranslationsLoader);
     app.register(NodePerformanceEmitterToken, NodePerformanceEmitterPlugin);
     app.register(EventLoopLagIntervalToken, 1000 * 10);
     app.register(MemoryIntervalToken, 1000 * 10);
