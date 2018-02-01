@@ -13,11 +13,7 @@ import CsrfProtection, {
   FetchForCsrfToken,
 } from 'fusion-plugin-csrf-protection-react';
 import Router from 'fusion-plugin-react-router';
-import I18n, {
-  I18nToken,
-  I18nLoaderToken,
-  createI18nLoader,
-} from 'fusion-plugin-i18n-react';
+import I18n, {I18nToken, I18nLoaderToken} from 'fusion-plugin-i18n-react';
 import UniversalEvents, {
   UniversalEventsToken,
 } from 'fusion-plugin-universal-events-react';
@@ -49,7 +45,7 @@ import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
 
 import root from './components/root';
 import rpcExample from './rpc/rpc-example';
-// import CsrfProtectionExample from './rpc/csrf-protection-example';
+import CsrfProtectionExample from './rpc/csrf-protection-example';
 import reducer from './reducers/root';
 
 import {preloadDepth, fonts} from './font-config.js';
@@ -60,10 +56,16 @@ export default function start() {
   const app = new App(root);
 
   if (__NODE__) {
+    const MemoryTranslationsLoader = {
+      from: () => ({
+        locale: 'en-US',
+        translations,
+      }),
+    };
+    app.register(I18nLoaderToken, MemoryTranslationsLoader);
     app.register(SessionToken, JWTSession);
     app.register(SessionSecretToken, 'abcdefg');
     app.register(SessionCookieNameToken, 'temp');
-    app.register(I18nLoaderToken, createI18nLoader());
     app.register(RPCHandlersToken, rpcExample());
     app.register(RPCToken, RPC);
   } else if (__BROWSER__) {
@@ -79,13 +81,6 @@ export default function start() {
   app.register(FontLoaderReactPlugin);
   app.register(I18nToken, I18n);
 
-  const MemoryTranslationsLoader = {
-    from: () => ({
-      locale: 'en-US',
-      translations,
-    }),
-  };
-  app.register(I18nLoaderToken, MemoryTranslationsLoader);
   app.register(ReduxToken, Redux);
   app.register(ReducerToken, reducer);
   app.register(EnhancerToken, ReduxActionEmitterEnhancer);
@@ -104,7 +99,7 @@ export default function start() {
   app.register(ErrorHandling);
   app.register(BrowserPerformanceEmitter);
   app.register(LoggerToken, UniversalLogger);
-  // app.register(CsrfProtectionExample);
+  __NODE__ && app.register(CsrfProtectionExample);
 
   return app;
 }

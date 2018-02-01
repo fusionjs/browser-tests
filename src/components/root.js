@@ -10,7 +10,7 @@ import {split} from 'fusion-react-async';
 import Image from './image';
 import PolyfillTests from './polyfill-tests';
 import RPCReduxExample from './rpc-redux-example';
-// import CsrfProtectionExample from './csrf-protection-example';
+import CsrfProtectionExample from './csrf-protection-example';
 import ReduxExample from './redux-example';
 
 const Home = () => <div>Hello</div>;
@@ -99,7 +99,7 @@ const Root = (
       <Route exact path="/styletron" component={SplitStyled} />
       <Route exact path="/custom-fonts" component={CustomFonts} />
       <Route exact path="/translations" component={SplitTranslations} />
-      {/* <Route exact path="/csrf-token" component={CsrfProtectionExample} /> */}
+      <Route exact path="/csrf-token" component={CsrfProtectionExample} />
       <Route exact path="/redux" component={ReduxExample} />
       <Route exact path="/redux-rpc" component={RPCReduxExample} />
       <Route component={PageNotFound} />
