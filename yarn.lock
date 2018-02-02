@@ -200,8 +200,8 @@ acorn-jsx@^3.0.0:
     acorn "^3.0.4"
 
 acorn@>=2.5.2, acorn@^5.0.0, acorn@^5.2.1, acorn@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.3.0.tgz#7446d39459c54fb49a80e6ee6478149b940ec822"
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.4.1.tgz#fdc58d9d17f4a4e98d102ded826a9b9759125102"
 
 acorn@^3.0.4:
   version "3.3.0"
@@ -2473,12 +2473,12 @@ electron-download@^3.0.1:
     sumchecker "^1.2.0"
 
 electron-to-chromium@^1.3.30:
-  version "1.3.31"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.31.tgz#00d832cba9fe2358652b0c48a8816c8e3a037e9f"
+  version "1.3.32"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.32.tgz#11d0684c0840e003c4be8928f8ac5f35dbc2b4e6"
 
 electron@^1.4.4:
-  version "1.7.11"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-1.7.11.tgz#993b6aa79e0e79a7cfcc369f4c813fbd9a0b08d9"
+  version "1.7.12"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-1.7.12.tgz#dcc61a2c1b0c3df25f68b3425379a01abd01190e"
   dependencies:
     "@types/node" "^7.0.18"
     electron-download "^3.0.1"
@@ -2786,9 +2786,9 @@ eslint-plugin-import@^2.8.0:
     minimatch "^3.0.3"
     read-pkg-up "^2.0.0"
 
-eslint-plugin-prettier@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.5.0.tgz#39a91dd7528eaf19cd42c0ee3f2c1f684606a05f"
+eslint-plugin-prettier@^2.6.0:
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.6.0.tgz#33e4e228bdb06142d03c560ce04ec23f6c767dd7"
   dependencies:
     fast-diff "^1.1.1"
     jest-docblock "^21.0.0"
@@ -3519,78 +3519,78 @@ fusion-cli@^0.3.1:
     winston "2.4.0"
     yargs "10.1.1"
 
-fusion-core@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/fusion-core/-/fusion-core-0.3.0.tgz#0ce2a5b17c2e1948f05fbcdee808c7bcf5d8eadf"
+fusion-core@0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/fusion-core/-/fusion-core-0.3.3.tgz#2be141a18afe93963469998c3076ac9ed99f798a"
   dependencies:
     koa "^2.3.0"
     koa-compose "^4.0.0"
     node-mocks-http "^1.6.6"
     toposort "^1.0.6"
 
-fusion-plugin-browser-performance-emitter@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-browser-performance-emitter/-/fusion-plugin-browser-performance-emitter-0.2.1.tgz#fa00dad0303813aa6ae91563721e23791458b10a"
+fusion-plugin-browser-performance-emitter@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-browser-performance-emitter/-/fusion-plugin-browser-performance-emitter-0.2.2.tgz#bb3a3d4490e8d2c3ba59c2c96c8061e4a7cb2193"
 
-fusion-plugin-csrf-protection-react@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection-react/-/fusion-plugin-csrf-protection-react-0.3.5.tgz#e0dffb3c8c3bcad83e6c53d68ad01d12e8fc1597"
+fusion-plugin-csrf-protection-react@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection-react/-/fusion-plugin-csrf-protection-react-0.3.6.tgz#c9eb5e5a62fac6f01f3fd0d097cd86f60c4e24dc"
   dependencies:
-    fusion-plugin-csrf-protection "^0.3.3"
+    fusion-plugin-csrf-protection "^0.3.4"
 
-fusion-plugin-csrf-protection@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection/-/fusion-plugin-csrf-protection-0.3.3.tgz#04827486d29f55267e10fe29d8afaa06da1be68b"
+fusion-plugin-csrf-protection@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection/-/fusion-plugin-csrf-protection-0.3.4.tgz#7d68c2a5e740d25b15aa502e4ccf4dc49b53fa63"
   dependencies:
     base64-url "^2.1.0"
 
-fusion-plugin-error-handling@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-0.2.2.tgz#ae8a8d7e98acc14678f24e4ba588a34567aeb3d5"
+fusion-plugin-error-handling@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-0.2.3.tgz#e74208351a6844497d7e57f72b42a765e3174d42"
   dependencies:
     fusion-cli "^0.3.1"
     koa-bodyparser "4.2.0"
 
-fusion-plugin-font-loader-react@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-font-loader-react/-/fusion-plugin-font-loader-react-0.3.2.tgz#f4872e788468c38022e6571b70794bd400037b1a"
+fusion-plugin-font-loader-react@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-font-loader-react/-/fusion-plugin-font-loader-react-0.3.3.tgz#0469e063308d6141f988206f0b6edd325d2e2e04"
 
-fusion-plugin-i18n-react@^0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-i18n-react/-/fusion-plugin-i18n-react-0.3.4.tgz#cc1e129f7d0e3abb808c2b5089b720792517aea8"
+fusion-plugin-i18n-react@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-i18n-react/-/fusion-plugin-i18n-react-0.3.5.tgz#92e40eeb356e1ab97304801d00182b52898a6b8d"
   dependencies:
-    fusion-plugin-i18n "^0.4.1"
+    fusion-plugin-i18n "^0.4.3"
     prop-types "^15.6.0"
 
-fusion-plugin-i18n@^0.4.1:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-i18n/-/fusion-plugin-i18n-0.4.2.tgz#33f8c54d752c34ae54ed41e9d42cfad225c6bb09"
+fusion-plugin-i18n@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-i18n/-/fusion-plugin-i18n-0.4.3.tgz#fdeaa328269abd36efc08d01b8242addd4a7bce7"
   dependencies:
     locale "^0.1.0"
     rollup "^0.55.1"
 
-fusion-plugin-jwt@^0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-jwt/-/fusion-plugin-jwt-0.3.4.tgz#66d2e0eeb59ca5ab4c306e401cfe1d4471ff8d96"
+fusion-plugin-jwt@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-jwt/-/fusion-plugin-jwt-0.3.5.tgz#152c02e53c494c733bc0d83319d2b06a8dfc1736"
   dependencies:
     jsonwebtoken "^8.1.1"
     just-safe-get "^1.2.0"
     just-safe-set "^2.0.1"
 
-fusion-plugin-node-performance-emitter@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-node-performance-emitter/-/fusion-plugin-node-performance-emitter-0.3.3.tgz#9d22b7252577558119431dfbedc02659d8db8587"
+fusion-plugin-node-performance-emitter@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-node-performance-emitter/-/fusion-plugin-node-performance-emitter-0.3.4.tgz#f93d08aeb0ee1286ac97c7709dc4bbb6cf58ab7e"
   dependencies:
     assert "^1.4.1"
     gc-profiler "^1.4.0"
 
-fusion-plugin-react-redux@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-react-redux/-/fusion-plugin-react-redux-0.2.2.tgz#40bf6deb632886549535c32129f7080e81cad6b8"
+fusion-plugin-react-redux@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-react-redux/-/fusion-plugin-react-redux-0.2.3.tgz#f8ee70995ccd055f27cdc4554abd50629b1580e2"
 
-fusion-plugin-react-router@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-react-router/-/fusion-plugin-react-router-0.4.2.tgz#c6b6ca22537fdec827677557d1006bcdff7768c8"
+fusion-plugin-react-router@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-react-router/-/fusion-plugin-react-router-0.4.3.tgz#d11effe831053989ab94013d7149976d83fd9fc8"
   dependencies:
     "@babel/preset-react" "^7.0.0-beta.38"
     history "^4.7.2"
@@ -3609,38 +3609,38 @@ fusion-plugin-rpc-redux-react@^0.3.2:
     fusion-rpc-redux "^0.3.3"
 
 fusion-plugin-rpc@^0.6.0:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-rpc/-/fusion-plugin-rpc-0.6.2.tgz#bd95346d37dabc07c110f8f7322821e5cc10e40a"
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-rpc/-/fusion-plugin-rpc-0.6.3.tgz#0177b5516d1bcd595fc4eb156715156910cf34ff"
   dependencies:
     body-parser "^1.18.2"
     koa-bodyparser "4.2.0"
-    rollup "0.55.1"
+    rollup "0.55.3"
 
-fusion-plugin-styletron-react@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-styletron-react/-/fusion-plugin-styletron-react-0.4.1.tgz#0019486755ef0664f7e4a3bdcd2082ee00ad5619"
+fusion-plugin-styletron-react@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-styletron-react/-/fusion-plugin-styletron-react-0.4.2.tgz#4d6b0344887005b92949822cdea3e2d1687f769c"
   dependencies:
     prop-types "^15.6.0"
     styletron-client "^3.0.4"
     styletron-react "^3.0.4"
     styletron-server "^3.0.4"
 
-fusion-plugin-universal-events-react@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events-react/-/fusion-plugin-universal-events-react-0.3.3.tgz#2ae54b598ff62d676a79e9b9479d7ab4b99bdc76"
+fusion-plugin-universal-events-react@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events-react/-/fusion-plugin-universal-events-react-0.3.4.tgz#4d030e133923193e63d1687a0d02747c7b367663"
   dependencies:
-    fusion-plugin-universal-events "^0.3.1"
+    fusion-plugin-universal-events "^0.3.3"
     fusion-test-utils "^0.4.2"
 
-fusion-plugin-universal-events@^0.3.0, fusion-plugin-universal-events@^0.3.1:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events/-/fusion-plugin-universal-events-0.3.2.tgz#110c4bb7a4387cf204d10913b2c572e22f99df4c"
+fusion-plugin-universal-events@^0.3.0, fusion-plugin-universal-events@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events/-/fusion-plugin-universal-events-0.3.3.tgz#54f3a24778498f4dfe31f0a585fc4289fd43fdcb"
   dependencies:
     koa-bodyparser "4.2.0"
 
-fusion-plugin-universal-logger@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-logger/-/fusion-plugin-universal-logger-0.4.1.tgz#0456be33c8ef4c87c06af7efc780d460980d0585"
+fusion-plugin-universal-logger@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-logger/-/fusion-plugin-universal-logger-0.4.2.tgz#78e8a72452b94762b255866ab69ad8331b5c958c"
   dependencies:
     winston "2.4.0"
 
@@ -3668,9 +3668,9 @@ fusion-test-utils@^0.4.2:
     koa "^2.4.1"
     node-mocks-http "^1.6.6"
 
-fusion-tokens@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/fusion-tokens/-/fusion-tokens-0.0.5.tgz#71af057ab696046c43e89ca06dfe47cdbaeac6d8"
+fusion-tokens@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/fusion-tokens/-/fusion-tokens-0.0.6.tgz#71606a0109918dc098eb43cc0a3b877beb111d4d"
 
 gauge@~2.7.3:
   version "2.7.4"
@@ -5952,8 +5952,8 @@ mime@^1.3.4, mime@^1.5.0:
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
 
 mimic-fn@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.1.0.tgz#e667783d92e89dbd342818b5230b9d62a672ad18"
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
 
 min-document@^2.19.0:
   version "2.19.0"
@@ -7735,9 +7735,9 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^2.0.0"
     inherits "^2.0.1"
 
-rollup@0.55.1, rollup@^0.55.1:
-  version "0.55.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.55.1.tgz#baf4f23abe3014b29e56dea7d72d9946e56ac7dd"
+rollup@0.55.3, rollup@^0.55.1:
+  version "0.55.3"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.55.3.tgz#0af082a766d51c3058430c8372442ff5207d8736"
 
 rst-selector-parser@^2.2.3:
   version "2.2.3"
