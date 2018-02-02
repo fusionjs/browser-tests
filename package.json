@@ -26,7 +26,7 @@
     "fusion-plugin-browser-performance-emitter": "^0.1.11",
     "fusion-plugin-csrf-protection-react": "^0.2.1",
     "fusion-plugin-error-handling": "0.1.13",
-    "fusion-plugin-font-loader-react": "0.2.1",
+    "fusion-plugin-font-loader-react": "0.3.3",
     "fusion-plugin-i18n-react": "^0.1.10",
     "fusion-plugin-jwt": "^0.2.2",
     "fusion-plugin-node-performance-emitter": "^0.2.0",
