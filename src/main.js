@@ -41,8 +41,6 @@ import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhan
 import unfetch from 'unfetch';
 import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
 
-// import loggerConfig from './config/logger';
-
 import root from './components/root';
 import rpcExample from './rpc/rpc-example';
 import CsrfProtectionExample from './rpc/csrf-protection-example';
