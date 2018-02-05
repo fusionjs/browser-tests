@@ -10,10 +10,6 @@ import loading from './loading';
 import error from './error';
 
 export default (state, action) => {
-  /* eslint-disable no-debugger */
-  // debugger;
-  // // TODO: temp fix - need to initialize state via plugin(?)
-  // if (!state) state = {};
   return {
     count: count(state.count, action),
     rpcCount: rpcCount(state.rpcCount, action),
