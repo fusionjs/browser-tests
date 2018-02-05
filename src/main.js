@@ -5,24 +5,41 @@
  */
 
 import App from 'fusion-react';
-import JWTSession from 'fusion-plugin-jwt';
-import CsrfProtection from 'fusion-plugin-csrf-protection-react';
+import JWTSession, {
+  SessionCookieNameToken,
+  SessionSecretToken,
+} from 'fusion-plugin-jwt';
+import CsrfProtection, {
+  FetchForCsrfToken,
+} from 'fusion-plugin-csrf-protection-react';
 import Router from 'fusion-plugin-react-router';
-import I18n from 'fusion-plugin-i18n-react';
-import UniversalEvents from 'fusion-plugin-universal-events-react';
+import I18n, {I18nToken, I18nLoaderToken} from 'fusion-plugin-i18n-react';
+import UniversalEvents, {
+  UniversalEventsToken,
+} from 'fusion-plugin-universal-events-react';
 import UniversalLogger from 'fusion-plugin-universal-logger';
 import Styletron from 'fusion-plugin-styletron-react';
-import {FontPlugin} from 'fusion-plugin-font-loader-react';
-import RPC from 'fusion-plugin-rpc-redux-react';
-import Redux from 'fusion-plugin-react-redux';
-import ErrorHandling from 'fusion-plugin-error-handling';
-import NodePerformanceEmitter from 'fusion-plugin-node-performance-emitter';
+import FontLoaderReactPlugin, {
+  FontLoaderReactConfigToken,
+} from 'fusion-plugin-font-loader-react';
+import RPC, {RPCToken, RPCHandlersToken} from 'fusion-plugin-rpc-redux-react';
+import Redux, {
+  ReduxToken,
+  ReducerToken,
+  EnhancerToken,
+  InitialStateToken,
+} from 'fusion-plugin-react-redux';
+import ErrorHandling, {ErrorHandlerToken} from 'fusion-plugin-error-handling';
+import NodePerformanceEmitterPlugin, {
+  NodePerformanceEmitterToken,
+  EventLoopLagIntervalToken,
+  MemoryIntervalToken,
+  SocketIntervalToken,
+} from 'fusion-plugin-node-performance-emitter';
 import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter';
-import actionEmitter from 'fusion-redux-action-emitter-enhancer';
+import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhancer';
 import unfetch from 'unfetch';
-import {Plugin} from 'fusion-core';
-
-import loggerConfig from './config/logger';
+import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
 
 import root from './components/root';
 import rpcExample from './rpc/rpc-example';
@@ -31,65 +48,56 @@ import reducer from './reducers/root';
 
 import {preloadDepth, fonts} from './font-config.js';
 
-const MemoryTranslationsLoader = new Plugin({
-  Service: class MemoryTranslations {
-    constructor() {
-      if (__NODE__) {
-        this.locale = 'en-US';
-        this.translations = require('../translations/en-US.json');
-      }
-    }
-  },
-});
+import translations from '../translations/en-US.json';
 
 export default function start() {
   const app = new App(root);
 
-  const Session = app.plugin(JWTSession, {secret: __NODE__ ? 'abcdefg' : ''});
-  const {fetch, ignore} = app
-    .plugin(CsrfProtection, {
-      Session,
-      fetch: unfetch,
-    })
-    .of();
-  const EventEmitter = app.plugin(UniversalEvents, {fetch});
-
-  app.plugin(Router, {EventEmitter});
-  app.plugin(Styletron);
-  app.plugin(FontPlugin, {preloadDepth, fonts});
-  app.plugin(
-    I18n,
-    __BROWSER__ ? {fetch} : {TranslationsLoader: MemoryTranslationsLoader}
-  );
-  app.plugin(Redux, {reducer, enhancer: actionEmitter(EventEmitter)});
-  app.plugin(RPC, {handlers: __NODE__ && rpcExample(), fetch});
-
   if (__NODE__) {
-    const nodePerfConfig = {
-      eventLoopLagInterval: 1000 * 10,
-      memoryInterval: 1000 * 10,
-      socketInterval: 1000 * 10,
+    const MemoryTranslationsLoader = {
+      from: () => ({
+        locale: 'en-US',
+        translations,
+      }),
     };
-    app.plugin(NodePerformanceEmitter, {
-      config: nodePerfConfig,
-      EventEmitter,
-    });
+    app.register(I18nLoaderToken, MemoryTranslationsLoader);
+    app.register(SessionToken, JWTSession);
+    app.register(SessionSecretToken, 'abcdefg');
+    app.register(SessionCookieNameToken, 'temp');
+    app.register(RPCHandlersToken, rpcExample());
+    app.register(RPCToken, RPC);
+  } else if (__BROWSER__) {
+    app.register(FetchForCsrfToken, unfetch);
+    app.register(RPCToken, RPC);
   }
-  app.plugin(BrowserPerformanceEmitter, {EventEmitter});
-  const Logger = app.plugin(UniversalLogger, {
-    UniversalEvents: EventEmitter,
-    config: loggerConfig,
-  });
+  app.register(FetchToken, CsrfProtection);
+  app.register(UniversalEventsToken, UniversalEvents);
+  app.register(Router);
+  app.register(Styletron);
+
+  app.register(FontLoaderReactConfigToken, {preloadDepth, fonts});
+  app.register(FontLoaderReactPlugin);
+  app.register(I18nToken, I18n);
+
+  app.register(ReduxToken, Redux);
+  app.register(ReducerToken, reducer);
+  app.register(EnhancerToken, ReduxActionEmitterEnhancer);
+
   if (__NODE__) {
-    Logger.of().info('Hello from server!');
+    app.register(InitialStateToken, async () => {
+      return {};
+    });
+    app.register(NodePerformanceEmitterToken, NodePerformanceEmitterPlugin);
+    app.register(EventLoopLagIntervalToken, 1000 * 10);
+    app.register(MemoryIntervalToken, 1000 * 10);
+    app.register(SocketIntervalToken, 1000 * 10);
+    // eslint-disable-next-line no-console
+    app.register(ErrorHandlerToken, e => console.log('error!', e));
   }
-
-  app.plugin(ErrorHandling, {
-    onError: e => Logger.of().error(e),
-    CsrfProtection: {ignore},
-  });
-
-  app.plugin(CsrfProtectionExample);
+  app.register(ErrorHandling);
+  app.register(BrowserPerformanceEmitter);
+  app.register(LoggerToken, UniversalLogger);
+  __NODE__ && app.register(CsrfProtectionExample);
 
   return app;
 }
