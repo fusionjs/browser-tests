@@ -1262,8 +1262,8 @@ boom@5.x.x:
     hoek "4.x.x"
 
 bowser@^1.7.3:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.9.1.tgz#f86ef2132e8cb10b3eb6ea5af018758c587020db"
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.9.2.tgz#d66fc868ca5f4ba895bee1363c343fe7b37d3394"
 
 boxen@^1.2.1:
   version "1.3.0"
@@ -3519,9 +3519,9 @@ fusion-cli@^0.3.1, fusion-cli@^0.3.2:
     winston "2.4.0"
     yargs "11.0.0"
 
-fusion-core@0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/fusion-core/-/fusion-core-0.3.5.tgz#9c03d0514eb9c7c1c219a22f8dec2fe891ec4db6"
+fusion-core@0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/fusion-core/-/fusion-core-0.3.6.tgz#14903281aa94c37c898243f6061299aece31cc2a"
   dependencies:
     koa "^2.3.0"
     koa-compose "^4.0.0"
