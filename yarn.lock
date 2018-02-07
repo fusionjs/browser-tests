@@ -129,12 +129,12 @@
   resolved "https://registry.yarnpkg.com/@types/mkdirp/-/mkdirp-0.3.29.tgz#7f2ad7ec55f914482fc9b1ec4bb1ae6028d46066"
 
 "@types/node@*", "@types/node@^9.3.0":
-  version "9.4.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.0.tgz#b85a0bcf1e1cc84eb4901b7e96966aedc6f078d1"
+  version "9.4.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.1.tgz#0f636f7837e15d2d73a7f6f3ea0e322eb2a5ab65"
 
-"@types/node@^7.0.18":
-  version "7.0.52"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.52.tgz#8990d3350375542b0c21a83cd0331e6a8fc86716"
+"@types/node@^8.0.24":
+  version "8.5.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.5.10.tgz#49bd3637125dea5f55d7d1e8f51efd6cb835e1f7"
 
 "@types/react@*":
   version "16.0.36"
@@ -1519,8 +1519,8 @@ camelcase@^4.0.0, camelcase@^4.1.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
 caniuse-lite@^1.0.30000792:
-  version "1.0.30000792"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000792.tgz#d0cea981f8118f3961471afbb43c9a1e5bbf0332"
+  version "1.0.30000803"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000803.tgz#9939c37149d38d5f4540430490d240c03106a0f5"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -1801,7 +1801,11 @@ commander@2.9.0:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-commander@^2.8.1, commander@~2.13.0:
+commander@^2.8.1:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.14.0.tgz#7b25325963e6aace20d3a9285b09379b0c2208b5"
+
+commander@~2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
 
@@ -1819,9 +1823,9 @@ compressible@~2.0.11:
   dependencies:
     mime-db ">= 1.30.0 < 2"
 
-compression-webpack-plugin@1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-1.1.3.tgz#4b936c627eda09304e3153499ece7830289ab95a"
+compression-webpack-plugin@1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-1.1.6.tgz#450808fe143b4c5216a14f0c315c47bec3d83cec"
   dependencies:
     async "^2.4.1"
     cacache "^10.0.1"
@@ -2477,10 +2481,10 @@ electron-to-chromium@^1.3.30:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.32.tgz#11d0684c0840e003c4be8928f8ac5f35dbc2b4e6"
 
 electron@^1.4.4:
-  version "1.7.12"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-1.7.12.tgz#dcc61a2c1b0c3df25f68b3425379a01abd01190e"
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-1.8.2.tgz#a817cd733c2972b3c7cc4f777caf6e424b88014d"
   dependencies:
-    "@types/node" "^7.0.18"
+    "@types/node" "^8.0.24"
     electron-download "^3.0.1"
     extract-zip "^1.0.3"
 
@@ -3260,9 +3264,9 @@ flat-cache@^1.2.1:
     graceful-fs "^4.1.2"
     write "^0.2.1"
 
-flow-bin@^0.64.0:
-  version "0.64.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.64.0.tgz#ddd3fb3b183ab1ab35a5d5dec9caf5ebbcded167"
+flow-bin@^0.65.0:
+  version "0.65.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.65.0.tgz#64ffeca27211c786e2d68508c65686ba1b8a2169"
 
 flush-write-stream@^1.0.0:
   version "1.0.2"
@@ -3439,8 +3443,8 @@ functional-red-black-tree@^1.0.1:
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
 fusion-cli@^0.3.1, fusion-cli@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/fusion-cli/-/fusion-cli-0.3.2.tgz#339653013f88f37b61362334702f370eb3e883db"
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/fusion-cli/-/fusion-cli-0.3.3.tgz#6e87f9f14f387cdff480d001670b3e4bc1ff8555"
   dependencies:
     "@nadiia/file-loader" "1.0.0-beta.5"
     babel-core "6.26.0"
@@ -3464,14 +3468,14 @@ fusion-cli@^0.3.1, fusion-cli@^0.3.2:
     browser-unhandled-rejection "1.0.1"
     case-sensitive-paths-webpack-plugin "2.1.1"
     chalk "2.3.0"
-    compression-webpack-plugin "1.1.3"
+    compression-webpack-plugin "1.1.6"
     core-js "2.5.3"
     enzyme-adapter-react-16 "1.1.1"
     enzyme-to-json "3.3.1"
     es6-object-assign "1.1.0"
     express "4.16.2"
     fast-async "6.3.0"
-    fusion-plugin-universal-events "^0.3.0"
+    fusion-plugin-universal-events "^0.3.4"
     get-port "3.2.0"
     gzip-size "4.1.0"
     iltorb "2.0.3"
@@ -3578,8 +3582,8 @@ fusion-plugin-jwt@^0.3.5:
     just-safe-set "^2.0.1"
 
 fusion-plugin-node-performance-emitter@^0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-node-performance-emitter/-/fusion-plugin-node-performance-emitter-0.3.4.tgz#f93d08aeb0ee1286ac97c7709dc4bbb6cf58ab7e"
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-node-performance-emitter/-/fusion-plugin-node-performance-emitter-0.3.5.tgz#722ae763eebfc211ab5c7aa8e9fb6ba14310f112"
   dependencies:
     assert "^1.4.1"
     gc-profiler "^1.4.0"
@@ -3632,9 +3636,9 @@ fusion-plugin-universal-events-react@^0.3.4:
     fusion-plugin-universal-events "^0.3.3"
     fusion-test-utils "^0.4.2"
 
-fusion-plugin-universal-events@^0.3.0, fusion-plugin-universal-events@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events/-/fusion-plugin-universal-events-0.3.3.tgz#54f3a24778498f4dfe31f0a585fc4289fd43fdcb"
+fusion-plugin-universal-events@^0.3.3, fusion-plugin-universal-events@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events/-/fusion-plugin-universal-events-0.3.4.tgz#1edd179cfeee94786910b2ae77c5961e1416110a"
   dependencies:
     koa-bodyparser "4.2.0"
 
@@ -3655,8 +3659,8 @@ fusion-react@^0.4.3:
   resolved "https://registry.yarnpkg.com/fusion-react/-/fusion-react-0.4.3.tgz#cd62c1ddfbe1480b948c65aca2b88a7bcf1d9257"
 
 fusion-rpc-redux@^0.3.3:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/fusion-rpc-redux/-/fusion-rpc-redux-0.3.4.tgz#92f0efe69cd406d3beeff2a6ce392707e392c587"
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/fusion-rpc-redux/-/fusion-rpc-redux-0.3.6.tgz#e1a3e21287dfaaa58e287050f36375e75bd56323"
   dependencies:
     redux-reactors "^1.0.3"
 
@@ -8249,10 +8253,10 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 ssri@^5.0.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-5.1.0.tgz#2cbf1df36b74d0fc91fcf89640a4b3e1d10b1899"
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-5.2.1.tgz#8b6eb873688759bd3c75a88dee74593d179bb73c"
   dependencies:
-    safe-buffer "^5.1.0"
+    safe-buffer "^5.1.1"
 
 stable@~0.1.6:
   version "0.1.6"
