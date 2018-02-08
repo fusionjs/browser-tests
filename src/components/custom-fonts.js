@@ -8,7 +8,6 @@ import React, {Component} from 'react';
 import {styled} from 'fusion-plugin-styletron-react';
 import {withFontLoading as FontHOC} from 'fusion-plugin-font-loader-react';
 
-// FIXME: as of React 16, <div> props are written to html (e.g. $fontstyles)
 const FancyLink1 = FontHOC('lato-bold')(
   styled('a', props => ({
     ':hover': {fontSize: `${props.answer}px`},
