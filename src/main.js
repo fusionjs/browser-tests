@@ -27,7 +27,7 @@ import Redux, {
   ReduxToken,
   ReducerToken,
   EnhancerToken,
-  InitialStateToken,
+  GetInitialStateToken,
 } from 'fusion-plugin-react-redux';
 import ErrorHandling, {ErrorHandlerToken} from 'fusion-plugin-error-handling';
 import NodePerformanceEmitterPlugin, {
@@ -84,7 +84,7 @@ export default function start() {
   app.register(EnhancerToken, ReduxActionEmitterEnhancer);
 
   if (__NODE__) {
-    app.register(InitialStateToken, async () => {
+    app.register(GetInitialStateToken, async () => {
       return {};
     });
     app.register(NodePerformanceEmitterToken, NodePerformanceEmitterPlugin);
