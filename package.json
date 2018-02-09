@@ -39,7 +39,7 @@
     "fusion-plugin-universal-logger": "^0.4.2",
     "fusion-react": "^0.4.3",
     "fusion-react-async": "^0.2.0",
-    "fusion-tokens": "^0.0.6",
+    "fusion-tokens": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
