@@ -24,7 +24,7 @@
     "fusion-cli": "^0.3.4",
     "fusion-core": "0.3.6",
     "fusion-plugin-browser-performance-emitter": "^0.2.2",
-    "fusion-plugin-csrf-protection-react": "^0.3.6",
+    "fusion-plugin-csrf-protection-react": "^1.0.0",
     "fusion-plugin-error-handling": "^0.2.3",
     "fusion-plugin-font-loader-react": "^0.4.0",
     "fusion-plugin-i18n-react": "^0.3.5",

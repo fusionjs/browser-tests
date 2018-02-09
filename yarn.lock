@@ -3550,15 +3550,15 @@ fusion-plugin-browser-performance-emitter@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/fusion-plugin-browser-performance-emitter/-/fusion-plugin-browser-performance-emitter-0.2.2.tgz#bb3a3d4490e8d2c3ba59c2c96c8061e4a7cb2193"
 
-fusion-plugin-csrf-protection-react@^0.3.6:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection-react/-/fusion-plugin-csrf-protection-react-0.3.6.tgz#c9eb5e5a62fac6f01f3fd0d097cd86f60c4e24dc"
+fusion-plugin-csrf-protection-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection-react/-/fusion-plugin-csrf-protection-react-1.0.0.tgz#fc049e16ead4c56978ce4f06074de6ff291b3b3d"
   dependencies:
-    fusion-plugin-csrf-protection "^0.3.4"
+    fusion-plugin-csrf-protection "^1.0.0"
 
-fusion-plugin-csrf-protection@^0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection/-/fusion-plugin-csrf-protection-0.3.4.tgz#7d68c2a5e740d25b15aa502e4ccf4dc49b53fa63"
+fusion-plugin-csrf-protection@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-csrf-protection/-/fusion-plugin-csrf-protection-1.0.0.tgz#46a04bbd3461aacb0c6d5bdb969a97efc4d87482"
   dependencies:
     base64-url "^2.1.0"
 
