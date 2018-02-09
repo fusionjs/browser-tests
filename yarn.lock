@@ -3546,9 +3546,9 @@ fusion-core@0.3.6:
     node-mocks-http "^1.6.6"
     toposort "^1.0.6"
 
-fusion-plugin-browser-performance-emitter@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-browser-performance-emitter/-/fusion-plugin-browser-performance-emitter-0.2.2.tgz#bb3a3d4490e8d2c3ba59c2c96c8061e4a7cb2193"
+fusion-plugin-browser-performance-emitter@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-browser-performance-emitter/-/fusion-plugin-browser-performance-emitter-1.0.0.tgz#d1c70999118462e6748de506d4c958a86a907c8a"
 
 fusion-plugin-csrf-protection-react@^0.3.6:
   version "0.3.6"
