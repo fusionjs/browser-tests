@@ -3619,16 +3619,16 @@ fusion-plugin-redux-action-emitter-enhancer@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/fusion-plugin-redux-action-emitter-enhancer/-/fusion-plugin-redux-action-emitter-enhancer-0.2.2.tgz#2532ff6ac290f3caf629a3e2cd49bc0ab1af31f3"
 
-fusion-plugin-rpc-redux-react@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-rpc-redux-react/-/fusion-plugin-rpc-redux-react-0.3.3.tgz#a7222509d04e645ae49fa23935a143fd2d9e73bc"
+fusion-plugin-rpc-redux-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-rpc-redux-react/-/fusion-plugin-rpc-redux-react-1.0.0.tgz#dbe41e54b251003be1a072a74f14604cfd56a1ab"
   dependencies:
-    fusion-plugin-rpc "^0.6.3"
-    fusion-rpc-redux "^0.3.6"
+    fusion-plugin-rpc "^1.0.0"
+    fusion-rpc-redux "^1.0.0"
 
-fusion-plugin-rpc@^0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-rpc/-/fusion-plugin-rpc-0.6.3.tgz#0177b5516d1bcd595fc4eb156715156910cf34ff"
+fusion-plugin-rpc@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-rpc/-/fusion-plugin-rpc-1.0.0.tgz#71c340c26598458d69269c4e22aa3be40f4e3778"
   dependencies:
     body-parser "^1.18.2"
     koa-bodyparser "4.2.0"
@@ -3672,9 +3672,9 @@ fusion-react@^0.4.3:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/fusion-react/-/fusion-react-0.4.3.tgz#cd62c1ddfbe1480b948c65aca2b88a7bcf1d9257"
 
-fusion-rpc-redux@^0.3.6:
-  version "0.3.6"
-  resolved "https://registry.yarnpkg.com/fusion-rpc-redux/-/fusion-rpc-redux-0.3.6.tgz#e1a3e21287dfaaa58e287050f36375e75bd56323"
+fusion-rpc-redux@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-rpc-redux/-/fusion-rpc-redux-1.0.0.tgz#355d39a00f16dfd64ca7e15563440a36a627ba7f"
   dependencies:
     redux-reactors "^1.0.3"
 
