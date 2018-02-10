@@ -3456,7 +3456,7 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-fusion-cli@^0.3.1, fusion-cli@^0.3.4:
+fusion-cli@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/fusion-cli/-/fusion-cli-0.3.4.tgz#3c61e14b729b8bf43b7a134cdfecbd091884e834"
   dependencies:
@@ -3562,11 +3562,10 @@ fusion-plugin-csrf-protection@^0.3.4:
   dependencies:
     base64-url "^2.1.0"
 
-fusion-plugin-error-handling@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-0.2.3.tgz#e74208351a6844497d7e57f72b42a765e3174d42"
+fusion-plugin-error-handling@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-1.0.0.tgz#082617d8ea2c1788c77ac574f9dd1884927f3884"
   dependencies:
-    fusion-cli "^0.3.1"
     koa-bodyparser "4.2.0"
 
 fusion-plugin-font-loader-react@^0.4.0:
