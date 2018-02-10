@@ -3573,16 +3573,16 @@ fusion-plugin-font-loader-react@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/fusion-plugin-font-loader-react/-/fusion-plugin-font-loader-react-0.4.0.tgz#382f4a5da1ef9878ae5d8da48d6fa0245a2e5f2f"
 
-fusion-plugin-i18n-react@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-i18n-react/-/fusion-plugin-i18n-react-0.3.5.tgz#92e40eeb356e1ab97304801d00182b52898a6b8d"
+fusion-plugin-i18n-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-i18n-react/-/fusion-plugin-i18n-react-1.0.0.tgz#f67070d60b67dfdc9083ae1083bf032a216bc3ee"
   dependencies:
-    fusion-plugin-i18n "^0.4.3"
+    fusion-plugin-i18n "^1.0.0"
     prop-types "^15.6.0"
 
-fusion-plugin-i18n@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-i18n/-/fusion-plugin-i18n-0.4.3.tgz#fdeaa328269abd36efc08d01b8242addd4a7bce7"
+fusion-plugin-i18n@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-i18n/-/fusion-plugin-i18n-1.0.0.tgz#fae312e71c093e6171745e5bdb75831c849738cf"
   dependencies:
     locale "^0.1.0"
     rollup "^0.55.1"
