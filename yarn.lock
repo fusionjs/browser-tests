@@ -3634,9 +3634,9 @@ fusion-plugin-rpc@^0.6.3:
     koa-bodyparser "4.2.0"
     rollup "0.55.3"
 
-fusion-plugin-styletron-react@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-styletron-react/-/fusion-plugin-styletron-react-0.4.2.tgz#4d6b0344887005b92949822cdea3e2d1687f769c"
+fusion-plugin-styletron-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-styletron-react/-/fusion-plugin-styletron-react-1.0.0.tgz#4864278f9d3949d7a336c965ab491c7da9e986c3"
   dependencies:
     prop-types "^15.6.0"
     styletron-client "^3.0.4"
