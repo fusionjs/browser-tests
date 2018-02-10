@@ -3587,9 +3587,9 @@ fusion-plugin-i18n@^0.4.3:
     locale "^0.1.0"
     rollup "^0.55.1"
 
-fusion-plugin-jwt@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-jwt/-/fusion-plugin-jwt-0.3.5.tgz#152c02e53c494c733bc0d83319d2b06a8dfc1736"
+fusion-plugin-jwt@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-jwt/-/fusion-plugin-jwt-1.0.0.tgz#f34974b9240cfa21ac469c6e83e24ae44e5f3dd5"
   dependencies:
     jsonwebtoken "^8.1.1"
     just-safe-get "^1.2.0"
