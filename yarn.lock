@@ -3595,9 +3595,9 @@ fusion-plugin-jwt@^0.3.5:
     just-safe-get "^1.2.0"
     just-safe-set "^2.0.1"
 
-fusion-plugin-node-performance-emitter@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-node-performance-emitter/-/fusion-plugin-node-performance-emitter-0.3.5.tgz#722ae763eebfc211ab5c7aa8e9fb6ba14310f112"
+fusion-plugin-node-performance-emitter@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-node-performance-emitter/-/fusion-plugin-node-performance-emitter-1.0.0.tgz#3fa7ce058c1ac3436fbb045deb534f30fbf9999b"
   dependencies:
     assert "^1.4.1"
     gc-profiler "^1.4.0"
