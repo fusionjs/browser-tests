@@ -36,7 +36,7 @@
     "fusion-plugin-rpc-redux-react": "^0.3.3",
     "fusion-plugin-styletron-react": "^0.4.2",
     "fusion-plugin-universal-events-react": "^0.3.4",
-    "fusion-plugin-universal-logger": "^0.4.2",
+    "fusion-plugin-universal-logger": "^1.0.0",
     "fusion-react": "^0.4.3",
     "fusion-react-async": "^0.2.0",
     "fusion-tokens": "^0.0.6",
