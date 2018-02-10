@@ -3615,9 +3615,9 @@ fusion-plugin-react-router@^0.4.3:
     prop-types "^15.6.0"
     react-router-dom "^4.2.2"
 
-fusion-plugin-redux-action-emitter-enhancer@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-redux-action-emitter-enhancer/-/fusion-plugin-redux-action-emitter-enhancer-0.2.2.tgz#2532ff6ac290f3caf629a3e2cd49bc0ab1af31f3"
+fusion-plugin-redux-action-emitter-enhancer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-redux-action-emitter-enhancer/-/fusion-plugin-redux-action-emitter-enhancer-1.0.0.tgz#96fc67a487bd4c29f9dcf1ad96a800ad0deaf515"
 
 fusion-plugin-rpc-redux-react@^0.3.3:
   version "0.3.3"
