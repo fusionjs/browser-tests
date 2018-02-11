@@ -3643,16 +3643,22 @@ fusion-plugin-styletron-react@^0.4.2:
     styletron-react "^3.0.4"
     styletron-server "^3.0.4"
 
-fusion-plugin-universal-events-react@^0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events-react/-/fusion-plugin-universal-events-react-0.3.4.tgz#4d030e133923193e63d1687a0d02747c7b367663"
+fusion-plugin-universal-events-react@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events-react/-/fusion-plugin-universal-events-react-1.0.0.tgz#64a0a201d6c487553a0bb9c4daa707efdc4b5355"
   dependencies:
-    fusion-plugin-universal-events "^0.3.3"
-    fusion-test-utils "^0.4.2"
+    fusion-plugin-universal-events "^1.0.0"
+    fusion-test-utils "^1.0.0"
 
-fusion-plugin-universal-events@^0.3.3, fusion-plugin-universal-events@^0.3.4:
+fusion-plugin-universal-events@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events/-/fusion-plugin-universal-events-0.3.4.tgz#1edd179cfeee94786910b2ae77c5961e1416110a"
+  dependencies:
+    koa-bodyparser "4.2.0"
+
+fusion-plugin-universal-events@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-events/-/fusion-plugin-universal-events-1.0.0.tgz#5f2a058078f7a3ab7c9eb7feb1d588fc4f2cbfb4"
   dependencies:
     koa-bodyparser "4.2.0"
 
@@ -3678,9 +3684,9 @@ fusion-rpc-redux@^0.3.6:
   dependencies:
     redux-reactors "^1.0.3"
 
-fusion-test-utils@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/fusion-test-utils/-/fusion-test-utils-0.4.2.tgz#a8cc45eea3c6943cb41ba4b61f699adb126ef531"
+fusion-test-utils@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-test-utils/-/fusion-test-utils-1.0.0.tgz#f3ef434aff74186a77837828b84e2b50b524218f"
   dependencies:
     assert "^1.4.1"
     koa "^2.4.1"
