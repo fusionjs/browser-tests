@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 import React from 'react';
 import {Translate, withTranslations} from 'fusion-plugin-i18n-react';
 

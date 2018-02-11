@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 import React from 'react';
 import {styled} from 'fusion-plugin-styletron-react';
 

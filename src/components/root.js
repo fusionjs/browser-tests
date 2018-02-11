@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 import React from 'react';
 import {Route, Link, Switch, NotFound} from 'fusion-plugin-react-router';
 import {split} from 'fusion-react-async';

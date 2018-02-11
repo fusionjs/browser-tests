@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 import React from 'react';
 import {withFetch} from 'fusion-plugin-csrf-protection-react';
 

@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 import React, {Component} from 'react';
 import {styled} from 'fusion-plugin-styletron-react';
 import {withFontLoading as FontHOC} from 'fusion-plugin-font-loader-react';

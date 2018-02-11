@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 export default (/* some provisioned db/micro-service */) => {
   let rpcCount = 0; // we're storing things in memory for this example
   return {
