@@ -3656,9 +3656,9 @@ fusion-plugin-universal-events@^0.3.3, fusion-plugin-universal-events@^0.3.4:
   dependencies:
     koa-bodyparser "4.2.0"
 
-fusion-plugin-universal-logger@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-logger/-/fusion-plugin-universal-logger-0.4.2.tgz#78e8a72452b94762b255866ab69ad8331b5c958c"
+fusion-plugin-universal-logger@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-universal-logger/-/fusion-plugin-universal-logger-1.0.0.tgz#72a7320dced3fe9fda772675bbae54f04dc2da12"
   dependencies:
     winston "2.4.0"
 
