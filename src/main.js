@@ -4,6 +4,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
+
 import App from 'fusion-react';
 import JWTSession, {
   SessionCookieNameToken,
