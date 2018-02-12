@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 import React from 'react';
 
 export default function bundleSplitComponent() {

@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 import {createPlugin} from 'fusion-core';
 
 export default createPlugin({

@@ -5,7 +5,6 @@
  */
 
 // @flow
-
 import App from 'fusion-react';
 import JWTSession, {
   SessionCookieNameToken,

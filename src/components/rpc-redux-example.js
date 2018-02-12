@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 import React from 'react';
 import {withRPCRedux} from 'fusion-plugin-rpc-redux-react';
 import {prepared} from 'fusion-react-async';

@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 export default (state, action) => {
   switch (action.type) {
     case 'GET_COUNT_SUCCESS': //rpc-redux-example action

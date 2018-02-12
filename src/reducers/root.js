@@ -4,6 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// @flow
 import count from './count';
 import rpcCount from './rpc-count';
 import loading from './loading';
