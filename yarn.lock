@@ -2785,9 +2785,9 @@ eslint-plugin-cup@^1.0.0:
   dependencies:
     globals "^10.0.0"
 
-eslint-plugin-flowtype@^2.43.0:
-  version "2.43.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.43.0.tgz#47cdac5f01cda53f1c3e8477f0c83fee66a1606e"
+eslint-plugin-flowtype@^2.44.0:
+  version "2.44.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.44.0.tgz#c0610d0018801e1fbe1eaec1c2174de1338ab4ee"
   dependencies:
     lodash "^4.15.0"
 
@@ -3539,7 +3539,7 @@ fusion-cli@^1.0.1:
     winston "2.4.0"
     yargs "11.0.0"
 
-fusion-core@1.0.1:
+fusion-core@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/fusion-core/-/fusion-core-1.0.1.tgz#a926b6b908b6f807cc4b8fd095e7fdf51ffef61b"
   dependencies:
@@ -3620,7 +3620,7 @@ fusion-plugin-redux-action-emitter-enhancer@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/fusion-plugin-redux-action-emitter-enhancer/-/fusion-plugin-redux-action-emitter-enhancer-1.0.2.tgz#1413e15cfa11f410855ea9116816e0198871b470"
 
-fusion-plugin-rpc-redux-react@^1.0.2:
+fusion-plugin-rpc-redux-react@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/fusion-plugin-rpc-redux-react/-/fusion-plugin-rpc-redux-react-1.0.3.tgz#0e85d1e61ccd7af26f90d4e2f4e891f32de24da3"
   dependencies:

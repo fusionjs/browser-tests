@@ -14,6 +14,9 @@ module.exports = {
       .waitForElementVisible('#root', 10000)
       .assert.containsText('#root h1', 'Hello')
 
+      // Check that the favicon plugin works
+      .waitForElementPresent('link[rel="icon"]', 10000)
+
       .waitForElementVisible('li#image', 2000)
       .click('li#image a')
       .waitForElementVisible('img', 2000)
