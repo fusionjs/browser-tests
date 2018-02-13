@@ -50,12 +50,15 @@ import reducer from './reducers/root';
 
 import {preloadDepth, fonts} from './font-config.js';
 
+import FaviconPlugin from './plugins/favicon.js';
+
 import translations from '../translations/en-US.json';
 
 export default function start() {
   const app = new App(root);
 
   if (__NODE__) {
+    app.register(FaviconPlugin);
     const MemoryTranslationsLoader = {
       from: () => ({
         locale: 'en-US',
