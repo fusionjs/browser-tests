@@ -38,6 +38,7 @@ import NodePerformanceEmitterPlugin, {
   MemoryIntervalToken,
   SocketIntervalToken,
 } from 'fusion-plugin-node-performance-emitter';
+import {createPlugin} from 'fusion-core';
 import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter';
 import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhancer';
 import unfetch from 'unfetch';
@@ -87,6 +88,31 @@ export default function start() {
   app.register(ReduxToken, Redux);
   app.register(ReducerToken, reducer);
   app.register(EnhancerToken, ReduxActionEmitterEnhancer);
+
+  app.register(UniversalEventsToken, UniversalEvents);
+  app.register(BrowserPerformanceEmitter);
+
+  // app.plugin(BrowserPerformanceEmitter, {EventEmitter, appId});
+  // if (__NODE__) {
+  //   app.plugin(HeatpipePublisher, {
+  //     EventEmitter,
+  //     config: {
+  //       appId,
+  //       heatpipePort: 18084,
+  //       heatpipeSchemaPort: 14040,
+  //     },
+  //   });
+  // }
+
+  createPlugin({
+    deps: {emitter: UniversalEventsToken},
+    provides: deps => {
+      const emitter = deps.emitter;
+      emitter.on('browser-performance-emitter:stats', e => {
+        console.log('**********', e); // log events to console
+      });
+    },
+  });
 
   if (__NODE__) {
     app.register(GetInitialStateToken, async () => {
