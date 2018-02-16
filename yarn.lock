@@ -3567,7 +3567,7 @@ fusion-core@^1.0.2:
 
 fusion-plugin-browser-performance-emitter@^1.0.2:
   version "1.0.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-browser-performance-emitter/-/fusion-plugin-browser-performance-emitter-1.0.2.tgz#e4146275fb8cbd41f71c7bf0f5371f8a5d9b9254"
+  resolved "https://unpm.uberinternal.com/fusion-plugin-browser-performance-emitter/-/fusion-plugin-browser-performance-emitter-1.0.2.tgz#e4146275fb8cbd41f71c7bf0f5371f8a5d9b9254"
 
 fusion-plugin-csrf-protection-react@^1.0.2:
   version "1.0.2"

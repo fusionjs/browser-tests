@@ -39,7 +39,10 @@ import NodePerformanceEmitterPlugin, {
   SocketIntervalToken,
 } from 'fusion-plugin-node-performance-emitter';
 import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter';
-import PerformanceHeatpipeLogger from '@uber/fusion-plugin-heatpipe-performance-logger';
+import PerformanceHeatpipeLogger, {
+  HeatpipePerfLoggerConfig,
+} from '@uber/fusion-plugin-heatpipe-performance-logger';
+
 import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhancer';
 import unfetch from 'unfetch';
 import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
@@ -57,6 +60,7 @@ import translations from '../translations/en-US.json';
 
 export default function start() {
   const app = new App(root);
+  const appId = 'browser-tests';
 
   if (__NODE__) {
     app.register(FaviconPlugin);
@@ -105,6 +109,11 @@ export default function start() {
 
   if (__NODE__) {
     app.register(PerformanceHeatpipeLogger);
+    app.register(HeatpipePerfLoggerConfig, {
+      appId,
+      heatpipePort: 18084,
+      heatpipeSchemaPort: 14040,
+    });
     app.register(GetInitialStateToken, async () => {
       return {};
     });
