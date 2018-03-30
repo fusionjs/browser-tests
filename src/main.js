@@ -38,7 +38,9 @@ import NodePerformanceEmitterPlugin, {
   MemoryIntervalToken,
   SocketIntervalToken,
 } from 'fusion-plugin-node-performance-emitter';
-import BrowserPerformanceEmitter from 'fusion-plugin-browser-performance-emitter';
+import BrowserPerformanceEmitter, {
+  BrowserPerformanceEmitterConfigToken,
+} from 'fusion-plugin-browser-performance-emitter';
 import ReduxActionEmitterEnhancer from 'fusion-plugin-redux-action-emitter-enhancer';
 import unfetch from 'unfetch';
 import {LoggerToken, FetchToken, SessionToken} from 'fusion-tokens';
@@ -101,6 +103,7 @@ export default function start() {
   }
   app.register(ErrorHandling);
   app.register(BrowserPerformanceEmitter);
+  app.register(BrowserPerformanceEmitterConfigToken, {});
   app.register(LoggerToken, UniversalLogger);
   __NODE__ && app.register(CsrfProtectionExample);
 
