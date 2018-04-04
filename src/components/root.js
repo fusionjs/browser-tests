@@ -65,7 +65,7 @@ const Root = (
       <li id="split">
         <Link to="/split">Split</Link>
       </li>
-      <li>
+      <li id="split-deferred">
         <Link to="/split-deferred">Split (Deferred)</Link>
       </li>
       <li>

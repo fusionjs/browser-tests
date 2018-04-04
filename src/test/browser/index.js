@@ -22,8 +22,8 @@ module.exports = {
       .waitForElementVisible('img', 2000)
       .pause(1000)
 
-      .waitForElementVisible('li#split', 2000)
-      .click('li#split a')
+      .waitForElementVisible('li#split-deferred', 2000)
+      .click('li#split-deferred a')
       .waitForElementVisible('div#split-example', 2000)
       .assert.containsText('div#split-example', 'This should be async loaded')
       .pause(1000)
