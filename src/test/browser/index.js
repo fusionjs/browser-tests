@@ -13,7 +13,12 @@ module.exports = {
       .url('http://localhost:3000')
       .waitForElementVisible('#root', 10000)
       .assert.containsText('#root h1', 'Hello')
-
+      .getLogTypes(function(result) {
+        console.log('Log Types', result);
+      })
+      .getLog('browser', function(result) {
+        console.log('Browser Logs', result);
+      })
       // Check that the favicon plugin works
       .waitForElementPresent('link[rel="icon"]', 10000)
 
@@ -40,7 +45,14 @@ module.exports = {
       .click('li#translations a')
       .waitForElementVisible('li#doge-translation', 2000)
       .assert.containsText('li#doge-translation', 'doge')
-      .pause(1000)
+      .end();
+  },
+
+  'Chunk Loading': function(browser) {
+    browser
+      .url('http://localhost:3000/split-deferred')
+      .waitForElementVisible('div#split-example', 2000)
+      .assert.containsText('div#split-example', 'This should be async loaded')
       .end();
   },
 
