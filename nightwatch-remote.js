@@ -13,7 +13,8 @@ const settings = {
   selenium: {
     start_process: true,
     server_path:
-      '/Users/anguscroll/Library/Caches/Homebrew/selenium-server-standalone-3.7.0.jar',
+      // '/Users/anguscroll/Library/Caches/Homebrew/selenium-server-standalone-3.7.0.jar',
+      './node_modules/nightwatch/bin/selenium.jar',
     log_path: '',
     port: 4444,
     cli_args: {

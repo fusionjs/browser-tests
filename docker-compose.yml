@@ -16,17 +16,17 @@ services:
 
   chrome-standalone:
     image: selenium/standalone-chrome:latest
-    network_mode: "host"    
-    restart: always    
+    network_mode: "host"
+    restart: always
     ports:
       - "4444:4444"
 
   firefox-standalone:
     image: selenium/standalone-firefox:latest
-    network_mode: "host"    
-    restart: always    
+    network_mode: "host"
+    restart: always
     ports:
-      - "4444:4444"      
+      - "4444:4444"
 
   sauce-tunnel:
     image: henrrich/docker-sauce-connect:latest
@@ -52,8 +52,7 @@ services:
     build: .
     network_mode: "host"
     depends_on:
-      sauce-tunnel:
-        condition: service_healthy
+      - sauce-tunnel
 
   # wait for running server.
   fusion-server-healthy:
@@ -89,7 +88,7 @@ services:
     network_mode: "host"
     depends_on:
       - chrome-standalone
-      - fusion-server-healthy    
+      - fusion-server-healthy
     command: ./test-standalone.sh
 
   # For running integration tests locally in firefox
@@ -98,6 +97,6 @@ services:
     network_mode: "host"
     depends_on:
       - firefox-standalone
-      - fusion-server-healthy    
-    command: ./test-standalone.sh    
+      - fusion-server-healthy
+    command: ./test-standalone.sh
 

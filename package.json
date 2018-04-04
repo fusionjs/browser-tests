@@ -14,7 +14,7 @@
     "download-selenium": "node download-selenium.js",
     "test-chrome": "docker-compose down && docker-compose run browser-test-chrome",
     "test-firefox": "docker-compose down && docker-compose run browser-test-firefox",
-    "test-remote": "./test-remotely.sh",
+    "test": "./test-remotely.sh",
     "cover": "fusion test --cover",
     "source-map-explorer": "fusion source-map-explorer",
     "check": "fusion check"
@@ -66,7 +66,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.2.0",
     "request": "^2.83.0",
-    "selenium-download": "^2.0.11",
+    "selenium-download": "2.0.11",
     "tape": "^4.8.0"
   },
   "engines": {

@@ -6,7 +6,7 @@ CI and adhoc testing for cross browser API support using nightwatch, selenium an
 
 ## Cross-browser testing using Buildkite CI
 
-After each push Buildkite runs cross-browser UI tests over core libraries and plugins 
+After each push Buildkite runs cross-browser UI tests over core libraries and plugins
 
 ## Running Ad hoc chrome and firefox tests locally
 
@@ -17,15 +17,12 @@ In Firefox
 
 ## Running Ad hoc cross-browser tests remotely
 
-(For convenience you should add SAUCE\_USERNAME and SAUCE\_ACCESS_KEY as environment variables)
+1. Add SAUCE\_USERNAME and SAUCE\_ACCESS_KEY as environment variables. See Angus if you don't have these.
 
-1. Start the app server\
-`yarn dev`
-1. Start sauce connect\
-`sc -u <saucelabs username> -k <saucelabs access key>`
-1. Run the tests remotely\
-run specific test: `yarn test-remote -- --env ie-11`\
-run all tests: `yarn test-remote`
+2. `docker-compose build` (this copies repo environment to docker)
+
+3. `docker-compose run browser-tests yarn test` (run tests for all environments)
+`docker-compose run browser-tests yarn test --ie9` (run tests for one environment)
 
 ## The Tests
 
