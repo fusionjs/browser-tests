@@ -53,7 +53,7 @@ module.exports = {
         },
         [],
         function(result) {
-          console.log('window.Promise (value) is? ', result.value);
+          console.log('window.Promise is? ', result);
         }
       )
       .execute(
@@ -62,7 +62,7 @@ module.exports = {
         },
         [],
         function(result) {
-          console.log('window.__PRELOADED_CHUNKS__ (value) is? ', result.value);
+          console.log('window.__PRELOADED_CHUNKS__ is? ', result);
         }
       )
       .waitForElementVisible('div', 2000)
