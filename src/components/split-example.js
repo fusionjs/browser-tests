@@ -5,7 +5,22 @@
  */
 
 import React from 'react';
+import {split} from 'fusion-react-async';
+
+const LoadingComponent = () => <div>Loading...</div>;
+const ErrorComponent = () => <div>Error loading bundle split component</div>;
+const SplitExample = split({
+  defer: true,
+  load: () => import('./split-deferred.js'),
+  LoadingComponent,
+  ErrorComponent,
+});
 
 export default function bundleSplitComponent() {
-  return <div id="split-example">This should fail</div>;
+  return (
+    <div>
+      <SplitExample />
+      <div id="split-example">split-example</div>
+    </div>
+  );
 }

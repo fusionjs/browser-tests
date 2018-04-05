@@ -31,8 +31,7 @@ const SplitTranslations = split({
   LoadingComponent,
   ErrorComponent,
 });
-const SplitDefer = split({
-  defer: true,
+const SplitExample = split({
   load: () => import('./split-example'),
   LoadingComponent,
   ErrorComponent,
@@ -94,8 +93,8 @@ const Root = (
       <Route exact path="/" component={Home} />
       <Route exact path="/test-polyfills" component={PolyfillTests} />
       <Route exact path="/image" component={Image} />
-      {/* <Route exact path="/split" component={SplitExample} /> */}
-      <Route exact path="/split-deferred" component={SplitDefer} />
+      <Route exact path="/split" component={SplitExample} />
+      {/* <Route exact path="/split-deferred" component={SplitDefer} /> */}
       <Route exact path="/styletron" component={SplitStyled} />
       <Route exact path="/custom-fonts" component={CustomFonts} />
       <Route exact path="/translations" component={SplitTranslations} />

@@ -46,10 +46,12 @@ module.exports = {
 
   'Chunk Loading': function(browser) {
     browser
-      .url('http://localhost:3001/split-deferred')
+      .url('http://localhost:3001/split')
       .waitForElementVisible('div', 2000)
       .waitForElementVisible('div#split-example', 2000)
-      .assert.containsText('div#split-example', 'This should be async loaded')
+      .assert.containsText('div#split-example', 'split-example')
+      .waitForElementVisible('div#split-deferred', 2000)
+      .assert.containsText('div#split-split-deferred', 'split-deferred')
       .end();
   },
 
