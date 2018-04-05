@@ -28,7 +28,9 @@ class FetchingComponent extends React.Component {
     if (this.state.loading) {
       return <div>Loading...</div>;
     }
-    return <div>Fetch request responded with: {this.state.status}</div>;
+    return (
+      <div id="csrf">Fetch request responded with: {this.state.status}</div>
+    );
   }
 }
 

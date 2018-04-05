@@ -8,5 +8,12 @@ import React from 'react';
 import {assetUrl} from 'fusion-core';
 
 export default function Image() {
-  return <img src={assetUrl('../../static/test.png')} />;
+  return (
+    <div>
+      <p>
+        Example of using <code>assetUrl</code> to load an image
+      </p>
+      <img id="img" src={assetUrl('../../static/test.png')} />
+    </div>
+  );
 }

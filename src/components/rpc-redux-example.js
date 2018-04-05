@@ -13,10 +13,14 @@ import {compose} from 'redux';
 function Example({rpcCount, loading, error, increment, decrement}) {
   return (
     <div>
-      <p>Count: {rpcCount}</p>
+      <p id="count">Count: {rpcCount}</p>
       <p>
-        <button onClick={() => increment()}>Increment</button>
-        <button onClick={() => decrement()}>Decrement</button>
+        <button id="increment" onClick={() => increment()}>
+          Increment
+        </button>
+        <button id="decrement" onClick={() => decrement()}>
+          Decrement
+        </button>
       </p>
       {loading && 'Loading...'}
       {error}

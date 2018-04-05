@@ -1,0 +1,6 @@
+{
+  "test": "Isto é uma tradução${ending}",
+  "raw": "Isto é raw",
+  "interpolated": "Isto é interpolado ${thing}",
+  "split": "Este component é carregado de forma assíncrona${ending}"
+}

@@ -43,8 +43,8 @@ module.exports = {
 
       .waitForElementVisible('li#translations', 2000)
       .click('li#translations a')
-      .waitForElementVisible('li#doge-translation', 2000)
-      .assert.containsText('li#doge-translation', 'doge')
+      .waitForElementVisible('#i18n-hoc-interpolation', 2000)
+      .assert.containsText('#i18n-hoc-interpolation', 'doge')
       .end();
   },
 
@@ -81,6 +81,47 @@ module.exports = {
       .assert.containsText('#set', 'set: true')
       .waitForElementVisible('#promise', 10000)
       .assert.containsText('#promise', 'promise: true')
+      .end();
+  },
+
+  'I18n Testing': function(browser) {
+    browser
+      .url('http://localhost:3000/translations')
+      .waitForElementVisible('#i18n', 10000)
+      .assert.containsText('#i18n', 'This is a translation!')
+      .waitForElementVisible('#i18n-hoc', 10000)
+      .assert.containsText('#i18n-hoc', 'This is raw')
+      .waitForElementVisible('#i18n-hoc-interpolation', 10000)
+      .assert.containsText(
+        '#i18n-hoc-interpolation',
+        'This is interpolated doge'
+      )
+      .end();
+  },
+
+  'assetUrl Testing': function(browser) {
+    browser
+      .url('http://localhost:3000/image')
+      .waitForElementVisible('#img', 10000)
+      .assert.attributeContains('#img', 'src', '.png')
+      .end();
+  },
+
+  'CSRF Protection Testing': function(browser) {
+    browser
+      .url('http://localhost:3000/csrf-token')
+      .waitForElementVisible('#csrf', 10000)
+      .assert.containsText('#csrf', '200')
+      .end();
+  },
+
+  'reduxRPC Testing': function(browser) {
+    browser
+      .url('http://localhost:3000/redux-rpc')
+      .waitForElementVisible('#increment', 10000)
+      .click('#increment')
+      .pause(500)
+      .assert.containsText('#count', '1')
       .end();
   },
 

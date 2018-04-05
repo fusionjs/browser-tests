@@ -12,14 +12,14 @@ const FancyContainer = styled('div', {
   border: '5px solid pink',
 });
 const FancyLink = styled('a', props => ({
-  ':hover': {fontSize: `${props.answer}px`},
+  ':hover': {fontSize: `${props.$answer}px`},
 }));
 
 export default function StyletronComponent() {
   return (
-    <FancyContainer>
+    <FancyContainer id="styled">
       Styled!
-      <FancyLink href="#" answer={42}>
+      <FancyLink href="#" $answer={42}>
         Answer to Life, the Universe and Everything
       </FancyLink>
     </FancyContainer>
