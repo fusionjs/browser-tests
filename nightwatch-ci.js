@@ -2,7 +2,7 @@
 
 const environments = require('./selenium-environments');
 
-const JOB_IDENTIFIER = process.env.BUILDKITE_BUILD_NUMBER;
+//const JOB_IDENTIFIER = process.env.BUILDKITE_BUILD_NUMBER;
 const BINPATH = './node_modules/nightwatch/bin/';
 
 const settings = {

@@ -15,7 +15,11 @@ import CsrfProtection, {
   FetchForCsrfToken,
 } from 'fusion-plugin-csrf-protection-react';
 import Router from 'fusion-plugin-react-router';
-import I18n, {I18nToken, I18nLoaderToken} from 'fusion-plugin-i18n-react';
+import I18n, {
+  I18nToken,
+  I18nLoaderToken,
+  createI18nLoader,
+} from 'fusion-plugin-i18n-react';
 import UniversalEvents, {
   UniversalEventsToken,
 } from 'fusion-plugin-universal-events-react';
@@ -52,20 +56,12 @@ import {preloadDepth, fonts} from './font-config.js';
 
 import FaviconPlugin from './plugins/favicon.js';
 
-import translations from '../translations/en-US.json';
-
 export default function start() {
   const app = new App(root);
 
   if (__NODE__) {
     app.register(FaviconPlugin);
-    const MemoryTranslationsLoader = {
-      from: () => ({
-        locale: 'en-US',
-        translations,
-      }),
-    };
-    app.register(I18nLoaderToken, MemoryTranslationsLoader);
+    app.register(I18nLoaderToken, createI18nLoader());
     app.register(SessionToken, JWTSession);
     app.register(SessionSecretToken, 'abcdefg');
     app.register(SessionCookieNameToken, 'temp');

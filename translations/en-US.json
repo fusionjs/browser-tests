@@ -1,12 +1,6 @@
 {
-  "my.translated.string": "Lorem Ipsum (This is a translated string)",
-  "interpolated": "Hello, this is ${thing} (This is a translated string)",
-  "raw": "Raw Translated (This is a translated string)",
-  "included": "Included Translated (This is a translated string)",
-  "split.included": "Split Included (This is a translated string)",
-  "split.dynamic": "Split Dynamic (This is a translated string)",
-  "split.raw": "Split Raw (This is a translated string)",
-  "dynamic": "Dynamic Translated (This is a translated string)",
-  "some.translation.key": "Test Translated String with an apostrophe' (This is a translated string)",
-  "split.translation.key.woot": "Split translation (This is a translated string)"
+  "test": "This is a translation${ending}",
+  "raw": "This is raw",
+  "interpolated": "This is interpolated ${thing}",
+  "split": "This translated component is loaded asynchronously${ending}"
 }

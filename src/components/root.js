@@ -12,6 +12,7 @@ import PolyfillTests from './polyfill-tests';
 import RPCReduxExample from './rpc-redux-example';
 import CsrfProtectionExample from './csrf-protection-example';
 import ReduxExample from './redux-example';
+import RPCError from './rpc-error';
 
 const Home = () => <div>Hello</div>;
 const PageNotFound = () => (
@@ -19,18 +20,18 @@ const PageNotFound = () => (
     <div>404</div>
   </NotFound>
 );
-const LoadingComponent = () => <div>Loading...</div>;
+const LoadingComponent = () => <div id="split-loading">Loading...</div>;
 const ErrorComponent = () => <div>Error loading bundle split component</div>;
 const SplitExample = split({
   defer: true,
   load: () => {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       setTimeout(resolve, 500);
     }).then(() => {
       return import('./split-example');
     });
   },
-  LoadingComponent: () => <div id="split-loading">Loading...</div>,
+  LoadingComponent,
   ErrorComponent,
 });
 const SplitTranslations = split({
@@ -88,6 +89,9 @@ const Root = (
         <Link to="/redux-rpc">Redux RPC</Link>
       </li>
       <li>
+        <Link to="/rpc-error">RPC error</Link>
+      </li>
+      <li>
         <Link to="/404">404</Link>
       </li>
     </ul>
@@ -102,6 +106,7 @@ const Root = (
       <Route exact path="/csrf-token" component={CsrfProtectionExample} />
       <Route exact path="/redux" component={ReduxExample} />
       <Route exact path="/redux-rpc" component={RPCReduxExample} />
+      <Route exact path="/rpc-error" component={RPCError} />
       <Route component={PageNotFound} />
     </Switch>
   </div>
