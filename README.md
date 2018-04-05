@@ -6,7 +6,16 @@ CI and adhoc testing for cross browser API support using nightwatch, selenium an
 
 ## Cross-browser testing using Buildkite CI
 
-After each push Buildkite runs cross-browser UI tests over core libraries and plugins 
+After each push Buildkite runs cross-browser UI tests over core libraries and plugins
+
+### Running cross-browser tests locally
+
+You can run cross-browser tests locally leveraging docker and Sauce Labs by running the following:
+
+```
+docker-compose run
+SAUCE_USERNAME=... SAUCE_ACCESS_KEY=... BUILDKITE_BUILD_NUMBER=1 docker-compose run browser-tests .buildkite/run-all-tests.sh
+```
 
 ## Running Ad hoc chrome and firefox tests locally
 
@@ -17,26 +26,28 @@ In Firefox
 
 ## Running Ad hoc cross-browser tests remotely
 
-(For convenience you should add SAUCE\_USERNAME and SAUCE\_ACCESS_KEY as environment variables)
+(For convenience you should add SAUCE_USERNAME and SAUCE_ACCESS_KEY as environment variables)
 
-1. Start the app server\
-`yarn dev`
-1. Start sauce connect\
-`sc -u <saucelabs username> -k <saucelabs access key>`
-1. Run the tests remotely\
-run specific test: `yarn test-remote -- --env ie-11`\
-run all tests: `yarn test-remote`
+1.  Start the app server\
+    `yarn dev`
+1.  Start sauce connect\
+    `sc -u <saucelabs username> -k <saucelabs access key>`
+1.  Run the tests remotely\
+    run specific test: `yarn test-remote -- --env ie-11`\
+    run all tests: `yarn test-remote`
 
 ## The Tests
 
 ### Basic UI Test
+
 Runs simple UI over core fusion libraries and plugins. In theory should be sufficient to verify necessary API/polyfill support, though we should add more UI interactions to improve confidence level.
 
 ### Polyfills Test
+
 Off by default. Tests for a selection of ES2015+ utils which are not transpiled by Babel at buildtime. Tested utils are somewhat arbitary as not all are necessarily required by fusion, so only uncomment if you want to test for specific API/polyfill support.
 
-
 ## Nightwatch Configuration files
+
 * Buildkite: `nightwatch-ci.js`
 * Ad Hoc (local): `nightwatch.js`
 * Ad Hoc (remote): `nightwatch-remote.js`
@@ -46,6 +57,7 @@ Off by default. Tests for a selection of ES2015+ utils which are not transpiled 
 
 **Test environments**\
 e.g.
+
 ```js
 'chrome-mac': {
   desiredCapabilities: {
