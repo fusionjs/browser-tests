@@ -20,13 +20,13 @@ module.exports = {
       .waitForElementVisible('li#image', 2000)
       .click('li#image a')
       .waitForElementVisible('img', 2000)
-      .pause(1000)
 
       .waitForElementVisible('li#split', 2000)
       .click('li#split a')
       .waitForElementVisible('div#split-example', 2000)
-      .assert.containsText('div#split-example', 'This should be async loaded')
-      .pause(1000)
+      .assert.containsText('div#split-example', 'split-example')
+      .waitForElementVisible('div#split-deferred', 2000)
+      .assert.containsText('div#split-deferred', 'split-deferred')
 
       .waitForElementVisible('li#custom-fonts', 2000)
       .click('li#custom-fonts a')
@@ -46,7 +46,7 @@ module.exports = {
 
   'Chunk Loading': function(browser) {
     browser
-      .url('http://localhost:3001/split')
+      .url('http://localhost:3000/split')
       .waitForElementVisible('div', 2000)
       .waitForElementVisible('div#split-example', 2000)
       .assert.containsText('div#split-example', 'split-example')
