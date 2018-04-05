@@ -44,6 +44,15 @@ module.exports = {
       .end();
   },
 
+  'Chunk Loading': function(browser) {
+    browser
+      .url('http://localhost:3000/split-deferred')
+      .waitForElementVisible('div', 2000)
+      .waitForElementVisible('div#split-example', 2000)
+      .assert.containsText('div#split-example', 'This should be async loaded')
+      .end();
+  },
+
   'Polyfill Testing': function(browser) {
     // For reasons unknown. Nightmare overrides polyfills in execute functions.
     // So we need to insert polyfill results in the DOM
