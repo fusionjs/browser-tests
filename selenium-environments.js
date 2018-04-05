@@ -5,6 +5,9 @@ module.exports = {
     desiredCapabilities: {
       browserName: 'chrome',
       platform: 'macOS 10.12',
+      chromeOptions: {
+        args: ['auto-open-devtools-for-tabs'],
+      },
     },
   },
 

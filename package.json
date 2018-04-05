@@ -16,7 +16,7 @@
       "docker-compose down && docker-compose run browser-test-chrome",
     "test-firefox":
       "docker-compose down && docker-compose run browser-test-firefox",
-    "test-remote": "./test-remotely.sh",
+    "test": "./.buildkite/run-all-tests.sh",
     "cover": "fusion test --cover",
     "source-map-explorer": "fusion source-map-explorer",
     "check": "fusion check"

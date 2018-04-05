@@ -12,6 +12,7 @@ const settings = {
   custom_assertions_path: '',
   page_objects_path: '',
   globals_path: '',
+  openDevTools: true,
 
   selenium: {
     start_process: false,
