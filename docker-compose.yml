@@ -2,14 +2,14 @@ version: '2.1'
 services:
   fusion-server:
     build: .
-    command: yarn start --environment=development --port=3001
+    command: yarn start --environment=development
     expose:
-      - 3001
+      - 3000
     ports:
-      - "3001:3001"
+      - "3000:3000"
     network_mode: "host"
     healthcheck:
-      test: ["CMD-SHELL", "curl -H \"Accept: text/html\" -f http://localhost:3001 || exit 1"]
+      test: ["CMD-SHELL", "curl -H \"Accept: text/html\" -f http://localhost:3000 || exit 1"]
       interval: 5s
       timeout: 10s
       retries: 5
