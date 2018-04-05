@@ -32,7 +32,7 @@ const settings = {
       username: process.env.SAUCE_USERNAME,
       access_key: process.env.SAUCE_ACCESS_KEY,
       desiredCapabilities: {
-        'tunnel-identifier': JOB_IDENTIFIER,
+        browserName: 'chrome',
       },
     },
   },
