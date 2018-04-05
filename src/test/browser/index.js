@@ -51,7 +51,7 @@ module.exports = {
       .waitForElementVisible('div#split-example', 2000)
       .assert.containsText('div#split-example', 'split-example')
       .waitForElementVisible('div#split-deferred', 2000)
-      .assert.containsText('div#split-split-deferred', 'split-deferred')
+      .assert.containsText('div#split-deferred', 'split-deferred')
       .end();
   },
 
