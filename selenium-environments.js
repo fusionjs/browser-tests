@@ -5,6 +5,7 @@ module.exports = {
     desiredCapabilities: {
       browserName: 'chrome',
       platform: 'macOS 10.12',
+      extendedDebugging: true,
     },
   },
 
@@ -36,6 +37,7 @@ module.exports = {
       browserName: 'safari',
       platform: 'OS X 10.9',
       version: '7.0',
+      extendedDebugging: true,
     },
   },
 
