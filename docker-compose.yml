@@ -15,21 +15,21 @@ services:
       retries: 5
 
   chrome-standalone:
-    image: selenium/standalone-chrome:latest
+    image: selenium/standalone-chrome:latest@sha256:3c598426e44ba78c8289901cc095d787b18f4dcd69b5b75a366f2bfe503fcb7c
     network_mode: "host"    
     restart: always    
     ports:
       - "4444:4444"
 
   firefox-standalone:
-    image: selenium/standalone-firefox:latest
+    image: selenium/standalone-firefox:latest@sha256:4e8546d82e3d24d7f0289ae6586b5c9bd0d6ed16770fd0dfbbf0c6ddb05c0777
     network_mode: "host"    
     restart: always    
     ports:
       - "4444:4444"      
 
   sauce-tunnel:
-    image: henrrich/docker-sauce-connect:latest
+    image: henrrich/docker-sauce-connect:latest@sha256:9921657d1a3db8832f868ab25491363756abae52025a8d5af888aadc42ed31e9
     restart: always
     expose:
       - 4445
