@@ -3943,12 +3943,12 @@ fusion-plugin-i18n@^1.0.1:
     locale "^0.1.0"
     rollup "^0.55.5"
 
-fusion-plugin-jwt@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-jwt/-/fusion-plugin-jwt-1.0.3.tgz#f8bed08527511510e7d73afc16e05f03091ecb75"
+fusion-plugin-jwt@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-jwt/-/fusion-plugin-jwt-1.0.2.tgz#382526fa1668aa3cbca2fdf3dbce0b3661a16512"
   dependencies:
     jsonwebtoken "^8.1.1"
-    just-safe-get "^1.2.1"
+    just-safe-get "^1.2.0"
     just-safe-set "^2.0.1"
 
 fusion-plugin-node-performance-emitter@^1.0.2:
@@ -5949,7 +5949,7 @@ jsx-ast-utils@^2.0.1:
   dependencies:
     array-includes "^3.0.3"
 
-just-safe-get@^1.2.1:
+just-safe-get@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/just-safe-get/-/just-safe-get-1.2.1.tgz#b8ee4167d2e44866a1d5be3dd4b2688dd12b6c90"
 

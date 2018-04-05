@@ -46,7 +46,7 @@ module.exports = {
 
   'Chunk Loading': function(browser) {
     browser
-      .url('http://localhost:3001/split')
+      .url('http://localhost:3000/split')
       .execute(
         function() {
           return window.Promise;
