@@ -51,6 +51,7 @@ module.exports = {
   'Chunk Loading': function(browser) {
     browser
       .url('http://localhost:3001/split')
+      .waitForElementVisible('div#split-loading', 2000)
       .waitForElementVisible('div#split-example', 2000)
       .assert.containsText('div#split-example', 'This should be async loaded')
       .end();

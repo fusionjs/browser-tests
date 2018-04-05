@@ -23,8 +23,14 @@ const LoadingComponent = () => <div>Loading...</div>;
 const ErrorComponent = () => <div>Error loading bundle split component</div>;
 const SplitExample = split({
   defer: true,
-  load: () => import('./split-example'),
-  LoadingComponent,
+  load: () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(resolve, 500);
+    }).then(() => {
+      return import('./split-example');
+    });
+  },
+  LoadingComponent: () => <div id="split-loading">Loading...</div>,
   ErrorComponent,
 });
 const SplitTranslations = split({
