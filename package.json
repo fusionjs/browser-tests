@@ -12,8 +12,10 @@
     "build": "fusion build",
     "start": "fusion start",
     "download-selenium": "node download-selenium.js",
-    "test-chrome": "docker-compose down && docker-compose run browser-test-chrome",
-    "test-firefox": "docker-compose down && docker-compose run browser-test-firefox",
+    "test-chrome":
+      "docker-compose down && docker-compose run browser-test-chrome",
+    "test-firefox":
+      "docker-compose down && docker-compose run browser-test-firefox",
     "test-remote": "./test-remotely.sh",
     "cover": "fusion test --cover",
     "source-map-explorer": "fusion source-map-explorer",
@@ -21,7 +23,7 @@
   },
   "dependencies": {
     "fast-async": "^6.3.0",
-    "fusion-cli": "^1.0.2",
+    "fusion-cli": "1.3.1",
     "fusion-core": "^1.0.2",
     "fusion-plugin-browser-performance-emitter": "^1.0.2",
     "fusion-plugin-csrf-protection-react": "^1.0.2",
@@ -64,13 +66,11 @@
     "node-fetch": "^2.0.0",
     "prettier": "1.11.1",
     "react-addons-test-utils": "^15.6.2",
-    "react-hot-loader": "^4.0.0",
     "react-test-renderer": "^16.2.0",
     "request": "^2.83.0",
     "selenium-download": "^2.0.11",
     "tape": "^4.8.0"
   },
-  "clientHotLoaderEntry": "react-hot-loader/patch",
   "engines": {
     "node": ">= 8.9.0"
   },
