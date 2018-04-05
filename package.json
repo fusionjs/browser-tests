@@ -28,7 +28,7 @@
     "fusion-plugin-error-handling": "^1.0.2",
     "fusion-plugin-font-loader-react": "^1.0.2",
     "fusion-plugin-i18n-react": "^1.0.2",
-    "fusion-plugin-jwt": "^1.0.2",
+    "fusion-plugin-jwt": "^1.0.3",
     "fusion-plugin-node-performance-emitter": "^1.0.2",
     "fusion-plugin-react-redux": "^1.0.2",
     "fusion-plugin-react-router": "^1.0.2",
