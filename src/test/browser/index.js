@@ -6,51 +6,51 @@
 
 /* globals module */
 
+const DEFAULT_TIMEOUT = 10000;
 module.exports = {
   // This will test necessary polyfill support across browsers
   'Basic UI Test': function(browser) {
     browser
       .url('http://localhost:3000')
-      .waitForElementVisible('#root', 10000)
+      .waitForElementVisible('#root', DEFAULT_TIMEOUT)
       .assert.containsText('#root h1', 'Hello')
 
       // Check that the favicon plugin works
-      .waitForElementPresent('link[rel="icon"]', 10000)
+      .waitForElementPresent('link[rel="icon"]', DEFAULT_TIMEOUT)
 
-      .waitForElementVisible('li#image', 2000)
+      .waitForElementVisible('li#image', DEFAULT_TIMEOUT)
       .click('li#image a')
-      .waitForElementVisible('img', 2000)
+      .waitForElementVisible('img', DEFAULT_TIMEOUT)
 
-      .waitForElementVisible('li#split', 2000)
+      .waitForElementVisible('li#split', DEFAULT_TIMEOUT)
       .click('li#split a')
-      .waitForElementVisible('div#split-example', 2000)
+      .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
       .assert.containsText('div#split-example', 'split-example')
-      .waitForElementVisible('div#split-deferred', 2000)
+      .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
       .assert.containsText('div#split-deferred', 'split-deferred')
 
-      .waitForElementVisible('li#custom-fonts', 2000)
+      .waitForElementVisible('li#custom-fonts', DEFAULT_TIMEOUT)
       .click('li#custom-fonts a')
-      .waitForElementVisible('div#fancy-link-2', 2000)
+      .waitForElementVisible('div#fancy-link-2', DEFAULT_TIMEOUT)
       .expect.element('div#fancy-link-2')
       .to.have.css('font-family')
       .which.contains('lato');
     browser
 
-      .waitForElementVisible('li#translations', 2000)
+      .waitForElementVisible('li#translations', DEFAULT_TIMEOUT)
       .click('li#translations a')
-      .waitForElementVisible('li#doge-translation', 2000)
+      .waitForElementVisible('li#doge-translation', DEFAULT_TIMEOUT)
       .assert.containsText('li#doge-translation', 'doge')
-      .pause(1000)
       .end();
   },
 
   'Chunk Loading': function(browser) {
     browser
       .url('http://localhost:3000/split')
-      .waitForElementVisible('div', 2000)
-      .waitForElementVisible('div#split-example', 2000)
+      .waitForElementVisible('div', DEFAULT_TIMEOUT)
+      .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
       .assert.containsText('div#split-example', 'split-example')
-      .waitForElementVisible('div#split-deferred', 2000)
+      .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
       .assert.containsText('div#split-deferred', 'split-deferred')
       .end();
   },
@@ -61,24 +61,24 @@ module.exports = {
     // See /components/polyfill-tests.js
     browser
       .url('http://localhost:3000')
-      .waitForElementVisible('#root', 10000)
+      .waitForElementVisible('#root', DEFAULT_TIMEOUT)
       .click('#polyfills a')
-      .waitForElementVisible('#polyfills-root', 10000)
-      .waitForElementVisible('#symbol', 10000)
+      .waitForElementVisible('#polyfills-root', DEFAULT_TIMEOUT)
+      .waitForElementVisible('#symbol', DEFAULT_TIMEOUT)
       .assert.containsText('#symbol', 'symbol: true')
-      .waitForElementVisible('#assign', 10000)
+      .waitForElementVisible('#assign', DEFAULT_TIMEOUT)
       .assert.containsText('#assign', 'assign: true')
-      .waitForElementVisible('#arrayinclude', 10000)
+      .waitForElementVisible('#arrayinclude', DEFAULT_TIMEOUT)
       .assert.containsText('#arrayinclude', 'array.include: true')
-      .waitForElementVisible('#arrayfind', 10000)
+      .waitForElementVisible('#arrayfind', DEFAULT_TIMEOUT)
       .assert.containsText('#arrayfind', 'array.find: true')
-      .waitForElementVisible('#map', 10000)
+      .waitForElementVisible('#map', DEFAULT_TIMEOUT)
       .assert.containsText('#map', 'map: true')
-      .waitForElementVisible('#weakMap', 10000)
+      .waitForElementVisible('#weakMap', DEFAULT_TIMEOUT)
       .assert.containsText('#weakMap', 'weakMap: true')
-      .waitForElementVisible('#set', 10000)
+      .waitForElementVisible('#set', DEFAULT_TIMEOUT)
       .assert.containsText('#set', 'set: true')
-      .waitForElementVisible('#promise', 10000)
+      .waitForElementVisible('#promise', DEFAULT_TIMEOUT)
       .assert.containsText('#promise', 'promise: true')
       .end();
   },
