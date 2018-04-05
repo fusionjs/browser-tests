@@ -6,7 +6,7 @@
 
 /* globals module */
 
-const DEFAULT_TIMEOUT = 10000;
+const DEFAULT_TIMEOUT = 8000;
 module.exports = {
   // This will test necessary polyfill support across browsers
   'Basic UI Test': function(browser) {
