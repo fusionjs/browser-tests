@@ -22,5 +22,8 @@ export default (/* some provisioned db/micro-service */) => {
       rpcCount--;
       return {rpcCount};
     },
+    testError() {
+      throw new Error('Test RPC Failure');
+    },
   };
 };

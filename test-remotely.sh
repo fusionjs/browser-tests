@@ -3,7 +3,7 @@
 if [[ $1 = '' ]]
 then
   # run in series due to saucelabs concurrency limits
-  echo "### running tests against all browserssss"
+  echo "### running tests against all browsers"
 
   set -x
 
@@ -24,3 +24,5 @@ else
   echo "### running tests against $1"
   nightwatch --config nightwatch-ci.js --env $1
 fi
+
+yarn test-e2e
