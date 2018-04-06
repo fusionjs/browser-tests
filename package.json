@@ -36,7 +36,7 @@
     "fusion-plugin-react-router": "^1.0.2",
     "fusion-plugin-redux-action-emitter-enhancer": "^1.0.2",
     "fusion-plugin-rpc-redux-react": "^1.0.3",
-    "fusion-plugin-styletron-react": "^1.0.2",
+    "fusion-plugin-styletron-react": "^2.0.0",
     "fusion-plugin-universal-events-react": "^1.0.1",
     "fusion-plugin-universal-logger": "^1.0.2",
     "fusion-react": "^1.0.2",
