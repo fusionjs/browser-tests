@@ -30,6 +30,8 @@ steps:
       queue: workers
   - name: ':saucelabs: :selenium:'
     command: .buildkite/run-all-tests.sh
+    concurrency: 1
+    concurrency_group: "saucelabs"
     plugins:
       'docker-compose#v1.7.0':
         run: browser-tests
