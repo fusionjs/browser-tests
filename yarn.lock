@@ -3135,6 +3135,13 @@ fast-async@^6.3.1:
     nodent-compiler ">=3.1.7"
     nodent-runtime ">=3.2.0"
 
+fast-async@^6.3.2:
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/fast-async/-/fast-async-6.3.2.tgz#6ae7c4eae57057d59b9a7642d971122613695d96"
+  dependencies:
+    nodent-compiler ">=3.1.7"
+    nodent-runtime ">=3.2.0"
+
 fast-deep-equal@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-1.1.0.tgz#c053477817c86b51daa853c81e059b733d023614"
@@ -3478,9 +3485,9 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-fusion-cli@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/fusion-cli/-/fusion-cli-1.3.3.tgz#499aea807733bdd6df51654754692aaee51b9419"
+fusion-cli@^1.3.4:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/fusion-cli/-/fusion-cli-1.3.4.tgz#d1d5102c9322b885477424e6e3dea04b532707ef"
   dependencies:
     "@babel/core" "^7.0.0-beta.42"
     "@babel/plugin-external-helpers" "7.0.0-beta.44"
@@ -3608,9 +3615,9 @@ fusion-plugin-i18n@^1.0.1:
     locale "^0.1.0"
     rollup "^0.55.5"
 
-fusion-plugin-jwt@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-jwt/-/fusion-plugin-jwt-1.0.4.tgz#76b3eb57ba56bd64749c7d99fa02afc92d94dc79"
+fusion-plugin-jwt@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-jwt/-/fusion-plugin-jwt-1.0.5.tgz#8e4261fa1e080ba389c66ad287932cf4983c6b19"
   dependencies:
     jsonwebtoken "^8.1.1"
     just-safe-get "^1.2.1"
