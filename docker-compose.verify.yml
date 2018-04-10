@@ -1,0 +1,32 @@
+# The verification docker-compose file runs our services for the release-verification pipeline.
+# This is separate from the normal docker-compose as we mount node_modules as a volume in the verification process.
+version: '2.1'
+services:
+  fusion-server-verify:
+    extends:
+      file: docker-compose.yml
+      service: fusion-server
+    volumes:
+      - ./node_modules:/browser-tests/node_modules
+
+  chrome-standalone-verify:
+    extends:
+      file: docker-compose.yml
+      service: chrome-standalone
+
+  # wait for running server.
+  fusion-server-healthy-verify:
+    build: .
+    network_mode: "host"
+    depends_on:
+      fusion-server-verify:
+        condition: service_healthy
+
+  # For running verification integration tests in chrome
+  browser-test-chrome-verify:
+    build: .
+    network_mode: "host"
+    depends_on:
+      - chrome-standalone-verify
+      - fusion-server-healthy-verify
+    command: ./test-standalone.sh
