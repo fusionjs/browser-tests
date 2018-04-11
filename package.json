@@ -16,6 +16,8 @@
       "docker-compose down && docker-compose run browser-test-chrome",
     "test-firefox":
       "docker-compose down && docker-compose run browser-test-firefox",
+    "test-verification":
+      "docker-compose down && docker-compose -f docker-compose.verify.yml run browser-test-chrome-verify",
     "test": "./test-remotely.sh",
     "cover": "fusion test --cover",
     "source-map-explorer": "fusion source-map-explorer",
