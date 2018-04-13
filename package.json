@@ -12,13 +12,14 @@
     "build": "fusion build",
     "start": "fusion start",
     "download-selenium": "node download-selenium.js",
+    "test": "yarn run test-chrome",
     "test-chrome":
       "docker-compose down && docker-compose run browser-test-chrome",
     "test-firefox":
       "docker-compose down && docker-compose run browser-test-firefox",
     "test-verification":
       "docker-compose down && docker-compose -f docker-compose.verify.yml run browser-test-chrome-verify",
-    "test": "./test-remotely.sh",
+    "test-remote": "./test-remotely.sh",
     "cover": "fusion test --cover",
     "source-map-explorer": "fusion source-map-explorer",
     "check": "fusion check"
