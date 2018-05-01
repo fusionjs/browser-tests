@@ -15,7 +15,7 @@ services:
       retries: 5
 
   chrome-standalone:
-    image: selenium/standalone-chrome:latest@sha256:3c598426e44ba78c8289901cc095d787b18f4dcd69b5b75a366f2bfe503fcb7c
+    image: selenium/standalone-chrome:latest@sha256:8ed70f34249531df3f4d6dda762f06a07f21d194435869f1f124e62c75287ac9
     network_mode: "host"
     restart: always
     ports:
