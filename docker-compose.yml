@@ -22,7 +22,7 @@ services:
       - "4444:4444"
 
   firefox-standalone:
-    image: selenium/standalone-firefox:latest@sha256:4e8546d82e3d24d7f0289ae6586b5c9bd0d6ed16770fd0dfbbf0c6ddb05c0777
+    image: selenium/standalone-firefox:latest@sha256:2ecb0a03dca4fe445d161cfc1ff493b13a7f8d0c61d0d337c848f48d415c3e7b
     network_mode: "host"
     restart: always
     ports:
