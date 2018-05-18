@@ -3591,9 +3591,9 @@ fusion-plugin-csrf-protection@^1.0.1:
   dependencies:
     base64-url "^2.1.0"
 
-fusion-plugin-error-handling@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-1.0.3.tgz#4284d275ffcdd24d6cd48b319a1bde1056ecaa44"
+fusion-plugin-error-handling@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-error-handling/-/fusion-plugin-error-handling-1.0.5.tgz#6d1eaea5e634e3f6b8e8268812201e1a49ddfa84"
   dependencies:
     koa-bodyparser "4.2.0"
 
