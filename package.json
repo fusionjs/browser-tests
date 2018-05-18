@@ -13,12 +13,9 @@
     "start": "fusion start",
     "download-selenium": "node download-selenium.js",
     "test": "yarn run test-chrome",
-    "test-chrome":
-      "docker-compose down && docker-compose run browser-test-chrome",
-    "test-firefox":
-      "docker-compose down && docker-compose run browser-test-firefox",
-    "test-verification":
-      "docker-compose down && docker-compose -f docker-compose.verify.yml run browser-test-chrome-verify",
+    "test-chrome": "docker-compose down && docker-compose run browser-test-chrome",
+    "test-firefox": "docker-compose down && docker-compose run browser-test-firefox",
+    "test-verification": "docker-compose down && docker-compose -f docker-compose.verify.yml run browser-test-chrome-verify",
     "test-remote": "./test-remotely.sh",
     "cover": "fusion test --cover",
     "source-map-explorer": "fusion source-map-explorer",
@@ -30,7 +27,7 @@
     "fusion-core": "^1.2.2",
     "fusion-plugin-browser-performance-emitter": "^1.4.0",
     "fusion-plugin-csrf-protection-react": "^1.0.2",
-    "fusion-plugin-error-handling": "^1.0.3",
+    "fusion-plugin-error-handling": "^1.0.5",
     "fusion-plugin-font-loader-react": "^1.0.2",
     "fusion-plugin-i18n-react": "^1.0.2",
     "fusion-plugin-jwt": "^1.0.5",
