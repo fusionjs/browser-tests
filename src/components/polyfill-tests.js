@@ -2,16 +2,30 @@
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
+ *
+ * @flow
  */
 
 /* globals window */
 
 import React from 'react';
 
+type Props = empty;
+type State = {
+  symbol: ?boolean,
+  objectAssign: ?boolean,
+  arrayInclude: ?boolean,
+  arrayFind: ?boolean,
+  map: ?boolean,
+  promise: ?boolean,
+  weakMap: ?boolean,
+  set: ?boolean,
+};
+
 // For reasons unknown. Nightmare overrides polyfills in execute functions.
 // So we need to insert polyfill results in the DOM
-export default class PolyfillsTest extends React.Component {
-  constructor(props) {
+export default class PolyfillsTest extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       symbol: null,
@@ -102,30 +116,32 @@ export default class PolyfillsTest extends React.Component {
     return (
       <div id="polyfills-root">
         {this.state.symbol !== null ? (
-          <div id="symbol">{`symbol: ${this.state.symbol}`}</div>
+          <div id="symbol">{`symbol: ${String(this.state.symbol)}`}</div>
         ) : null}
         {this.state.objectAssign !== null ? (
-          <div id="assign">{`assign: ${this.state.objectAssign}`}</div>
+          <div id="assign">{`assign: ${String(this.state.objectAssign)}`}</div>
         ) : null}
         {this.state.arrayInclude !== null ? (
-          <div id="arrayinclude">{`array.include: ${
+          <div id="arrayinclude">{`array.include: ${String(
             this.state.arrayInclude
-          }`}</div>
+          )}`}</div>
         ) : null}
         {this.state.arrayFind !== null ? (
-          <div id="arrayfind">{`array.find: ${this.state.arrayFind}`}</div>
+          <div id="arrayfind">{`array.find: ${String(
+            this.state.arrayFind
+          )}`}</div>
         ) : null}
         {this.state.map !== null ? (
-          <div id="map">{`map: ${this.state.map}`}</div>
+          <div id="map">{`map: ${String(this.state.map)}`}</div>
         ) : null}
         {this.state.weakMap !== null ? (
-          <div id="weakMap">{`weakMap: ${this.state.weakMap}`}</div>
+          <div id="weakMap">{`weakMap: ${String(this.state.weakMap)}`}</div>
         ) : null}
         {this.state.set !== null ? (
-          <div id="set">{`set: ${this.state.set}`}</div>
+          <div id="set">{`set: ${String(this.state.set)}`}</div>
         ) : null}
         {this.state.promise !== null ? (
-          <div id="promise">{`promise: ${this.state.promise}`}</div>
+          <div id="promise">{`promise: ${String(this.state.promise)}`}</div>
         ) : null}
       </div>
     );

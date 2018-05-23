@@ -1,3 +1,11 @@
+/** Copyright (c) 2018 Uber Technologies, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @flow
+ */
+
 /* globals module, process, require */
 
 const environments = require('./selenium-environments');
@@ -38,5 +46,5 @@ const settings = {
   },
 };
 
-Object.assign(settings.test_settings, environments);
+settings.test_settings = {...settings.test_settings, ...environments};
 module.exports = settings;

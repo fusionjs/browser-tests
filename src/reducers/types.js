@@ -6,9 +6,9 @@
  * @flow
  */
 
-import React from 'react';
-import {assetUrl} from 'fusion-core';
-
-export default function Image() {
-  return <img src={assetUrl('../../static/test.png')} />;
-}
+export type State = {
+  count: number,
+  rpcCount: number,
+  loading: boolean,
+  error: string,
+};
