@@ -2,6 +2,8 @@
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
+ *
+ * @flow
  */
 
 import React, {Component} from 'react';
@@ -26,8 +28,11 @@ const FontedContainer = FontHOC('lato-regular')(
   }))
 );
 
-export default class CustomFonts extends Component {
-  constructor(props, context) {
+type Props = empty;
+type Context = empty;
+
+export default class CustomFonts extends Component<Props, Context> {
+  constructor(props: Props, context: Context) {
     super(props, context);
   }
   render() {

@@ -2,6 +2,8 @@
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
+ *
+ * @flow
  */
 
 /* globals module */
@@ -9,7 +11,7 @@
 const DEFAULT_TIMEOUT = 8000;
 module.exports = {
   // This will test necessary polyfill support across browsers
-  'Basic UI Test': function(browser) {
+  'Basic UI Test': function(browser: any) {
     browser
       .url('http://localhost:3000')
       .waitForElementVisible('#root', DEFAULT_TIMEOUT)
@@ -45,7 +47,7 @@ module.exports = {
       .end();
   },
 
-  // 'Chunk Loading': function(browser) {
+  // 'Chunk Loading': function(browser: any) {
   //   browser
   //     .url('http://localhost:3000/split')
   //     .waitForElementVisible('div', DEFAULT_TIMEOUT)
@@ -56,7 +58,7 @@ module.exports = {
   //     .end();
   // },
 
-  'Polyfill Testing': function(browser) {
+  'Polyfill Testing': function(browser: any) {
     // For reasons unknown. Nightmare overrides polyfills in execute functions.
     // So we need to insert polyfill results in the DOM
     // See /components/polyfill-tests.js
