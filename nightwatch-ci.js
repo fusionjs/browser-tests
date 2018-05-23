@@ -8,6 +8,8 @@
 
 /* globals module, process, require */
 
+require('@babel/register');
+
 const environments = require('./selenium-environments');
 
 const JOB_IDENTIFIER = process.env.BUILDKITE_BUILD_NUMBER;

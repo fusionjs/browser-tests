@@ -5,7 +5,9 @@
  *
  * @flow
  */
-/* globals module */
+/* globals module, require */
+
+require('@babel/register');
 
 module.exports = {
   src_folders: ['src/test/browser/index.js'],

@@ -51,6 +51,10 @@
     "winston": "^2.4.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "@babel/preset-flow": "^7.0.0-beta.47",
+    "@babel/register": "^7.0.0-beta.47",
     "babel-eslint": "^8.2.3",
     "enzyme": "^3.3.0",
     "eslint": "^4.19.1",
