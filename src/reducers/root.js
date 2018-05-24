@@ -13,7 +13,10 @@ import error from './error';
 
 import type {State} from './types.js';
 
-export default (state: State, action: Object) => {
+export default (state?: State, action: Object) => {
+  if (!state) {
+    return {};
+  }
   return {
     count: count(state.count, action),
     rpcCount: rpcCount(state.rpcCount, action),
