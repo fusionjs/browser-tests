@@ -91,7 +91,7 @@ export default function start() {
   if (__NODE__) {
     app.register(
       GetInitialStateToken,
-      async (): Object => {
+      async (): Promise<Object> => {
         return {};
       }
     );
