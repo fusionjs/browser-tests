@@ -89,9 +89,12 @@ export default function start() {
   app.register(EnhancerToken, ReduxActionEmitterEnhancer);
 
   if (__NODE__) {
-    app.register(GetInitialStateToken, async () => {
-      return {};
-    });
+    app.register(
+      GetInitialStateToken,
+      async (): Promise<Object> => {
+        return {};
+      }
+    );
     app.register(NodePerformanceEmitterToken, NodePerformanceEmitterPlugin);
     app.register(EventLoopLagIntervalToken, 1000 * 10);
     app.register(MemoryIntervalToken, 1000 * 10);
