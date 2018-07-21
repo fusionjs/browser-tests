@@ -65,7 +65,7 @@
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-prettier": "^2.6.1",
     "eslint-plugin-react": "^7.10.0",
-    "flow-bin": "^0.75.0",
+    "flow-bin": "^0.77.0",
     "nightmare": "^3.0.1",
     "nightwatch": "^0.9.21",
     "node-fetch": "^2.1.2",
