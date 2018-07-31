@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {split} from 'fusion-react-async';
+import {split} from 'fusion-react';
 
 const LoadingComponent = () => <div>Loading...</div>;
 const ErrorComponent = () => <div>Error loading bundle split component</div>;

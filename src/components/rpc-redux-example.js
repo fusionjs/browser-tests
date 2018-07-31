@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {withRPCRedux} from 'fusion-plugin-rpc-redux-react';
-import {prepared} from 'fusion-react-async';
+import {prepared} from 'fusion-react';
 import {connect} from 'react-redux';
 import {compose} from 'redux';
 
