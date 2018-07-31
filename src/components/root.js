@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {Route, Link, Switch, NotFound} from 'fusion-plugin-react-router';
-import {split} from 'fusion-react-async';
+import {split} from 'fusion-react';
 import Image from './image';
 import PolyfillTests from './polyfill-tests';
 import RPCReduxExample from './rpc-redux-example';
