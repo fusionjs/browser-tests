@@ -48,6 +48,7 @@
     "react-redux": "^5.0.7",
     "recompose": "^0.30.0",
     "redux": "^4.0.0",
+    "styletron-react": "^4.3.5",
     "unfetch": "^4.0.1"
   },
   "devDependencies": {
