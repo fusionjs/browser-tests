@@ -1752,8 +1752,8 @@ chrome-trace-event@^1.0.0:
     tslib "^1.9.0"
 
 ci-info@^1.5.0:
-  version "1.5.1"
-  resolved "https://registry.npmjs.org/ci-info/-/ci-info-1.5.1.tgz#17e8eb5de6f8b2b6038f0cbb714d410bfa9f3030"
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/ci-info/-/ci-info-1.6.0.tgz#2ca20dbb9ceb32d4524a683303313f0304b1e497"
 
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.4"
@@ -2053,7 +2053,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
 
 create-react-context@^0.2.2:
   version "0.2.3"
-  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
+  resolved "https://registry.npmjs.org/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
   dependencies:
     fbjs "^0.8.0"
     gud "^1.0.0"
@@ -3412,9 +3412,9 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-fusion-cli@^1.10.3:
-  version "1.10.3"
-  resolved "https://registry.npmjs.org/fusion-cli/-/fusion-cli-1.10.3.tgz#aa7ee80fa6257bced5cce555468c8042a1334b8d"
+fusion-cli@^1.10.4:
+  version "1.10.4"
+  resolved "https://registry.npmjs.org/fusion-cli/-/fusion-cli-1.10.4.tgz#85d59f7f514c6822c566765085599e0a229e062b"
   dependencies:
     "@babel/core" "^7.0.1"
     "@babel/plugin-syntax-dynamic-import" "7.0.0"
@@ -3466,9 +3466,9 @@ fusion-cli@^1.10.3:
     webpack-hot-middleware "^2.24.0"
     winston "^3.1.0"
 
-fusion-core@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.npmjs.org/fusion-core/-/fusion-core-1.6.0.tgz#397935d0e045df30751a70f10fae739f0557fc09"
+fusion-core@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.npmjs.org/fusion-core/-/fusion-core-1.6.1.tgz#4ef8ddb91b5c2dcbb15c4d379974c66a267b0cd6"
   dependencies:
     koa "^2.4.1"
     koa-compose "^4.0.0"
@@ -3506,14 +3506,14 @@ fusion-plugin-font-loader-react@^1.0.6:
   dependencies:
     prop-types "^15.6.2"
 
-fusion-plugin-i18n-react@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/fusion-plugin-i18n-react/-/fusion-plugin-i18n-react-1.0.4.tgz#4e32bd0d9baf42cdd5ed99ee5d780310828c0436"
+fusion-plugin-i18n-react@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/fusion-plugin-i18n-react/-/fusion-plugin-i18n-react-1.1.0.tgz#a5198dcef8866d4c6ae08e3cce82b63aab12c101"
   dependencies:
-    fusion-plugin-i18n "^1.0.5"
-    prop-types "^15.6.1"
+    fusion-plugin-i18n "^1.1.1"
+    prop-types "^15.6.2"
 
-fusion-plugin-i18n@^1.0.5:
+fusion-plugin-i18n@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/fusion-plugin-i18n/-/fusion-plugin-i18n-1.1.1.tgz#486af1fde00eeed467d694cc7ac5815f2e7ac228"
   dependencies:
@@ -3529,12 +3529,12 @@ fusion-plugin-jwt@^1.0.6:
     just-safe-get "^1.2.1"
     just-safe-set "^2.0.1"
 
-fusion-plugin-node-performance-emitter@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/fusion-plugin-node-performance-emitter/-/fusion-plugin-node-performance-emitter-1.0.4.tgz#a956b7f9eb4418184a4efab1e5b56b8f879a26ea"
+fusion-plugin-node-performance-emitter@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npmjs.org/fusion-plugin-node-performance-emitter/-/fusion-plugin-node-performance-emitter-1.0.5.tgz#48f184ed77aebe342f9ec4ce41e65bf0cd293acf"
   dependencies:
     assert "^1.4.1"
-    gc-profiler "^1.4.0"
+    gc-stats "^1.2.0"
 
 fusion-plugin-react-redux@^1.0.9:
   version "1.0.9"
@@ -3636,11 +3636,12 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-gc-profiler@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.npmjs.org/gc-profiler/-/gc-profiler-1.4.0.tgz#1a8c4965a8d792b3be6138f8e8ae27ea861731a6"
+gc-stats@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/gc-stats/-/gc-stats-1.2.0.tgz#c32845148f3f842064d5aafcc427306e523894f4"
   dependencies:
-    nan "^2.0.8"
+    nan "^2.10.0"
+    node-pre-gyp "^0.10.0"
 
 get-caller-file@^1.0.1:
   version "1.0.3"
@@ -3800,7 +3801,7 @@ growly@^1.3.0:
 
 gud@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
+  resolved "https://registry.npmjs.org/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
 
 gzip-size@3.0.0:
   version "3.0.0"
@@ -5821,7 +5822,7 @@ mz@^2.7.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-nan@^2.0.8, nan@^2.9.2:
+nan@^2.10.0, nan@^2.9.2:
   version "2.11.0"
   resolved "https://registry.npmjs.org/nan/-/nan-2.11.0.tgz#574e360e4d954ab16966ec102c0c049fd961a099"
 
@@ -6239,8 +6240,8 @@ opn@5.2.0:
     is-wsl "^1.1.0"
 
 opn@^5.2.0:
-  version "5.3.0"
-  resolved "https://registry.npmjs.org/opn/-/opn-5.3.0.tgz#64871565c863875f052cfdf53d3e3cb5adb53b1c"
+  version "5.4.0"
+  resolved "https://registry.npmjs.org/opn/-/opn-5.4.0.tgz#cb545e7aab78562beb11aa3bfabc7042e1761035"
   dependencies:
     is-wsl "^1.1.0"
 
@@ -6862,7 +6863,7 @@ react-lifecycles-compat@^3.0.2:
 
 react-redux@^5.0.7:
   version "5.0.7"
-  resolved "https://registry.npmjs.org/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
+  resolved "http://registry.npmjs.org/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
   dependencies:
     hoist-non-react-statics "^2.5.0"
     invariant "^2.0.0"
@@ -7828,14 +7829,14 @@ styletron-engine-atomic@^1.0.5:
 
 styletron-react-core@^1.3.2:
   version "1.3.2"
-  resolved "https://registry.yarnpkg.com/styletron-react-core/-/styletron-react-core-1.3.2.tgz#919f9e55e555d8bd66957e11c98c00d1d6e559f9"
+  resolved "https://registry.npmjs.org/styletron-react-core/-/styletron-react-core-1.3.2.tgz#919f9e55e555d8bd66957e11c98c00d1d6e559f9"
   dependencies:
     create-react-context "^0.2.2"
     prop-types "^15.6.0"
 
 styletron-react@^4.3.5:
   version "4.3.5"
-  resolved "https://registry.yarnpkg.com/styletron-react/-/styletron-react-4.3.5.tgz#f85515fa83de41e2f73c029c82524ada0c8bbe81"
+  resolved "https://registry.npmjs.org/styletron-react/-/styletron-react-4.3.5.tgz#f85515fa83de41e2f73c029c82524ada0c8bbe81"
   dependencies:
     prop-types "^15.6.0"
     styletron-react-core "^1.3.2"
@@ -8223,14 +8224,14 @@ union-value@^1.0.0:
     set-value "^0.4.3"
 
 unique-filename@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npmjs.org/unique-filename/-/unique-filename-1.1.0.tgz#d05f2fe4032560871f30e93cbe735eea201514f3"
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/unique-filename/-/unique-filename-1.1.1.tgz#1d69769369ada0583103a1e6ae87681b56573230"
   dependencies:
     unique-slug "^2.0.0"
 
 unique-slug@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/unique-slug/-/unique-slug-2.0.0.tgz#db6676e7c7cc0629878ff196097c78855ae9f4ab"
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/unique-slug/-/unique-slug-2.0.1.tgz#5e9edc6d1ce8fb264db18a507ef9bd8544451ca6"
   dependencies:
     imurmurhash "^0.1.4"
 
@@ -8391,8 +8392,8 @@ webidl-conversions@^4.0.2:
   resolved "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
 webpack-hot-middleware@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.npmjs.org/webpack-hot-middleware/-/webpack-hot-middleware-2.24.0.tgz#d67ae5107edff29debbab3631a424c998856fd47"
+  version "2.24.1"
+  resolved "https://registry.npmjs.org/webpack-hot-middleware/-/webpack-hot-middleware-2.24.1.tgz#52fcc54fd4e5f962af2440ce8ed37717f1a5e81c"
   dependencies:
     ansi-html "0.0.7"
     html-entities "^1.2.0"
@@ -8400,8 +8401,8 @@ webpack-hot-middleware@^2.24.0:
     strip-ansi "^3.0.0"
 
 webpack-sources@^1.0.1, webpack-sources@^1.1.0, webpack-sources@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-1.2.0.tgz#18181e0d013fce096faf6f8e6d41eeffffdceac2"
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-1.3.0.tgz#2a28dcb9f1f45fe960d8f1493252b5ee6530fa85"
   dependencies:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
