@@ -5,7 +5,7 @@ then
   # run in series due to saucelabs concurrency limits
   echo "### running tests against all browsers"
 
-  set -x
+  set -ex
 
   nightwatch --config nightwatch-ci.js --env chrome-mac
   nightwatch --config nightwatch-ci.js --env chrome-windows
