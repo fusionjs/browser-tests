@@ -93,12 +93,12 @@ module.exports = {
     },
   },
 
-  'iPhone-5C': {
+  'iPhone-5s': {
     desiredCapabilities: {
       browserName: 'Safari',
-      deviceName: 'iPhone 5C Simulator',
+      deviceName: 'iPhone 5s Simulator',
       deviceOrientation: 'portrait',
-      platformVersion: '9.1',
+      platformVersion: '9.3',
       platformName: 'iOS',
     },
   },

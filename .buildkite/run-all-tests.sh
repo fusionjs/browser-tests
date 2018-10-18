@@ -13,7 +13,7 @@ nightwatch --config nightwatch-ci.js --env ie-11
 nightwatch --config nightwatch-ci.js --env edge
 nightwatch --config nightwatch-ci.js --env samsung-S3
 nightwatch --config nightwatch-ci.js --env samsung-G4
-nightwatch --config nightwatch-ci.js --env iPhone-5C
+nightwatch --config nightwatch-ci.js --env iPhone-5s
 # skipping iphone X for now as tests are taking a very long time to complete
 # nightwatch --config nightwatch-ci.js --env iPhone-X
 nightwatch --config nightwatch-ci.js --env kindleFire
