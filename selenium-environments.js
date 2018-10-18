@@ -40,11 +40,11 @@ module.exports = {
     },
   },
 
-  'safari-7': {
+  'safari-12': {
     desiredCapabilities: {
       browserName: 'safari',
-      platform: 'OS X 10.9',
-      version: '7.0',
+      platform: 'OS X 10.13',
+      version: '12.0',
       extendedDebugging: true,
     },
   },
@@ -93,12 +93,12 @@ module.exports = {
     },
   },
 
-  'iPhone-4S': {
+  'iPhone-5C': {
     desiredCapabilities: {
       browserName: 'Safari',
-      deviceName: 'iPhone 4s Simulator',
+      deviceName: 'iPhone 5C Simulator',
       deviceOrientation: 'portrait',
-      platformVersion: '8.1',
+      platformVersion: '9.1',
       platformName: 'iOS',
     },
   },
