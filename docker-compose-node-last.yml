@@ -1,7 +1,10 @@
 version: '2.1'
 services:
-  fusion-server:
-    build: .
+  fusion-server-node-last:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: 'uber/web-base-image:1.0.9'
     command: yarn start --environment=development
     expose:
       - 3000
@@ -18,21 +21,21 @@ services:
       timeout: 10s
       retries: 5
 
-  chrome-standalone:
+  chrome-standalone-node-last:
     image: selenium/standalone-chrome:latest@sha256:05fb982f176c8c836b188f85557e3c7ea6f291911c394200643862ef9b266155
     network_mode: 'host'
     restart: always
     ports:
       - '4444:4444'
 
-  firefox-standalone:
+  firefox-standalone-node-last:
     image: selenium/standalone-firefox:latest@sha256:ee0abb000eb116e1ed3299ad887390539835887369cc2caf52889806315856cb
     network_mode: 'host'
     restart: always
     ports:
       - '4444:4444'
 
-  sauce-tunnel:
+  sauce-tunnel-node-last:
     image: henrrich/docker-sauce-connect:latest@sha256:9921657d1a3db8832f868ab25491363756abae52025a8d5af888aadc42ed31e9
     restart: always
     expose:
@@ -65,28 +68,37 @@ services:
       retries: 10
 
   # docker-compose run does not wait on healthchecks, so proxy using this service.
-  sauce-tunnel-healthy:
-    build: .
+  sauce-tunnel-healthy-node-last:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: 'uber/web-base-image:1.0.9'
     network_mode: 'host'
     depends_on:
-      sauce-tunnel:
+      sauce-tunnel-node-last:
         condition: service_healthy
 
   # wait for running server.
-  fusion-server-healthy:
-    build: .
+  fusion-server-healthy-node-last:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: 'uber/web-base-image:1.0.9'
     network_mode: 'host'
     depends_on:
-      fusion-server:
+      fusion-server-node-last:
         condition: service_healthy
 
   # For running integration tests in CI
-  browser-tests:
-    build: .
+  browser-tests-node-last:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: 'uber/web-base-image:1.0.9'
     network_mode: 'host'
     depends_on:
-      - sauce-tunnel-healthy
-      - fusion-server-healthy
+      - sauce-tunnel-healthy-node-last
+      - fusion-server-healthy-node-last
     environment:
       - SAUCE_USERNAME
       - SAUCE_ACCESS_KEY
@@ -94,26 +106,35 @@ services:
 
   # For running linters and static analysis
   browser-tests-linters:
-    build: .
+    build:
+      context: .
+      args:
+        BASE_IMAGE: 'uber/web-base-image:1.0.9'
     environment:
       - SAUCE_USERNAME
       - SAUCE_ACCESS_KEY
       - BUILDKITE_BUILD_NUMBER
 
   # For running integration tests locally in chrome
-  browser-test-chrome:
-    build: .
+  browser-test-chrome-node-last:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: 'uber/web-base-image:1.0.9'
     network_mode: 'host'
     depends_on:
-      - chrome-standalone
-      - fusion-server-healthy
+      - chrome-standalone-node-last
+      - fusion-server-healthy-node-last
     command: ./test-standalone.sh
 
   # For running integration tests locally in firefox
-  browser-test-firefox:
-    build: .
+  browser-test-firefox-node-last:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: 'uber/web-base-image:1.0.9'
     network_mode: 'host'
     depends_on:
-      - firefox-standalone
-      - fusion-server-healthy
+      - firefox-standalone-node-last
+      - fusion-server-healthy-node-last
     command: ./test-standalone.sh

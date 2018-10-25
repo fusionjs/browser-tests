@@ -10,6 +10,7 @@ steps:
     plugins:
       'docker-compose#v1.7.0':
         build: browser-tests-node-last
+        config: docker-compose-node-last.yml
         image-repository: 027047743804.dkr.ecr.us-east-2.amazonaws.com/uber
     agents:
       queue: builders
@@ -24,6 +25,7 @@ steps:
     plugins:
       'docker-compose#v1.7.0':
         build: browser-tests-linters-node-last
+        config: docker-compose-node-last.yml
         image-repository: 027047743804.dkr.ecr.us-east-2.amazonaws.com/uber
     agents:
       queue: builders
@@ -40,6 +42,7 @@ steps:
     plugins:
       'docker-compose#v1.7.0':
         run: browser-tests-linters-node-last
+        config: docker-compose-node-last.yml
     agents:
       queue: workers
   - name: ':eslint:'
@@ -54,6 +57,7 @@ steps:
     plugins:
       'docker-compose#v1.7.0':
         run: browser-tests-linters-node-last
+        config: docker-compose-node-last.yml
     agents:
       queue: workers
   - name: ':saucelabs: :selenium:'
@@ -72,5 +76,6 @@ steps:
     plugins:
       'docker-compose#v1.7.0':
         run: browser-tests-node-last
+        config: docker-compose-node-last.yml
     agents:
       queue: workers
