@@ -105,7 +105,7 @@ services:
       - BUILDKITE_BUILD_NUMBER
 
   # For running linters and static analysis
-  browser-tests-linters:
+  browser-tests-linters-node-last:
     build:
       context: .
       args:
