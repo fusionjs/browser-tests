@@ -22,7 +22,7 @@ services:
       retries: 5
 
   chrome-standalone-node-last:
-    image: selenium/standalone-chrome:latest@sha256:05fb982f176c8c836b188f85557e3c7ea6f291911c394200643862ef9b266155
+    image: selenium/standalone-chrome:latest@sha256:8f265a536bb69b89c029bb05024a11eaa71315b89ad51deda05a4e9d6b942cfd
     network_mode: 'host'
     restart: always
     ports:
