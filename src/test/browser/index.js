@@ -24,7 +24,6 @@ module.exports = {
       .click('li#image a')
       .waitForElementVisible('img', DEFAULT_TIMEOUT)
 
-      // TODO: uncomment once we can dependably make these pass
       .waitForElementVisible('li#split', DEFAULT_TIMEOUT)
       .click('li#split a')
       .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)

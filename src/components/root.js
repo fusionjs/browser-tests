@@ -62,9 +62,6 @@ const Root = (
         <Link to="/split">Split</Link>
       </li>
       <li>
-        <Link to="/split-deferred">Split (Deferred)</Link>
-      </li>
-      <li>
         <Link to="/styletron">CSS styled (Styletron)</Link>
       </li>
       <li id="custom-fonts">
