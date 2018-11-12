@@ -73,6 +73,7 @@ module.exports = {
 
   edge: {
     desiredCapabilities: {
+      platform: 'Windows 10',
       browserName: 'MicrosoftEdge',
     },
   },
