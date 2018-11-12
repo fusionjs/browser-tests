@@ -25,12 +25,12 @@ module.exports = {
       .waitForElementVisible('img', DEFAULT_TIMEOUT)
 
       // TODO: uncomment once we can dependably make these pass
-      // .waitForElementVisible('li#split', DEFAULT_TIMEOUT)
-      // .click('li#split a')
-      // .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
-      // .assert.containsText('div#split-example', 'split-example')
-      // .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
-      // .assert.containsText('div#split-deferred', 'split-deferred')
+      .waitForElementVisible('li#split', DEFAULT_TIMEOUT)
+      .click('li#split a')
+      .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
+      .assert.containsText('div#split-example', 'split-example')
+      .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
+      .assert.containsText('div#split-deferred', 'split-deferred')
 
       .waitForElementVisible('li#custom-fonts', DEFAULT_TIMEOUT)
       .click('li#custom-fonts a')
@@ -47,16 +47,16 @@ module.exports = {
       .end();
   },
 
-  // 'Chunk Loading': function(browser: any) {
-  //   browser
-  //     .url('http://localhost:3000/split')
-  //     .waitForElementVisible('div', DEFAULT_TIMEOUT)
-  //     .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
-  //     .assert.containsText('div#split-example', 'split-example')
-  //     .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
-  //     .assert.containsText('div#split-deferred', 'split-deferred')
-  //     .end();
-  // },
+  'Chunk Loading': function(browser: any) {
+    browser
+      .url('http://localhost:3000/split')
+      .waitForElementVisible('div', DEFAULT_TIMEOUT)
+      .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
+      .assert.containsText('div#split-example', 'split-example')
+      .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
+      .assert.containsText('div#split-deferred', 'split-deferred')
+      .end();
+  },
 
   'Polyfill Testing': function(browser: any) {
     // For reasons unknown. Nightmare overrides polyfills in execute functions.
