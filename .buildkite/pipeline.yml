@@ -1,11 +1,4 @@
 steps:
-  - name: ':docker: :package: tests'
-    plugins:
-      'docker-compose#v1.7.0':
-        build: browser-tests
-        image-repository: 027047743804.dkr.ecr.us-east-2.amazonaws.com/uber
-    agents:
-      queue: builders
   - name: ':docker: :package: tests node8'
     plugins:
       'docker-compose#v1.7.0':
@@ -15,30 +8,6 @@ steps:
     agents:
       queue: builders
   - wait
-  - command: yarn flow
-    name: ':flowtype:'
-    plugins:
-      'docker-compose#v1.7.0':
-        run: browser-tests-linters
-    agents:
-      queue: workers
-  - command: yarn flow
-    name: ':flowtype: node8'
-    plugins:
-      'docker-compose#v1.7.0':
-        run: browser-tests-linters-node-last
-        config: docker-compose-node-last.yml
-    agents:
-      queue: workers
-  - name: ':saucelabs: :selenium:'
-    command: .buildkite/run-all-tests.sh
-    concurrency: 1
-    concurrency_group: saucelabs
-    plugins:
-      'docker-compose#v1.7.0':
-        run: browser-tests
-    agents:
-      queue: workers
   - name: ':saucelabs: :selenium: node8'
     command: .buildkite/run-all-tests.sh
     concurrency: 1
