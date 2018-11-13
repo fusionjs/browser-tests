@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+set -ex
 
 # run in series due to saucelabs concurrency limits
 nightwatch --config nightwatch-ci.js --env chrome-mac
