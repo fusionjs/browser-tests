@@ -5,17 +5,17 @@ services:
       context: .
       args:
         BASE_IMAGE: 'uber/web-base-image:1.0.9'
-    command: yarn start --environment=development
+    command: yarn start --environment=development --port=3004
     expose:
-      - 3000
+      - 3004
     ports:
-      - '3000:3000'
+      - '3004:3004'
     network_mode: 'host'
     healthcheck:
       test:
         [
           'CMD-SHELL',
-          'curl -H "Accept: text/html" -f http://localhost:3000 || exit 1',
+          'curl -H "Accept: text/html" -f http://localhost:3004 || exit 1',
         ]
       interval: 5s
       timeout: 10s

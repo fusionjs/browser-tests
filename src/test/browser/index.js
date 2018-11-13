@@ -13,7 +13,7 @@ module.exports = {
   // This will test necessary polyfill support across browsers
   'Basic UI Test': function(browser: any) {
     browser
-      .url('http://localhost:3000')
+      .url('http://localhost:3004')
       .waitForElementVisible('#root', DEFAULT_TIMEOUT)
       .assert.containsText('#root h1', 'Hello')
 
@@ -48,7 +48,7 @@ module.exports = {
 
   'Chunk Loading': function(browser: any) {
     browser
-      .url('http://localhost:3000/split')
+      .url('http://localhost:3004/split')
       .waitForElementVisible('div', DEFAULT_TIMEOUT)
       .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
       .assert.containsText('div#split-example', 'split-example')
@@ -62,7 +62,7 @@ module.exports = {
     // So we need to insert polyfill results in the DOM
     // See /components/polyfill-tests.js
     browser
-      .url('http://localhost:3000')
+      .url('http://localhost:3004')
       .waitForElementVisible('#root', DEFAULT_TIMEOUT)
       .click('#polyfills a')
       .waitForElementVisible('#polyfills-root', DEFAULT_TIMEOUT)
