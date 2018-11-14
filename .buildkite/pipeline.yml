@@ -1,31 +1,19 @@
 steps:
   - name: ':docker: :package: tests'
     plugins:
-      'docker-compose#v1.7.0':
-        build: browser-tests
-        image-repository: 027047743804.dkr.ecr.us-east-2.amazonaws.com/uber
-    agents:
-      queue: builders
-  - name: ':docker: :package: tests node8'
-    plugins:
-      'docker-compose#v1.7.0':
-        build: browser-tests-node-last
-        config: docker-compose-node-last.yml
+      'rtsao/docker-compose#e47c1ae':
+        build:
+          - browser-tests
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
         image-repository: 027047743804.dkr.ecr.us-east-2.amazonaws.com/uber
     agents:
       queue: builders
   - name: ':docker: :package: linters'
     plugins:
-      'docker-compose#v1.7.0':
+      'rtsao/docker-compose#e47c1ae':
         build: browser-tests-linters
-        image-repository: 027047743804.dkr.ecr.us-east-2.amazonaws.com/uber
-    agents:
-      queue: builders
-  - name: ':docker: :package: linters node8'
-    plugins:
-      'docker-compose#v1.7.0':
-        build: browser-tests-linters-node-last
-        config: docker-compose-node-last.yml
         image-repository: 027047743804.dkr.ecr.us-east-2.amazonaws.com/uber
     agents:
       queue: builders
@@ -33,49 +21,144 @@ steps:
   - command: yarn flow
     name: ':flowtype:'
     plugins:
-      'docker-compose#v1.7.0':
+      'rtsao/docker-compose#e47c1ae':
         run: browser-tests-linters
-    agents:
-      queue: workers
-  - command: yarn flow
-    name: ':flowtype: node8'
-    plugins:
-      'docker-compose#v1.7.0':
-        run: browser-tests-linters-node-last
-        config: docker-compose-node-last.yml
     agents:
       queue: workers
   - name: ':eslint:'
     command: yarn lint
     plugins:
-      'docker-compose#v1.7.0':
+      'rtsao/docker-compose#e47c1ae':
         run: browser-tests-linters
     agents:
       queue: workers
-  - name: ':eslint: node8'
-    command: yarn lint
-    plugins:
-      'docker-compose#v1.7.0':
-        run: browser-tests-linters-node-last
-        config: docker-compose-node-last.yml
-    agents:
-      queue: workers
-  - name: ':saucelabs: :selenium:'
-    command: .buildkite/run-all-tests.sh
-    concurrency: 1
+  - name: ':saucelabs: :selenium: :safari: 9'
+    command: ./test-remotely.sh safari-9
+    concurrency: 5
     concurrency_group: saucelabs
     plugins:
-      'docker-compose#v1.7.0':
+      'rtsao/docker-compose#e47c1ae':
         run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
     agents:
       queue: workers
-  - name: ':saucelabs: :selenium: node8'
-    command: .buildkite/run-all-tests.sh
-    concurrency: 1
+  - name: ':saucelabs: :selenium: :safari: 11'
+    command: ./test-remotely.sh safari-11
+    concurrency: 5
     concurrency_group: saucelabs
     plugins:
-      'docker-compose#v1.7.0':
-        run: browser-tests-node-last
-        config: docker-compose-node-last.yml
+      'rtsao/docker-compose#e47c1ae':
+        run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
+    agents:
+      queue: workers
+  - name: ':saucelabs: :selenium: :safari: 12'
+    command: ./test-remotely.sh safari-12
+    concurrency: 5
+    concurrency_group: saucelabs
+    plugins:
+      'rtsao/docker-compose#e47c1ae':
+        run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
+    agents:
+      queue: workers
+  - name: ':saucelabs: :selenium: :ie: 9'
+    command: ./test-remotely.sh ie-9
+    concurrency: 5
+    concurrency_group: saucelabs
+    plugins:
+      'rtsao/docker-compose#e47c1ae':
+        run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
+    agents:
+      queue: workers
+  - name: ':saucelabs: :selenium: :ie: 11'
+    command: ./test-remotely.sh ie-11
+    concurrency: 5
+    concurrency_group: saucelabs
+    plugins:
+      'rtsao/docker-compose#e47c1ae':
+        run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
+    agents:
+      queue: workers
+  - name: ':saucelabs: :selenium: :edge:'
+    command: ./test-remotely.sh edge
+    concurrency: 5
+    concurrency_group: saucelabs
+    plugins:
+      'rtsao/docker-compose#e47c1ae':
+        run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
+    agents:
+      queue: workers
+  - name: ':saucelabs: :selenium: :android: Samsung S3'
+    command: ./test-remotely.sh samsung-S3
+    concurrency: 5
+    concurrency_group: saucelabs
+    plugins:
+      'rtsao/docker-compose#e47c1ae':
+        run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
+    agents:
+      queue: workers
+  - name: ':saucelabs: :selenium: :android: Samsung G4'
+    command: ./test-remotely.sh samsung-G4
+    concurrency: 5
+    concurrency_group: saucelabs
+    plugins:
+      'rtsao/docker-compose#e47c1ae':
+        run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
+    agents:
+      queue: workers
+  - name: ':saucelabs: :selenium: :iphone: 5S'
+    command: ./test-remotely.sh iPhone-5s
+    concurrency: 5
+    concurrency_group: saucelabs
+    plugins:
+      'rtsao/docker-compose#e47c1ae':
+        run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
+    agents:
+      queue: workers
+  - name: ':saucelabs: :selenium: Kindle Fire'
+    command: ./test-remotely.sh kindleFire
+    concurrency: 5
+    concurrency_group: saucelabs
+    plugins:
+      'rtsao/docker-compose#e47c1ae':
+        run: browser-tests
+        pull:
+          - fusion-server
+          - sauce-tunnel-healthy
+          - fusion-server-healthy
     agents:
       queue: workers

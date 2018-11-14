@@ -9,11 +9,12 @@
 /* globals module */
 
 const DEFAULT_TIMEOUT = 8000;
+const URL = 'http://fusion-server:3000';
 module.exports = {
   // This will test necessary polyfill support across browsers
   'Basic UI Test': function(browser: any) {
     browser
-      .url('http://localhost:3000')
+      .url(URL)
       .waitForElementVisible('#root', DEFAULT_TIMEOUT)
       .assert.containsText('#root h1', 'Hello')
 
@@ -24,13 +25,12 @@ module.exports = {
       .click('li#image a')
       .waitForElementVisible('img', DEFAULT_TIMEOUT)
 
-      // TODO: uncomment once we can dependably make these pass
-      // .waitForElementVisible('li#split', DEFAULT_TIMEOUT)
-      // .click('li#split a')
-      // .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
-      // .assert.containsText('div#split-example', 'split-example')
-      // .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
-      // .assert.containsText('div#split-deferred', 'split-deferred')
+      .waitForElementVisible('li#split', DEFAULT_TIMEOUT)
+      .click('li#split a')
+      .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
+      .assert.containsText('div#split-example', 'split-example')
+      .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
+      .assert.containsText('div#split-deferred', 'split-deferred')
 
       .waitForElementVisible('li#custom-fonts', DEFAULT_TIMEOUT)
       .click('li#custom-fonts a')
@@ -47,23 +47,23 @@ module.exports = {
       .end();
   },
 
-  // 'Chunk Loading': function(browser: any) {
-  //   browser
-  //     .url('http://localhost:3000/split')
-  //     .waitForElementVisible('div', DEFAULT_TIMEOUT)
-  //     .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
-  //     .assert.containsText('div#split-example', 'split-example')
-  //     .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
-  //     .assert.containsText('div#split-deferred', 'split-deferred')
-  //     .end();
-  // },
+  'Chunk Loading': function(browser: any) {
+    browser
+      .url(`${URL}/split`)
+      .waitForElementVisible('div', DEFAULT_TIMEOUT)
+      .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
+      .assert.containsText('div#split-example', 'split-example')
+      .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
+      .assert.containsText('div#split-deferred', 'split-deferred')
+      .end();
+  },
 
   'Polyfill Testing': function(browser: any) {
     // For reasons unknown. Nightmare overrides polyfills in execute functions.
     // So we need to insert polyfill results in the DOM
     // See /components/polyfill-tests.js
     browser
-      .url('http://localhost:3000')
+      .url(URL)
       .waitForElementVisible('#root', DEFAULT_TIMEOUT)
       .click('#polyfills a')
       .waitForElementVisible('#polyfills-root', DEFAULT_TIMEOUT)

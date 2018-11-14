@@ -9,21 +9,6 @@
 /* globals module */
 
 module.exports = {
-  'chrome-mac': {
-    desiredCapabilities: {
-      browserName: 'chrome',
-      platform: 'macOS 10.12',
-      extendedDebugging: true,
-    },
-  },
-
-  'chrome-windows': {
-    desiredCapabilities: {
-      browserName: 'chrome',
-      platform: 'Windows 10',
-    },
-  },
-
   'safari-11': {
     desiredCapabilities: {
       browserName: 'safari',
@@ -99,16 +84,6 @@ module.exports = {
       deviceName: 'iPhone 5s Simulator',
       deviceOrientation: 'portrait',
       platformVersion: '9.3',
-      platformName: 'iOS',
-    },
-  },
-
-  'iPhone-X': {
-    desiredCapabilities: {
-      browserName: 'Safari',
-      deviceName: 'iPhone X Simulator',
-      deviceOrientation: 'portrait',
-      platformVersion: '11.0',
       platformName: 'iOS',
     },
   },
