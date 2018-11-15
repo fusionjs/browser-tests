@@ -32,8 +32,8 @@ steps:
         run: browser-tests-linters
     agents:
       queue: workers
-  - name: ':saucelabs: :selenium: :safari: 9'
-    command: ./test-remotely.sh safari-9
+  - name: ':saucelabs: :selenium: :safari: 10.1'
+    command: ./test-remotely.sh safari-10-1
     concurrency: 5
     concurrency_group: saucelabs
     plugins:
@@ -71,19 +71,6 @@ steps:
           - fusion-server-healthy
     agents:
       queue: workers
-  - name: ':saucelabs: :selenium: :ie: 9'
-    command: ./test-remotely.sh ie-9
-    concurrency: 5
-    concurrency_group: saucelabs
-    plugins:
-      'rtsao/docker-compose#e47c1ae':
-        run: browser-tests
-        pull:
-          - fusion-server
-          - sauce-tunnel-healthy
-          - fusion-server-healthy
-    agents:
-      queue: workers
   - name: ':saucelabs: :selenium: :ie: 11'
     command: ./test-remotely.sh ie-11
     concurrency: 5
@@ -97,8 +84,8 @@ steps:
           - fusion-server-healthy
     agents:
       queue: workers
-  - name: ':saucelabs: :selenium: :edge:'
-    command: ./test-remotely.sh edge
+  - name: ':saucelabs: :selenium: :edge: latest'
+    command: ./test-remotely.sh edge-latest
     concurrency: 5
     concurrency_group: saucelabs
     plugins:
@@ -110,8 +97,8 @@ steps:
           - fusion-server-healthy
     agents:
       queue: workers
-  - name: ':saucelabs: :selenium: :android: Samsung S3'
-    command: ./test-remotely.sh samsung-S3
+  - name: ':saucelabs: :selenium: :firefox: latest'
+    command: ./test-remotely.sh firefox-latest
     concurrency: 5
     concurrency_group: saucelabs
     plugins:
@@ -123,8 +110,8 @@ steps:
           - fusion-server-healthy
     agents:
       queue: workers
-  - name: ':saucelabs: :selenium: :android: Samsung G4'
-    command: ./test-remotely.sh samsung-G4
+  - name: ':saucelabs: :selenium: :firefox: previous'
+    command: ./test-remotely.sh firefox-previous
     concurrency: 5
     concurrency_group: saucelabs
     plugins:
@@ -136,21 +123,8 @@ steps:
           - fusion-server-healthy
     agents:
       queue: workers
-  - name: ':saucelabs: :selenium: :iphone: 5S'
-    command: ./test-remotely.sh iPhone-5s
-    concurrency: 5
-    concurrency_group: saucelabs
-    plugins:
-      'rtsao/docker-compose#e47c1ae':
-        run: browser-tests
-        pull:
-          - fusion-server
-          - sauce-tunnel-healthy
-          - fusion-server-healthy
-    agents:
-      queue: workers
-  - name: ':saucelabs: :selenium: Kindle Fire'
-    command: ./test-remotely.sh kindleFire
+  - name: ':saucelabs: :selenium: :firefox: 46'
+    command: ./test-remotely.sh firefox-46
     concurrency: 5
     concurrency_group: saucelabs
     plugins:

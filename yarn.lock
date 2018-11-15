@@ -2743,6 +2743,10 @@ eslint-plugin-jest@^21.18.0, eslint-plugin-jest@^21.22.0, eslint-plugin-jest@^21
   version "21.24.1"
   resolved "https://registry.npmjs.org/eslint-plugin-jest/-/eslint-plugin-jest-21.24.1.tgz#aaf3c34e816f07add83d1e9c20696fdc31fac8dc"
 
+eslint-plugin-jest@^22.0.0:
+  version "22.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-22.0.0.tgz#87dc52bbdd47f37f23bf2b10bb8469458bb3ed68"
+
 eslint-plugin-prettier@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/eslint-plugin-prettier/-/eslint-plugin-prettier-3.0.0.tgz#f6b823e065f8c36529918cdb766d7a0e975ec30c"
@@ -3492,13 +3496,13 @@ fusion-plugin-i18n-react@^1.1.0:
     fusion-plugin-i18n "^1.1.1"
     prop-types "^15.6.2"
 
-fusion-plugin-i18n@^1.1.1:
-  version "1.1.2"
-  resolved "https://registry.npmjs.org/fusion-plugin-i18n/-/fusion-plugin-i18n-1.1.2.tgz#351e712ebc4c55b3d5c9cc99dc884f1764fd188f"
+fusion-plugin-i18n@1.1.5-0, fusion-plugin-i18n@^1.1.1:
+  version "1.1.5-0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-i18n/-/fusion-plugin-i18n-1.1.5-0.tgz#99a4b3bf776883d2e1bf2a17b7753043d901a558"
   dependencies:
-    eslint-plugin-jest "^21.24.1"
+    eslint-plugin-jest "^22.0.0"
     locale "^0.1.0"
-    rollup "^0.66.2"
+    rollup "^0.67.1"
 
 fusion-plugin-jwt@^1.0.6:
   version "1.0.6"
@@ -7250,9 +7254,9 @@ rollup@^0.64.0:
     "@types/estree" "0.0.39"
     "@types/node" "*"
 
-rollup@^0.66.2:
-  version "0.66.6"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-0.66.6.tgz#ce7d6185beb7acea644ce220c25e71ae03275482"
+rollup@^0.67.1:
+  version "0.67.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.67.1.tgz#4094110c944d3c9e25b5bf196771b51132ec3adb"
   dependencies:
     "@types/estree" "0.0.39"
     "@types/node" "*"

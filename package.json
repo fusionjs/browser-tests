@@ -76,6 +76,9 @@
     "selenium-download": "^2.0.13",
     "tape": "^4.9.1"
   },
+  "resolutions": {
+    "fusion-plugin-i18n": "1.1.5-0"
+  },
   "engines": {
     "node": ">= 8.9.0"
   },
