@@ -13,4 +13,4 @@ RUN yarn download-selenium
 
 COPY . .
 
-RUN yarn build
+RUN yarn build --production
