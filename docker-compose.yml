@@ -2,7 +2,9 @@ version: '2.1'
 services:
   fusion-server:
     build: .
-    command: yarn start --environment=development
+    command: yarn start
+    environment:
+      - NODE_ENV=production
     expose:
       - '3000'
     healthcheck:
