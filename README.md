@@ -20,8 +20,8 @@ In Firefox
 You can run cross-browser tests locally leveraging docker and Sauce Labs by running the following:
 
 ```
-docker-compose run
-SAUCE_USERNAME=... SAUCE_ACCESS_KEY=... docker-compose run browser-tests .buildkite/run-all-tests.sh
+docker-compose build
+SAUCE_USERNAME=... SAUCE_ACCESS_KEY=... docker-compose run browser-tests ./test-remotely.sh
 ```
 
 ## Running Ad hoc cross-browser tests remotely
