@@ -15,6 +15,12 @@ module.exports = {
   'Basic UI Test': function(browser: any) {
     browser
       .url(URL)
+      .getLogTypes(function(result) {
+        console.log(result);
+      })
+      .getLog('browser', function(result) {
+        console.log(result);
+      })
       .waitForElementVisible('#root', DEFAULT_TIMEOUT)
       .assert.containsText('#root h1', 'Hello')
 
