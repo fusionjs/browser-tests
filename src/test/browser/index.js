@@ -35,6 +35,9 @@ module.exports = {
       .click('li#split a')
       .waitForElementVisible('div#split-example', DEFAULT_TIMEOUT)
       .assert.containsText('div#split-example', 'split-example')
+      .getLog('browser', function(result) {
+        console.log(result);
+      })
       .waitForElementVisible('div#split-deferred', DEFAULT_TIMEOUT)
       .assert.containsText('div#split-deferred', 'split-deferred')
 
