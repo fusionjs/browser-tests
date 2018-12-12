@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "fast-async": "^6.3.8",
-    "fusion-cli": "^1.11.5",
+    "fusion-cli": "1.13.0",
     "fusion-core": "^1.7.0",
     "fusion-plugin-browser-performance-emitter": "^1.6.1",
     "fusion-plugin-csrf-protection-react": "^1.0.3",
