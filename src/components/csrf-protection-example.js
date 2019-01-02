@@ -7,7 +7,8 @@
  */
 
 import React from 'react';
-import {withFetch} from 'fusion-plugin-csrf-protection-react';
+import {withServices} from 'fusion-react';
+import {FetchToken} from 'fusion-tokens';
 
 type Props = {
   fetch: (a: string, ops: {}) => Promise<*>,
@@ -44,4 +45,4 @@ class FetchingComponent extends React.Component<Props, State> {
   }
 }
 
-export default withFetch(FetchingComponent);
+export default withServices({fetch: FetchToken})(FetchingComponent);

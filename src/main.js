@@ -11,9 +11,7 @@ import JWTSession, {
   SessionCookieNameToken,
   SessionSecretToken,
 } from 'fusion-plugin-jwt';
-import CsrfProtection, {
-  FetchForCsrfToken,
-} from 'fusion-plugin-csrf-protection-react';
+import CsrfProtection from 'fusion-plugin-csrf-protection';
 import Router from 'fusion-plugin-react-router';
 import I18n, {I18nToken, I18nLoaderToken} from 'fusion-plugin-i18n-react';
 import UniversalEvents, {
@@ -72,10 +70,10 @@ export default function start() {
     app.register(RPCHandlersToken, rpcExample());
     app.register(RPCToken, RPC);
   } else if (__BROWSER__) {
-    app.register(FetchForCsrfToken, unfetch);
+    app.register(FetchToken, unfetch);
     app.register(RPCToken, RPC);
   }
-  app.register(FetchToken, CsrfProtection);
+  app.enhance(FetchToken, CsrfProtection);
   app.register(UniversalEventsToken, UniversalEvents);
   app.register(Router);
   app.register(Styletron);
