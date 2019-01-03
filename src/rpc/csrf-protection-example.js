@@ -8,7 +8,7 @@
 
 import {createPlugin} from 'fusion-core';
 
-export default createPlugin({
+export default createPlugin<empty, void>({
   middleware: () => {
     return (ctx, next) => {
       if (ctx.path === ctx.prefix + '/test-fetch' && ctx.method === 'POST') {

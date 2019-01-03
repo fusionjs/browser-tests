@@ -13,7 +13,7 @@ this plugin will be completely removed in favor of a better interface
 import {assetUrl, dangerouslySetHTML, createPlugin} from 'fusion-core';
 import type {Context} from 'fusion-core';
 
-export default createPlugin({
+export default createPlugin<empty, void>({
   middleware: () => {
     const iconUrl = assetUrl('../static/favicon.ico');
     const escaped = dangerouslySetHTML(
