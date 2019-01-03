@@ -3938,15 +3938,15 @@ fusion-plugin-redux-action-emitter-enhancer@^2.0.1:
   dependencies:
     eslint-plugin-jest "^22.0.0"
 
-fusion-plugin-rpc-redux-react@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/fusion-plugin-rpc-redux-react/-/fusion-plugin-rpc-redux-react-2.0.2.tgz#62fa56c4d9af5c9ef5f44d0dde76d06f5ad79819"
+fusion-plugin-rpc-redux-react@2.0.3-0:
+  version "2.0.3-0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-rpc-redux-react/-/fusion-plugin-rpc-redux-react-2.0.3-0.tgz#07285b7de882e0a95750d43a55bc18b4129cb035"
   dependencies:
-    fusion-plugin-rpc "^2.3.0-0"
-    fusion-rpc-redux "^1.2.0"
+    fusion-plugin-rpc "^2.3.0"
+    fusion-rpc-redux "^1.3.0"
     prop-types "^15.6.1"
 
-fusion-plugin-rpc@^2.3.0-0:
+fusion-plugin-rpc@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/fusion-plugin-rpc/-/fusion-plugin-rpc-2.3.0.tgz#456ff64d66c47ad0baf515bc2df0105e98b2f57e"
   dependencies:
@@ -3990,9 +3990,9 @@ fusion-react@^1.3.5:
     prop-types "^15.6.2"
     react-is "^16.6.3"
 
-fusion-rpc-redux@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/fusion-rpc-redux/-/fusion-rpc-redux-1.2.0.tgz#beb515deff7b3e288d0c691bad9f6b361da4084f"
+fusion-rpc-redux@^1.3.0:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/fusion-rpc-redux/-/fusion-rpc-redux-1.3.1.tgz#1eebc81b0e3516ab88aeb5d1956a33530c6e44db"
   dependencies:
     redux-reactors "^1.0.3"
 
