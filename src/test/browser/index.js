@@ -83,6 +83,8 @@ module.exports = {
       .assert.containsText('#set', 'set: true')
       .waitForElementVisible('#promise', DEFAULT_TIMEOUT)
       .assert.containsText('#promise', 'promise: true')
+      .waitForElementVisible('#generatorFn', DEFAULT_TIMEOUT)
+      .assert.containsText('#generatorFn', 'generatorFn: true')
       .end();
   },
 

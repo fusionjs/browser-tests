@@ -20,6 +20,7 @@ type State = {
   promise: ?boolean,
   weakMap: ?boolean,
   set: ?boolean,
+  generatorFn: ?boolean,
 };
 
 // For reasons unknown. Nightmare overrides polyfills in execute functions.
@@ -36,6 +37,7 @@ export default class PolyfillsTest extends React.Component<Props, State> {
       weakMap: null,
       map: null,
       set: null,
+      generatorFn: null,
     };
   }
 
@@ -101,6 +103,24 @@ export default class PolyfillsTest extends React.Component<Props, State> {
       this.setState({promise: false});
     }
 
+    // Generator functions
+    function* counter() {
+      let i = 1;
+      for (i; i < 3; i++) {
+        yield i;
+      }
+      return i;
+    }
+    const count = counter();
+    const one = count.next();
+    const two = count.next();
+    const three = count.next();
+    const generatorFn =
+      one.value === 1 &&
+      two.value === 2 &&
+      three.value === 3 &&
+      three.done === true;
+
     this.setState({
       symbol,
       objectAssign,
@@ -109,6 +129,7 @@ export default class PolyfillsTest extends React.Component<Props, State> {
       map,
       weakMap,
       set,
+      generatorFn,
     });
   }
 
@@ -142,6 +163,11 @@ export default class PolyfillsTest extends React.Component<Props, State> {
         ) : null}
         {this.state.promise !== null ? (
           <div id="promise">{`promise: ${String(this.state.promise)}`}</div>
+        ) : null}
+        {this.state.generatorFn !== null ? (
+          <div id="generatorFn">{`generatorFn: ${String(
+            this.state.generatorFn
+          )}`}</div>
         ) : null}
       </div>
     );
