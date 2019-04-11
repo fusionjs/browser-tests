@@ -22,7 +22,6 @@
     "check": "fusion check"
   },
   "dependencies": {
-    "fast-async": "^6.3.8",
     "fusion-cli": "^1.18.2",
     "fusion-core": "^1.10.6",
     "fusion-plugin-browser-performance-emitter": "^1.8.0",
