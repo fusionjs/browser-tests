@@ -73,7 +73,7 @@
     "prettier": "1.15.3",
     "react-test-renderer": "^16.7.0",
     "request": "^2.88.0",
-    "selenium-download": "^2.0.13",
+    "selenium-download": "^2.0.15",
     "tape": "^4.9.2"
   },
   "resolutions": {

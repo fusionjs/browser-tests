@@ -7759,9 +7759,10 @@ schema-utils@^1.0.0:
     ajv-errors "^1.0.0"
     ajv-keywords "^3.1.0"
 
-selenium-download@^2.0.13:
-  version "2.0.13"
-  resolved "https://registry.npmjs.org/selenium-download/-/selenium-download-2.0.13.tgz#96d3490e3c91e7992ae72dc7f25d133f2b47e45c"
+selenium-download@^2.0.15:
+  version "2.0.15"
+  resolved "https://registry.yarnpkg.com/selenium-download/-/selenium-download-2.0.15.tgz#360c3875a1b8cbd982e8296d269ad29516d2e083"
+  integrity sha512-GoQgM8MtJ55czpTY9USNLS4jIjGnpsA6oZClk4ekawJt1GGZ6run0MmkvHTV0KXI61KDTD1K723ZdnUBR6KR+A==
   dependencies:
     adm-zip "~0.4.4"
     async "^2.1.4"
