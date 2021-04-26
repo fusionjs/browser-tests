@@ -22,7 +22,7 @@ services:
     restart: always
 
   firefox-standalone:
-    image: selenium/standalone-firefox:latest@sha256:ee0abb000eb116e1ed3299ad887390539835887369cc2caf52889806315856cb
+    image: selenium/standalone-firefox:latest@sha256:4cee1e9d02dc0ff00683582a678a904991016a4534fa61bda2db11982d5094f4
     restart: always
 
   sauce-tunnel:
